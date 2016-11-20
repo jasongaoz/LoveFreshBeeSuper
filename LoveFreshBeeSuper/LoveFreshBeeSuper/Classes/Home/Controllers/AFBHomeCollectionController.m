@@ -8,6 +8,7 @@
 
 #import "AFBHomeCollectionController.h"
 #import "AFBHomeFlowLayout.h"
+#import "AFBHomeFirstCell.h"
 #import "AFBHomeSecondCell.h"
 #import "AFBHomeThreeCell.h"
 #import "AFBDownLoadManager.h"
@@ -36,7 +37,7 @@ static NSString *cell1 = @"cell";
     self.collectionView.backgroundColor = [UIColor grayColor];
     //注册
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cell1];
-    [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellFrist];
+    [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
     
@@ -59,12 +60,10 @@ static NSString *cell1 = @"cell";
 - (void)loadData{
     AFBDownLoadManager *manager = [AFBDownLoadManager shareManager];
 
-    [manager getHomeDataWithParameters:@1 CompleteBlock:^(NSArray *arrayH) {
+    [manager getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
         //字典转模型
-//        NSDictionary *dic = arrayH[@"data"];
-//        NSArray *array = dic[@"activities"];
-//        _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:arrayH];
-        NSLog(@"%@",arrayH);
+        NSArray *array = arrayH[@"activities"];
+        _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
     }];
 }
 
@@ -97,10 +96,18 @@ static NSString *cell1 = @"cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    
+    if (indexPath.section == 0) {
+        
+        AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];
+        
+        cell.contentView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);
+        
+        return cell;
+    }else if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
         AFBHomeSecondModel *model = _modelList[indexPath.row];
-        
+        cell.model = model;
         return cell;
     }else if (indexPath.section == 2){
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
