@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		213140141DE191A2002F7787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140131DE191A2002F7787 /* main.m */; };
+		213140171DE191A2002F7787 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140161DE191A2002F7787 /* AppDelegate.m */; };
+		213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */; };
+		213140221DE191A2002F7787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213140211DE191A2002F7787 /* Assets.xcassets */; };
+		213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213140231DE191A2002F7787 /* LaunchScreen.storyboard */; };
+		3E0A645B2979DF7F6855365E /* libPods-LoveFreshBeeSuper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveFreshBeeSuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		213140131DE191A2002F7787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		213140151DE191A2002F7787 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		213140161DE191A2002F7787 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2131401F1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoveFreshBeeSuper.xcdatamodel; sourceTree = "<group>"; };
+		213140211DE191A2002F7787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		213140241DE191A2002F7787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		213140261DE191A2002F7787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.debug.xcconfig"; sourceTree = "<group>"; };
+		BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveFreshBeeSuper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2131400C1DE191A2002F7787 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0A645B2979DF7F6855365E /* libPods-LoveFreshBeeSuper.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		213140061DE191A2002F7787 = {
+			isa = PBXGroup;
+			children = (
+				213140111DE191A2002F7787 /* LoveFreshBeeSuper */,
+				213140101DE191A2002F7787 /* Products */,
+				C96FA0AECC2F603282370FE1 /* Pods */,
+				6F6C6CAE27940B4326C57445 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		213140101DE191A2002F7787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		213140111DE191A2002F7787 /* LoveFreshBeeSuper */ = {
+			isa = PBXGroup;
+			children = (
+				213140151DE191A2002F7787 /* AppDelegate.h */,
+				213140161DE191A2002F7787 /* AppDelegate.m */,
+				213140121DE191A2002F7787 /* Supporting Files */,
+			);
+			path = LoveFreshBeeSuper;
+			sourceTree = "<group>";
+		};
+		213140121DE191A2002F7787 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				213140211DE191A2002F7787 /* Assets.xcassets */,
+				213140231DE191A2002F7787 /* LaunchScreen.storyboard */,
+				213140261DE191A2002F7787 /* Info.plist */,
+				2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */,
+				213140131DE191A2002F7787 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F6C6CAE27940B4326C57445 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96FA0AECC2F603282370FE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */,
+				C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2131400E1DE191A2002F7787 /* LoveFreshBeeSuper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213140291DE191A2002F7787 /* Build configuration list for PBXNativeTarget "LoveFreshBeeSuper" */;
+			buildPhases = (
+				99D53C59C40A2F3B0B743DA9 /* [CP] Check Pods Manifest.lock */,
+				2131400B1DE191A2002F7787 /* Sources */,
+				2131400C1DE191A2002F7787 /* Frameworks */,
+				2131400D1DE191A2002F7787 /* Resources */,
+				8C8A4769E54FC7F7942A672C /* [CP] Embed Pods Frameworks */,
+				BE8AE1350FC77BC566610894 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoveFreshBeeSuper;
+			productName = LoveFreshBeeSuper;
+			productReference = 2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		213140071DE191A2002F7787 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = gao2015;
+				TargetAttributes = {
+					2131400E1DE191A2002F7787 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2131400A1DE191A2002F7787 /* Build configuration list for PBXProject "LoveFreshBeeSuper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 213140061DE191A2002F7787;
+			productRefGroup = 213140101DE191A2002F7787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2131400E1DE191A2002F7787 /* LoveFreshBeeSuper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2131400D1DE191A2002F7787 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */,
+				213140221DE191A2002F7787 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C8A4769E54FC7F7942A672C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99D53C59C40A2F3B0B743DA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE8AE1350FC77BC566610894 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2131400B1DE191A2002F7787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213140171DE191A2002F7787 /* AppDelegate.m in Sources */,
+				213140141DE191A2002F7787 /* main.m in Sources */,
+				213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		213140231DE191A2002F7787 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				213140241DE191A2002F7787 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		213140271DE191A2002F7787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		213140281DE191A2002F7787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2131402A1DE191A2002F7787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2131402B1DE191A2002F7787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2131400A1DE191A2002F7787 /* Build configuration list for PBXProject "LoveFreshBeeSuper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213140271DE191A2002F7787 /* Debug */,
+				213140281DE191A2002F7787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213140291DE191A2002F7787 /* Build configuration list for PBXNativeTarget "LoveFreshBeeSuper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2131402A1DE191A2002F7787 /* Debug */,
+				2131402B1DE191A2002F7787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2131401F1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodel */,
+			);
+			currentVersion = 2131401F1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodel */;
+			path = LoveFreshBeeSuper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 213140071DE191A2002F7787 /* Project object */;
+}
