@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYModel.h>
 
 @interface AFBHomeSecondModel : NSObject
-
+@property(nonatomic,copy)NSString *img;
 @end

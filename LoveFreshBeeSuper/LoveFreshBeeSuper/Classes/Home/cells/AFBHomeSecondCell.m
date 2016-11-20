@@ -31,5 +31,10 @@
     }];
 }
 
+- (void)setModel:(AFBHomeSecondModel *)model{
+    _model = model;
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
+}
+
 
 @end

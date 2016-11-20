@@ -9,5 +9,8 @@
 #import "AFBHomeSecondModel.h"
 
 @implementation AFBHomeSecondModel
+- (NSString *)description{
+    return [self yy_modelDescription];
+}
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFBHomeSecondModel.h"
+#import <UIImageView+WebCache.h>
 
 @interface AFBHomeSecondCell : UICollectionViewCell
-
+@property(nonatomic,strong)AFBHomeSecondModel *model;
 @end

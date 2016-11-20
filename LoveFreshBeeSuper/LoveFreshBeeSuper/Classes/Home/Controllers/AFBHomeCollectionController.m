@@ -11,6 +11,7 @@
 #import "AFBHomeSecondCell.h"
 #import "AFBHomeThreeCell.h"
 #import "AFBDownLoadManager.h"
+#import "AFBHomeSecondModel.h"
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout>
 
@@ -19,7 +20,9 @@ static NSString *cellFrist = @"cellFrist";
 static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cell1 = @"cell";
-@implementation AFBHomeCollectionController
+@implementation AFBHomeCollectionController{
+    NSArray *_modelList;
+}
 //重新init方法
 - (instancetype)init{
     AFBHomeFlowLayout *layout = [[AFBHomeFlowLayout alloc]init];
@@ -58,11 +61,11 @@ static NSString *cell1 = @"cell";
 
     [manager getHomeDataWithParameters:@1 CompleteBlock:^(NSArray *arrayH) {
         //字典转模型
-        
-        
+//        NSDictionary *dic = arrayH[@"data"];
+//        NSArray *array = dic[@"activities"];
+//        _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:arrayH];
+        NSLog(@"%@",arrayH);
     }];
-    
-    
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -96,6 +99,8 @@ static NSString *cell1 = @"cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
+        AFBHomeSecondModel *model = _modelList[indexPath.row];
+        
         return cell;
     }else if (indexPath.section == 2){
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
