@@ -45,11 +45,16 @@ static CGFloat btnWH = 50;
 
 - (void)setCycleScrollView{
     
-    SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
+//    SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
     
-    NSArray * imagesName = @[@"h1",@"h2",@"h3",@"h4"];
+    NSArray * imagesURLString = @[_image1stURLString,
+                                 _image2ndURLString,
+                                  _image3rdURLString,
+                                  _image4thURLString,
+                                  _image5thURLString];
     
-    cycleScrollView.localizationImageNamesGroup = imagesName;
+    SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero imageURLStringsGroup:imagesURLString];
+    
     
     [self addSubview:cycleScrollView];
     
@@ -60,6 +65,8 @@ static CGFloat btnWH = 50;
     }];
     
     _cycleScrollView = cycleScrollView;
+    
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
 }
 
 

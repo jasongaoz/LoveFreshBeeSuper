@@ -10,4 +10,10 @@
 
 @interface AFBHomeHeaderView : UIView
 
+@property (nonatomic,copy)NSString * image1stURLString;
+@property (nonatomic,copy)NSString * image2ndURLString;
+@property (nonatomic,copy)NSString * image3rdURLString;
+@property (nonatomic,copy)NSString * image4thURLString;
+@property (nonatomic,copy)NSString * image5thURLString;
+
 @end
