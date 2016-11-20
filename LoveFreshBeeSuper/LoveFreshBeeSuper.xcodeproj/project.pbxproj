@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */; };
+		0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */; };
+		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
+		0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */; };
+		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
 		213140141DE191A2002F7787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140131DE191A2002F7787 /* main.m */; };
 		213140171DE191A2002F7787 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140161DE191A2002F7787 /* AppDelegate.m */; };
 		213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */; };
@@ -52,6 +57,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeCollectionController.h; sourceTree = "<group>"; };
+		0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeCollectionController.m; sourceTree = "<group>"; };
+		0A6C38061DE1BBB000DEAFDB /* AFBHomeFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFlowLayout.h; sourceTree = "<group>"; };
+		0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeFlowLayout.m; sourceTree = "<group>"; };
+		0A6C380A1DE1BD8200DEAFDB /* AFBHomeSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeSecondCell.h; sourceTree = "<group>"; };
+		0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondCell.m; sourceTree = "<group>"; };
+		0A6C380D1DE1BEFE00DEAFDB /* AFBHomeThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeThreeCell.h; sourceTree = "<group>"; };
+		0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeCell.m; sourceTree = "<group>"; };
+		0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeSecondModel.h; sourceTree = "<group>"; };
+		0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondModel.m; sourceTree = "<group>"; };
 		2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveFreshBeeSuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		213140131DE191A2002F7787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		213140151DE191A2002F7787 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +163,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A6C38051DE1BB7A00DEAFDB /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				0A6C38061DE1BBB000DEAFDB /* AFBHomeFlowLayout.h */,
+				0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		0A6C38091DE1BD3E00DEAFDB /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A6C380A1DE1BD8200DEAFDB /* AFBHomeSecondCell.h */,
+				0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */,
+				0A6C380D1DE1BEFE00DEAFDB /* AFBHomeThreeCell.h */,
+				0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		0A6C38101DE1C41300DEAFDB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
+				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		213140061DE191A2002F7787 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +250,9 @@
 		213140421DE19958002F7787 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0A6C38101DE1C41300DEAFDB /* models */,
+				0A6C38091DE1BD3E00DEAFDB /* cells */,
+				0A6C38051DE1BB7A00DEAFDB /* FlowLayout */,
 				213140431DE19958002F7787 /* Controllers */,
 				213140461DE19958002F7787 /* Views */,
 			);
@@ -217,6 +264,8 @@
 			children = (
 				213140441DE19958002F7787 /* AFBHomeController.h */,
 				213140451DE19958002F7787 /* AFBHomeController.m */,
+				0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */,
+				0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -559,17 +608,22 @@
 				32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */,
 				213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */,
 				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
+				0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */,
 				213140171DE191A2002F7787 /* AppDelegate.m in Sources */,
 				213140AD1DE19958002F7787 /* NSAttributedString+Addition.m in Sources */,
 				213140141DE191A2002F7787 /* main.m in Sources */,
 				213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */,
 				2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */,
+				0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */,
 				213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */,
 				2131409E1DE19958002F7787 /* AFBBaseViewController.m in Sources */,
 				213140A41DE19958002F7787 /* AFBOrderLeftCell.m in Sources */,
+				0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */,
 				213140AC1DE19958002F7787 /* NSArray+Log.m in Sources */,
 				213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */,
+				0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */,
 				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
+				0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */,
 				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,

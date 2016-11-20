@@ -8,6 +8,7 @@
 
 #import "AFBHomeController.h"
 #import "AFBHomeHeaderView.h"
+#import "AFBHomeCollectionController.h"
 
 @interface AFBHomeController ()
 
@@ -22,26 +23,17 @@
 
 #pragma mark - 搭建界面
 - (void)setupUI{
-    self.view.backgroundColor = [UIColor yellowColor];
     self.navigationItem.title = @"首页";
+    
     //MARK:创建主页的tableView
-    UITableView * mainTableView = [UITableView new];
+    AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
+    [self addChildViewController:collVc];
+    [self.view addSubview:collVc.view];
     
-    [self.view addSubview:mainTableView];
-    
-    [mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.edges.mas_equalTo(self.view);
+    [collVc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-    
-    //创建headerView
-    AFBHomeHeaderView * headerView = [AFBHomeHeaderView new];
-    
-    headerView.frame = CGRectMake(0, 0, 0, 200);
-    
-    mainTableView.tableHeaderView = headerView;
-    
-    
+
     //MARK:添加NavigationItem
     [self addNavigationItem];
 }

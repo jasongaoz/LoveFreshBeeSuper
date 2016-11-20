@@ -24,7 +24,8 @@ static id _instance;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
-    [manager POST:@"http://iosapi.itcast.cn/loveBeen/focus.json.php" parameters: nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
+    NSDictionary *dict = @{@"call":parameter};
+    [manager POST:@"http://iosapi.itcast.cn/loveBeen/focus.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
         NSLog(@"%@",responseObject);
        NSArray *array = responseObject[@"data"];
         if (completeBlock) {
