@@ -679,7 +679,10 @@
 			baseConfigurationReference = 4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+
 				GCC_PREFIX_HEADER = ./LoveFreshBeeSuper/LoveFreshBeeSuper/AFB.pch;
+
+
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
@@ -692,7 +695,9 @@
 			baseConfigurationReference = C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+
 				GCC_PREFIX_HEADER = ./LoveFreshBeeSuper/LoveFreshBeeSuper/AFB.pch;
+
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
