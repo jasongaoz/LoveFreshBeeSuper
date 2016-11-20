@@ -10,4 +10,8 @@
 
 @interface AFBMineTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) UIImageView *iconView;
+@property (nonatomic, weak) UILabel *lb_title;
+
+
 @end
