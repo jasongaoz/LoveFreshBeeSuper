@@ -27,19 +27,25 @@
 - (void)setupUI{
     //创建控件
     UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:imageView];
     
     UILabel *nameLabel = [[UILabel alloc]init];
-    nameLabel.font = [UIFont systemFontOfSize:20];
+//    nameLabel.font = [UIFont systemFontOfSize:15];
+    nameLabel.font = [UIFont boldSystemFontOfSize:12];
     [self addSubview:nameLabel];
     
     UIImageView *selectView = [[UIImageView alloc]init];
+    selectView.image = [UIImage imageNamed:@"jingxuan.png"];
     [self addSubview:selectView];
     
     UIImageView *payView = [[UIImageView alloc]init];
+    payView.image = [UIImage imageNamed:@"buyOne.png"];
     [self addSubview:payView];
     
     UILabel *countLabel = [[UILabel alloc]init];
+    countLabel.font = [UIFont systemFontOfSize:12];
+    countLabel.textColor = [UIColor grayColor];
     [self addSubview:countLabel];
     
     UIButton *button = [[UIButton alloc]init];
@@ -52,25 +58,25 @@
     //设置约束
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(160);
     }];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(imageView.mas_bottom).offset(5);
-        make.left.equalTo(self);
+        make.top.equalTo(imageView.mas_bottom);
+        make.left.equalTo(self).offset(5);
     }];
     [selectView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(nameLabel);
-        make.top.equalTo(nameLabel).offset(5);
-        make.size.mas_equalTo(CGSizeMake(18, 12));
+        make.top.equalTo(nameLabel.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(20, 13));
     }];
     [payView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(selectView.mas_right);
         make.top.equalTo(selectView);
-        make.size.mas_equalTo(CGSizeMake(25, 12));
+        make.size.mas_equalTo(CGSizeMake(28, 13));
     }];
     [countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(nameLabel);
-        make.top.equalTo(selectView.mas_bottom).offset(5);
+        make.top.equalTo(selectView.mas_bottom);
     }];
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,14 +102,6 @@
     self.nameLabel.text = model.name;
     self.countLabel.text = model.specifics;
 }
-
-
-
-
-
-
-
-
 
 
 @end
