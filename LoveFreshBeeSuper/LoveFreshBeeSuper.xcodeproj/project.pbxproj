@@ -126,9 +126,9 @@
 		213140921DE19958002F7787 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		213140931DE19958002F7787 /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
 		213140941DE19958002F7787 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
-		213140B71DE199A3002F7787 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFB.pch; path = ../AFB.pch; sourceTree = "<group>"; };
 		213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBDownLoadManager.h; sourceTree = "<group>"; };
 		213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDownLoadManager.m; sourceTree = "<group>"; };
+		23FD84A81DE1A337009D5075 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFB.pch; sourceTree = "<group>"; };
 		4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.debug.xcconfig"; sourceTree = "<group>"; };
 		BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveFreshBeeSuper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		213140121DE191A2002F7787 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				213140B71DE199A3002F7787 /* AFB.pch */,
+				23FD84A81DE1A337009D5075 /* AFB.pch */,
 				213140151DE191A2002F7787 /* AppDelegate.h */,
 				213140161DE191A2002F7787 /* AppDelegate.m */,
 				213140211DE191A2002F7787 /* Assets.xcassets */,
