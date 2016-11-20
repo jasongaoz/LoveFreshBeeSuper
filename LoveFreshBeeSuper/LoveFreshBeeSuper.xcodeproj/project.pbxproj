@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+
 		0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */; };
 		0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */; };
 		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
 		0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */; };
 		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
+
+		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
+
 		213140141DE191A2002F7787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140131DE191A2002F7787 /* main.m */; };
 		213140171DE191A2002F7787 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140161DE191A2002F7787 /* AppDelegate.m */; };
 		213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */; };
@@ -57,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeCollectionController.h; sourceTree = "<group>"; };
 		0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeCollectionController.m; sourceTree = "<group>"; };
 		0A6C38061DE1BBB000DEAFDB /* AFBHomeFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFlowLayout.h; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 		0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeCell.m; sourceTree = "<group>"; };
 		0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeSecondModel.h; sourceTree = "<group>"; };
 		0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondModel.m; sourceTree = "<group>"; };
+
+		1B205B401DE1AB1800AC3863 /* AFBSweepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBSweepViewController.h; sourceTree = "<group>"; };
+		1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBSweepViewController.m; sourceTree = "<group>"; };
+
 		2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveFreshBeeSuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		213140131DE191A2002F7787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		213140151DE191A2002F7787 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -264,8 +274,13 @@
 			children = (
 				213140441DE19958002F7787 /* AFBHomeController.h */,
 				213140451DE19958002F7787 /* AFBHomeController.m */,
+
 				0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */,
 				0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */,
+
+				1B205B401DE1AB1800AC3863 /* AFBSweepViewController.h */,
+				1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */,
+
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -623,7 +638,11 @@
 				213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */,
 				0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */,
 				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
+
 				0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */,
+
+				1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */,
+
 				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
