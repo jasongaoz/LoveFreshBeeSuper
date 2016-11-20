@@ -14,7 +14,7 @@
 
 
 
-- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSArray *arrayH))completeBlock;
+- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *arrayH))completeBlock;
 
 - (void)getHomeHotSaleDataParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH,NSString *reqid))completeBlock;
 - (void)getLaunchDataWithBlock:(void(^)(NSDictionary * dic))completeBlock;
