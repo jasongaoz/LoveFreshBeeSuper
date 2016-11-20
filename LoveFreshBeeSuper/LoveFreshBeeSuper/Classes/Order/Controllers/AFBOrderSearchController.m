@@ -48,7 +48,7 @@
         make.height.mas_equalTo(size.height);
     }];
     
-//    NSLog(@"%@",self.view.subviews);
+    
 }
 
 - (void)backBtnClicked{
