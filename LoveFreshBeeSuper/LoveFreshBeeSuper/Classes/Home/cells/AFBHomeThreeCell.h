@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFBHomeThreeModel.h"
+#import <UIImageView+WebCache.h>
 
 @interface AFBHomeThreeCell : UICollectionViewCell
+@property(nonatomic,strong)AFBHomeThreeModel *model;
 
 @end

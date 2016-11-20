@@ -12,7 +12,8 @@
 @property(nonatomic,weak)UIImageView *imageView;
 @property(nonatomic,weak)UILabel *nameLabel;
 @property(nonatomic,weak)UIImageView *selectView;
-
+@property(nonatomic,weak)UIImageView *payView;
+@property(nonatomic,weak)UILabel *countLabel;
 @end
 
 @implementation AFBHomeThreeCell
@@ -24,13 +25,12 @@
 }
 
 - (void)setupUI{
-    //创建空间
+    //创建控件
     UIImageView *imageView = [[UIImageView alloc]init];
     [self addSubview:imageView];
     
     UILabel *nameLabel = [[UILabel alloc]init];
     nameLabel.font = [UIFont systemFontOfSize:20];
-    
     [self addSubview:nameLabel];
     
     UIImageView *selectView = [[UIImageView alloc]init];
@@ -46,6 +46,8 @@
     [button setImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"v2_increased"] forState:UIControlStateHighlighted];
     [self addSubview:button];
+    //button点击事件
+    [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     
     //设置约束
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,17 +78,32 @@
         make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //设置关联
+    self.imageView = imageView;
+    self.nameLabel = nameLabel;
+    self.selectView = selectView;
+    self.payView = payView;
+    self.countLabel = countLabel;
+}
+//button点击事件
+- (void)clickButton:(UIButton *)sender{
     
 }
+//设置数据
+- (void)setModel:(AFBHomeThreeModel *)model{
+    _model = model;
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
+    self.nameLabel.text = model.name;
+    self.countLabel.text = model.specifics;
+}
+
+
+
+
+
+
+
+
+
 
 @end

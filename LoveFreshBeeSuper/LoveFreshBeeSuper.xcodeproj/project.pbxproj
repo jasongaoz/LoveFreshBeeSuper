@@ -12,6 +12,7 @@
 		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
 		0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */; };
 		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
+		0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */; };
 		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
 		1B205B451DE1CEC700AC3863 /* AFBHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */; };
 		213140141DE191A2002F7787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140131DE191A2002F7787 /* main.m */; };
@@ -69,6 +70,8 @@
 		0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeCell.m; sourceTree = "<group>"; };
 		0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeSecondModel.h; sourceTree = "<group>"; };
 		0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondModel.m; sourceTree = "<group>"; };
+		0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeThreeModel.h; sourceTree = "<group>"; };
+		0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeModel.m; sourceTree = "<group>"; };
 		1B205B401DE1AB1800AC3863 /* AFBSweepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBSweepViewController.h; sourceTree = "<group>"; };
 		1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBSweepViewController.m; sourceTree = "<group>"; };
 		1B205B431DE1CEC700AC3863 /* AFBHomeFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFirstCell.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
 				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
+				0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */,
+				0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
+				0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */,
 				213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */,
 				213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */,
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
