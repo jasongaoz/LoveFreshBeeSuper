@@ -12,6 +12,7 @@
 #import "AFBHomeCollectionController.h"
 
 #import "AFBSweepViewController.h"
+#import "AFBDownLoadManager.h"
 
 
 @interface AFBHomeController ()
@@ -40,6 +41,11 @@
 
     //MARK:添加NavigationItem
     [self addNavigationItem];
+    
+    
+    [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
+        NSLog(@"%@",arrayH);
+    }];
 }
 
 #pragma mark - 添加 设置NavigationItem

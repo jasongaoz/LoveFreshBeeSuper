@@ -14,6 +14,7 @@
 		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
 		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
 		1B205B451DE1CEC700AC3863 /* AFBHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */; };
+		1B205B481DE1D92200AC3863 /* AFBHeaderButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */; };
 		213140141DE191A2002F7787 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140131DE191A2002F7787 /* main.m */; };
 		213140171DE191A2002F7787 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140161DE191A2002F7787 /* AppDelegate.m */; };
 		213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */; };
@@ -73,6 +74,8 @@
 		1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBSweepViewController.m; sourceTree = "<group>"; };
 		1B205B431DE1CEC700AC3863 /* AFBHomeFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFirstCell.h; sourceTree = "<group>"; };
 		1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeFirstCell.m; sourceTree = "<group>"; };
+		1B205B461DE1D92200AC3863 /* AFBHeaderButtonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHeaderButtonModel.h; sourceTree = "<group>"; };
+		1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHeaderButtonModel.m; sourceTree = "<group>"; };
 		2131400F1DE191A2002F7787 /* LoveFreshBeeSuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveFreshBeeSuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		213140131DE191A2002F7787 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		213140151DE191A2002F7787 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
 				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
+				1B205B461DE1D92200AC3863 /* AFBHeaderButtonModel.h */,
+				1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B205B481DE1D92200AC3863 /* AFBHeaderButtonModel.m in Sources */,
 				2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */,
 				32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */,
 				2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */,
