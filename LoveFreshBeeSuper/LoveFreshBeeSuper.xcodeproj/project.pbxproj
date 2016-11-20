@@ -12,6 +12,41 @@
 		213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2131401E1DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld */; };
 		213140221DE191A2002F7787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213140211DE191A2002F7787 /* Assets.xcassets */; };
 		213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213140231DE191A2002F7787 /* LaunchScreen.storyboard */; };
+		213140951DE19958002F7787 /* AFBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140451DE19958002F7787 /* AFBHomeController.m */; };
+		213140961DE19958002F7787 /* AFBHomeHeaderBeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */; };
+		213140971DE19958002F7787 /* AFBHomeHeaderDrawWiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */; };
+		213140981DE19958002F7787 /* AFBHomeHeaderRedBagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */; };
+		213140991DE19958002F7787 /* AFBHomeHeaderSecKillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */; };
+		2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140501DE19958002F7787 /* AFBHomeHeaderView.m */; };
+		2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140541DE19958002F7787 /* AFBBaseNavgationController.m */; };
+		2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140561DE19958002F7787 /* AFBBaseTableView.m */; };
+		2131409D1DE19958002F7787 /* AFBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140581DE19958002F7787 /* AFBTabBarController.m */; };
+		2131409E1DE19958002F7787 /* AFBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131405B1DE19958002F7787 /* AFBBaseViewController.m */; };
+		2131409F1DE19958002F7787 /* AFBMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131405F1DE19958002F7787 /* AFBMineController.m */; };
+		213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140621DE19958002F7787 /* AFBMineTableViewCell.m */; };
+		213140A11DE19958002F7787 /* AFBOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140661DE19958002F7787 /* AFBOrderController.m */; };
+		213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */; };
+		213140A31DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */; };
+		213140A41DE19958002F7787 /* AFBOrderLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131406C1DE19958002F7787 /* AFBOrderLeftCell.m */; };
+		213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131406E1DE19958002F7787 /* AFBOrderLeftTableView.m */; };
+		213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140701DE19958002F7787 /* AFBOrderRightCell.m */; };
+		213140A71DE19958002F7787 /* AFBOrderRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213140711DE19958002F7787 /* AFBOrderRightCell.xib */; };
+		213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140731DE19958002F7787 /* AFBOrderRightTableView.m */; };
+		213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */; };
+		213140AA1DE19958002F7787 /* AFBShopCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140791DE19958002F7787 /* AFBShopCarController.m */; };
+		213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131407E1DE19958002F7787 /* NSArray+Addition.m */; };
+		213140AC1DE19958002F7787 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140801DE19958002F7787 /* NSArray+Log.m */; };
+		213140AD1DE19958002F7787 /* NSAttributedString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140821DE19958002F7787 /* NSAttributedString+Addition.m */; };
+		213140AE1DE19958002F7787 /* NSObject+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140841DE19958002F7787 /* NSObject+Addition.m */; };
+		213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140861DE19958002F7787 /* NSString+sandBox.m */; };
+		213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140881DE19958002F7787 /* UIButton+Addition.m */; };
+		213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131408A1DE19958002F7787 /* UIColor+Addition.m */; };
+		213140B21DE19958002F7787 /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131408C1DE19958002F7787 /* UILabel+Addition.m */; };
+		213140B31DE19958002F7787 /* UIScreen+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131408E1DE19958002F7787 /* UIScreen+Addition.m */; };
+		213140B41DE19958002F7787 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140901DE19958002F7787 /* UIView+Addition.m */; };
+		213140B51DE19958002F7787 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140921DE19958002F7787 /* UIView+Frame.m */; };
+		213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140941DE19958002F7787 /* UIViewController+Addition.m */; };
+		213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */; };
 		3E0A645B2979DF7F6855365E /* libPods-LoveFreshBeeSuper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +59,76 @@
 		213140211DE191A2002F7787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		213140241DE191A2002F7787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		213140261DE191A2002F7787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213140441DE19958002F7787 /* AFBHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeController.h; sourceTree = "<group>"; };
+		213140451DE19958002F7787 /* AFBHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeController.m; sourceTree = "<group>"; };
+		213140471DE19958002F7787 /* AFBHomeHeaderBeeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderBeeView.h; sourceTree = "<group>"; };
+		213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderBeeView.m; sourceTree = "<group>"; };
+		213140491DE19958002F7787 /* AFBHomeHeaderDrawWiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderDrawWiew.h; sourceTree = "<group>"; };
+		2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderDrawWiew.m; sourceTree = "<group>"; };
+		2131404B1DE19958002F7787 /* AFBHomeHeaderRedBagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderRedBagView.h; sourceTree = "<group>"; };
+		2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderRedBagView.m; sourceTree = "<group>"; };
+		2131404D1DE19958002F7787 /* AFBHomeHeaderSecKillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderSecKillView.h; sourceTree = "<group>"; };
+		2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderSecKillView.m; sourceTree = "<group>"; };
+		2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderView.h; sourceTree = "<group>"; };
+		213140501DE19958002F7787 /* AFBHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderView.m; sourceTree = "<group>"; };
+		213140531DE19958002F7787 /* AFBBaseNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseNavgationController.h; sourceTree = "<group>"; };
+		213140541DE19958002F7787 /* AFBBaseNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBBaseNavgationController.m; sourceTree = "<group>"; };
+		213140551DE19958002F7787 /* AFBBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseTableView.h; sourceTree = "<group>"; };
+		213140561DE19958002F7787 /* AFBBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBBaseTableView.m; sourceTree = "<group>"; };
+		213140571DE19958002F7787 /* AFBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBTabBarController.h; sourceTree = "<group>"; };
+		213140581DE19958002F7787 /* AFBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBTabBarController.m; sourceTree = "<group>"; };
+		2131405A1DE19958002F7787 /* AFBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseViewController.h; sourceTree = "<group>"; };
+		2131405B1DE19958002F7787 /* AFBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBBaseViewController.m; sourceTree = "<group>"; };
+		2131405E1DE19958002F7787 /* AFBMineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineController.h; sourceTree = "<group>"; };
+		2131405F1DE19958002F7787 /* AFBMineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMineController.m; sourceTree = "<group>"; };
+		213140611DE19958002F7787 /* AFBMineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineTableViewCell.h; sourceTree = "<group>"; };
+		213140621DE19958002F7787 /* AFBMineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMineTableViewCell.m; sourceTree = "<group>"; };
+		213140651DE19958002F7787 /* AFBOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderController.h; sourceTree = "<group>"; };
+		213140661DE19958002F7787 /* AFBOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderController.m; sourceTree = "<group>"; };
+		213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderIncreaseAndReduceView.h; sourceTree = "<group>"; };
+		213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderIncreaseAndReduceView.m; sourceTree = "<group>"; };
+		2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBOrderIncreaseAndReduceView.xib; sourceTree = "<group>"; };
+		2131406B1DE19958002F7787 /* AFBOrderLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftCell.h; sourceTree = "<group>"; };
+		2131406C1DE19958002F7787 /* AFBOrderLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftCell.m; sourceTree = "<group>"; };
+		2131406D1DE19958002F7787 /* AFBOrderLeftTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftTableView.h; sourceTree = "<group>"; };
+		2131406E1DE19958002F7787 /* AFBOrderLeftTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftTableView.m; sourceTree = "<group>"; };
+		2131406F1DE19958002F7787 /* AFBOrderRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightCell.h; sourceTree = "<group>"; };
+		213140701DE19958002F7787 /* AFBOrderRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightCell.m; sourceTree = "<group>"; };
+		213140711DE19958002F7787 /* AFBOrderRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBOrderRightCell.xib; sourceTree = "<group>"; };
+		213140721DE19958002F7787 /* AFBOrderRightTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightTableView.h; sourceTree = "<group>"; };
+		213140731DE19958002F7787 /* AFBOrderRightTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightTableView.m; sourceTree = "<group>"; };
+		213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightTableViewFootView.h; sourceTree = "<group>"; };
+		213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightTableViewFootView.m; sourceTree = "<group>"; };
+		213140781DE19958002F7787 /* AFBShopCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBShopCarController.h; sourceTree = "<group>"; };
+		213140791DE19958002F7787 /* AFBShopCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBShopCarController.m; sourceTree = "<group>"; };
+		2131407C1DE19958002F7787 /* AYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYAddition.h; sourceTree = "<group>"; };
+		2131407D1DE19958002F7787 /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
+		2131407E1DE19958002F7787 /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
+		2131407F1DE19958002F7787 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		213140801DE19958002F7787 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		213140811DE19958002F7787 /* NSAttributedString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Addition.h"; sourceTree = "<group>"; };
+		213140821DE19958002F7787 /* NSAttributedString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Addition.m"; sourceTree = "<group>"; };
+		213140831DE19958002F7787 /* NSObject+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Addition.h"; sourceTree = "<group>"; };
+		213140841DE19958002F7787 /* NSObject+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Addition.m"; sourceTree = "<group>"; };
+		213140851DE19958002F7787 /* NSString+sandBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+sandBox.h"; sourceTree = "<group>"; };
+		213140861DE19958002F7787 /* NSString+sandBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+sandBox.m"; sourceTree = "<group>"; };
+		213140871DE19958002F7787 /* UIButton+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
+		213140881DE19958002F7787 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
+		213140891DE19958002F7787 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		2131408A1DE19958002F7787 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		2131408B1DE19958002F7787 /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
+		2131408C1DE19958002F7787 /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
+		2131408D1DE19958002F7787 /* UIScreen+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Addition.h"; sourceTree = "<group>"; };
+		2131408E1DE19958002F7787 /* UIScreen+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Addition.m"; sourceTree = "<group>"; };
+		2131408F1DE19958002F7787 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		213140901DE19958002F7787 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		213140911DE19958002F7787 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		213140921DE19958002F7787 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		213140931DE19958002F7787 /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
+		213140941DE19958002F7787 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
+		213140B71DE199A3002F7787 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFB.pch; path = ../AFB.pch; sourceTree = "<group>"; };
+		213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBDownLoadManager.h; sourceTree = "<group>"; };
+		213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDownLoadManager.m; sourceTree = "<group>"; };
 		4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.debug.xcconfig"; sourceTree = "<group>"; };
 		BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoveFreshBeeSuper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveFreshBeeSuper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoveFreshBeeSuper/Pods-LoveFreshBeeSuper.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,8 +167,7 @@
 		213140111DE191A2002F7787 /* LoveFreshBeeSuper */ = {
 			isa = PBXGroup;
 			children = (
-				213140151DE191A2002F7787 /* AppDelegate.h */,
-				213140161DE191A2002F7787 /* AppDelegate.m */,
+				213140411DE19958002F7787 /* Classes */,
 				213140121DE191A2002F7787 /* Supporting Files */,
 			);
 			path = LoveFreshBeeSuper;
@@ -72,6 +176,9 @@
 		213140121DE191A2002F7787 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				213140B71DE199A3002F7787 /* AFB.pch */,
+				213140151DE191A2002F7787 /* AppDelegate.h */,
+				213140161DE191A2002F7787 /* AppDelegate.m */,
 				213140211DE191A2002F7787 /* Assets.xcassets */,
 				213140231DE191A2002F7787 /* LaunchScreen.storyboard */,
 				213140261DE191A2002F7787 /* Info.plist */,
@@ -79,6 +186,210 @@
 				213140131DE191A2002F7787 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		213140411DE19958002F7787 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				213140421DE19958002F7787 /* Home */,
+				213140511DE19958002F7787 /* Main */,
+				2131405C1DE19958002F7787 /* Mine */,
+				213140631DE19958002F7787 /* Order */,
+				213140761DE19958002F7787 /* ShopCar */,
+				2131407A1DE19958002F7787 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		213140421DE19958002F7787 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				213140431DE19958002F7787 /* Controllers */,
+				213140461DE19958002F7787 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		213140431DE19958002F7787 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				213140441DE19958002F7787 /* AFBHomeController.h */,
+				213140451DE19958002F7787 /* AFBHomeController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		213140461DE19958002F7787 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213140471DE19958002F7787 /* AFBHomeHeaderBeeView.h */,
+				213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */,
+				213140491DE19958002F7787 /* AFBHomeHeaderDrawWiew.h */,
+				2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */,
+				2131404B1DE19958002F7787 /* AFBHomeHeaderRedBagView.h */,
+				2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */,
+				2131404D1DE19958002F7787 /* AFBHomeHeaderSecKillView.h */,
+				2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */,
+				2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */,
+				213140501DE19958002F7787 /* AFBHomeHeaderView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		213140511DE19958002F7787 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				213140521DE19958002F7787 /* Controllers */,
+				213140591DE19958002F7787 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		213140521DE19958002F7787 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				213140531DE19958002F7787 /* AFBBaseNavgationController.h */,
+				213140541DE19958002F7787 /* AFBBaseNavgationController.m */,
+				213140551DE19958002F7787 /* AFBBaseTableView.h */,
+				213140561DE19958002F7787 /* AFBBaseTableView.m */,
+				213140571DE19958002F7787 /* AFBTabBarController.h */,
+				213140581DE19958002F7787 /* AFBTabBarController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		213140591DE19958002F7787 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2131405A1DE19958002F7787 /* AFBBaseViewController.h */,
+				2131405B1DE19958002F7787 /* AFBBaseViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2131405C1DE19958002F7787 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2131405D1DE19958002F7787 /* Controllers */,
+				213140601DE19958002F7787 /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		2131405D1DE19958002F7787 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2131405E1DE19958002F7787 /* AFBMineController.h */,
+				2131405F1DE19958002F7787 /* AFBMineController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		213140601DE19958002F7787 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213140611DE19958002F7787 /* AFBMineTableViewCell.h */,
+				213140621DE19958002F7787 /* AFBMineTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		213140631DE19958002F7787 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				213140641DE19958002F7787 /* Controllers */,
+				213140671DE19958002F7787 /* Views */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		213140641DE19958002F7787 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				213140651DE19958002F7787 /* AFBOrderController.h */,
+				213140661DE19958002F7787 /* AFBOrderController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		213140671DE19958002F7787 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
+				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
+				2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */,
+				2131406B1DE19958002F7787 /* AFBOrderLeftCell.h */,
+				2131406C1DE19958002F7787 /* AFBOrderLeftCell.m */,
+				2131406D1DE19958002F7787 /* AFBOrderLeftTableView.h */,
+				2131406E1DE19958002F7787 /* AFBOrderLeftTableView.m */,
+				2131406F1DE19958002F7787 /* AFBOrderRightCell.h */,
+				213140701DE19958002F7787 /* AFBOrderRightCell.m */,
+				213140711DE19958002F7787 /* AFBOrderRightCell.xib */,
+				213140721DE19958002F7787 /* AFBOrderRightTableView.h */,
+				213140731DE19958002F7787 /* AFBOrderRightTableView.m */,
+				213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */,
+				213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		213140761DE19958002F7787 /* ShopCar */ = {
+			isa = PBXGroup;
+			children = (
+				213140771DE19958002F7787 /* Controllers */,
+			);
+			path = ShopCar;
+			sourceTree = "<group>";
+		};
+		213140771DE19958002F7787 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				213140781DE19958002F7787 /* AFBShopCarController.h */,
+				213140791DE19958002F7787 /* AFBShopCarController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2131407A1DE19958002F7787 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */,
+				213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */,
+				2131407B1DE19958002F7787 /* AY_Addition */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2131407B1DE19958002F7787 /* AY_Addition */ = {
+			isa = PBXGroup;
+			children = (
+				2131407C1DE19958002F7787 /* AYAddition.h */,
+				2131407D1DE19958002F7787 /* NSArray+Addition.h */,
+				2131407E1DE19958002F7787 /* NSArray+Addition.m */,
+				2131407F1DE19958002F7787 /* NSArray+Log.h */,
+				213140801DE19958002F7787 /* NSArray+Log.m */,
+				213140811DE19958002F7787 /* NSAttributedString+Addition.h */,
+				213140821DE19958002F7787 /* NSAttributedString+Addition.m */,
+				213140831DE19958002F7787 /* NSObject+Addition.h */,
+				213140841DE19958002F7787 /* NSObject+Addition.m */,
+				213140851DE19958002F7787 /* NSString+sandBox.h */,
+				213140861DE19958002F7787 /* NSString+sandBox.m */,
+				213140871DE19958002F7787 /* UIButton+Addition.h */,
+				213140881DE19958002F7787 /* UIButton+Addition.m */,
+				213140891DE19958002F7787 /* UIColor+Addition.h */,
+				2131408A1DE19958002F7787 /* UIColor+Addition.m */,
+				2131408B1DE19958002F7787 /* UILabel+Addition.h */,
+				2131408C1DE19958002F7787 /* UILabel+Addition.m */,
+				2131408D1DE19958002F7787 /* UIScreen+Addition.h */,
+				2131408E1DE19958002F7787 /* UIScreen+Addition.m */,
+				2131408F1DE19958002F7787 /* UIView+Addition.h */,
+				213140901DE19958002F7787 /* UIView+Addition.m */,
+				213140911DE19958002F7787 /* UIView+Frame.h */,
+				213140921DE19958002F7787 /* UIView+Frame.m */,
+				213140931DE19958002F7787 /* UIViewController+Addition.h */,
+				213140941DE19958002F7787 /* UIViewController+Addition.m */,
+			);
+			path = AY_Addition;
 			sourceTree = "<group>";
 		};
 		6F6C6CAE27940B4326C57445 /* Frameworks */ = {
@@ -127,6 +438,7 @@
 		213140071DE191A2002F7787 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AFB;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = gao2015;
 				TargetAttributes = {
@@ -160,7 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */,
+				213140A71DE19958002F7787 /* AFBOrderRightCell.xib in Resources */,
 				213140221DE191A2002F7787 /* Assets.xcassets in Resources */,
+				213140A31DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +533,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */,
+				213140B21DE19958002F7787 /* UILabel+Addition.m in Sources */,
+				2131409D1DE19958002F7787 /* AFBTabBarController.m in Sources */,
+				213140B31DE19958002F7787 /* UIScreen+Addition.m in Sources */,
+				213140AA1DE19958002F7787 /* AFBShopCarController.m in Sources */,
+				2131409F1DE19958002F7787 /* AFBMineController.m in Sources */,
+				213140951DE19958002F7787 /* AFBHomeController.m in Sources */,
+				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
+				213140971DE19958002F7787 /* AFBHomeHeaderDrawWiew.m in Sources */,
+				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
+				213140991DE19958002F7787 /* AFBHomeHeaderSecKillView.m in Sources */,
+				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
+				213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */,
+				213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */,
+				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
+				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
+				213140981DE19958002F7787 /* AFBHomeHeaderRedBagView.m in Sources */,
+				213140A11DE19958002F7787 /* AFBOrderController.m in Sources */,
+				213140AE1DE19958002F7787 /* NSObject+Addition.m in Sources */,
+				213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */,
+				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
 				213140171DE191A2002F7787 /* AppDelegate.m in Sources */,
+				213140AD1DE19958002F7787 /* NSAttributedString+Addition.m in Sources */,
 				213140141DE191A2002F7787 /* main.m in Sources */,
+				213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */,
+				2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */,
 				213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */,
+				2131409E1DE19958002F7787 /* AFBBaseViewController.m in Sources */,
+				213140A41DE19958002F7787 /* AFBOrderLeftCell.m in Sources */,
+				213140AC1DE19958002F7787 /* NSArray+Log.m in Sources */,
+				213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */,
+				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
+				213140961DE19958002F7787 /* AFBHomeHeaderBeeView.m in Sources */,
+				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
+				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
+				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +679,7 @@
 			baseConfigurationReference = 4DF560E6B3F140C370DF7291 /* Pods-LoveFreshBeeSuper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/gao2015/LoveFreshBeeSuper/LoveFreshBeeSuper/AFB.pch;
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
@@ -344,6 +692,7 @@
 			baseConfigurationReference = C5EBA84694252094AE0941A3 /* Pods-LoveFreshBeeSuper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/gao2015/LoveFreshBeeSuper/LoveFreshBeeSuper/AFB.pch;
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
@@ -370,6 +719,7 @@
 				2131402B1DE191A2002F7787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

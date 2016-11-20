@@ -1,0 +1,20 @@
+//
+//  AFB.pch
+//  LoveFreshBeeSuper
+//
+//  Created by gao2015 on 2016/11/20.
+//  Copyright © 2016年 gao2015. All rights reserved.
+//
+
+#ifndef AFB_pch
+#define AFB_pch
+
+#import <Masonry.h>
+#import "AFBBaseViewController.h"
+#import "AFBBaseTableView.h"
+#import "AYAddition.h"
+
+//主题颜色
+#define kBaseColor [UIColor ay_colorWithR:253 G:212 B:50 alpha:1.0]
+
+#endif /* AFB_pch */
