@@ -8,6 +8,7 @@
 
 #import "AFBHomeController.h"
 #import "AFBHomeHeaderView.h"
+#import "AFBSweepViewController.h"
 
 @interface AFBHomeController ()
 
@@ -63,6 +64,10 @@
 
 - (void)clickLeftItem{
     NSLog(@"点击了扫一扫");
+    
+    AFBSweepViewController * sweepVC = [AFBSweepViewController new];
+    
+    [self.navigationController pushViewController:sweepVC animated:YES];
 }
 
 - (void)clickRightItem{
