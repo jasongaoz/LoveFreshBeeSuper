@@ -99,10 +99,7 @@ static NSString *cell1 = @"cell";
     
     if (indexPath.section == 0) {
         
-        AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];
-        
-        cell.contentView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);
-        
+        AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];        
         return cell;
     }else if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
@@ -126,7 +123,7 @@ static NSString *cell1 = @"cell";
     
     if (indexPath.section == 0) {
         
-        return CGSizeMake(wigth, 200);
+        return CGSizeMake(wigth, 220);
         
     }else if (indexPath.section == 1){
         
