@@ -13,10 +13,6 @@
 		213140221DE191A2002F7787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213140211DE191A2002F7787 /* Assets.xcassets */; };
 		213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213140231DE191A2002F7787 /* LaunchScreen.storyboard */; };
 		213140951DE19958002F7787 /* AFBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140451DE19958002F7787 /* AFBHomeController.m */; };
-		213140961DE19958002F7787 /* AFBHomeHeaderBeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */; };
-		213140971DE19958002F7787 /* AFBHomeHeaderDrawWiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */; };
-		213140981DE19958002F7787 /* AFBHomeHeaderRedBagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */; };
-		213140991DE19958002F7787 /* AFBHomeHeaderSecKillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */; };
 		2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140501DE19958002F7787 /* AFBHomeHeaderView.m */; };
 		2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140541DE19958002F7787 /* AFBBaseNavgationController.m */; };
 		2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140561DE19958002F7787 /* AFBBaseTableView.m */; };
@@ -47,6 +43,8 @@
 		213140B51DE19958002F7787 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140921DE19958002F7787 /* UIView+Frame.m */; };
 		213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140941DE19958002F7787 /* UIViewController+Addition.m */; };
 		213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */; };
+		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
+		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */; };
 		32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */; };
 		32E2AEA41DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */; };
@@ -64,14 +62,6 @@
 		213140261DE191A2002F7787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213140441DE19958002F7787 /* AFBHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeController.h; sourceTree = "<group>"; };
 		213140451DE19958002F7787 /* AFBHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeController.m; sourceTree = "<group>"; };
-		213140471DE19958002F7787 /* AFBHomeHeaderBeeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderBeeView.h; sourceTree = "<group>"; };
-		213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderBeeView.m; sourceTree = "<group>"; };
-		213140491DE19958002F7787 /* AFBHomeHeaderDrawWiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderDrawWiew.h; sourceTree = "<group>"; };
-		2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderDrawWiew.m; sourceTree = "<group>"; };
-		2131404B1DE19958002F7787 /* AFBHomeHeaderRedBagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderRedBagView.h; sourceTree = "<group>"; };
-		2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderRedBagView.m; sourceTree = "<group>"; };
-		2131404D1DE19958002F7787 /* AFBHomeHeaderSecKillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderSecKillView.h; sourceTree = "<group>"; };
-		2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderSecKillView.m; sourceTree = "<group>"; };
 		2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderView.h; sourceTree = "<group>"; };
 		213140501DE19958002F7787 /* AFBHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderView.m; sourceTree = "<group>"; };
 		213140531DE19958002F7787 /* AFBBaseNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseNavgationController.h; sourceTree = "<group>"; };
@@ -131,6 +121,10 @@
 		213140941DE19958002F7787 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
 		213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBDownLoadManager.h; sourceTree = "<group>"; };
 		213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDownLoadManager.m; sourceTree = "<group>"; };
+		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
+		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
+		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
+		2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMineMyCardController.m; sourceTree = "<group>"; };
 		32E2AE9C1DE1A105003E34D3 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFB.pch; sourceTree = "<group>"; };
 		32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderSearchController.h; sourceTree = "<group>"; };
 		32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderSearchController.m; sourceTree = "<group>"; };
@@ -230,14 +224,6 @@
 		213140461DE19958002F7787 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				213140471DE19958002F7787 /* AFBHomeHeaderBeeView.h */,
-				213140481DE19958002F7787 /* AFBHomeHeaderBeeView.m */,
-				213140491DE19958002F7787 /* AFBHomeHeaderDrawWiew.h */,
-				2131404A1DE19958002F7787 /* AFBHomeHeaderDrawWiew.m */,
-				2131404B1DE19958002F7787 /* AFBHomeHeaderRedBagView.h */,
-				2131404C1DE19958002F7787 /* AFBHomeHeaderRedBagView.m */,
-				2131404D1DE19958002F7787 /* AFBHomeHeaderSecKillView.h */,
-				2131404E1DE19958002F7787 /* AFBHomeHeaderSecKillView.m */,
 				2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */,
 				213140501DE19958002F7787 /* AFBHomeHeaderView.m */,
 			);
@@ -289,6 +275,10 @@
 			children = (
 				2131405E1DE19958002F7787 /* AFBMineController.h */,
 				2131405F1DE19958002F7787 /* AFBMineController.m */,
+				2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */,
+				2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */,
+				2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */,
+				2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -549,6 +539,7 @@
 			files = (
 				2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */,
 				32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */,
+				2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */,
 				213140B21DE19958002F7787 /* UILabel+Addition.m in Sources */,
 				2131409D1DE19958002F7787 /* AFBTabBarController.m in Sources */,
 				213140B31DE19958002F7787 /* UIScreen+Addition.m in Sources */,
@@ -556,15 +547,13 @@
 				2131409F1DE19958002F7787 /* AFBMineController.m in Sources */,
 				213140951DE19958002F7787 /* AFBHomeController.m in Sources */,
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
-				213140971DE19958002F7787 /* AFBHomeHeaderDrawWiew.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
-				213140991DE19958002F7787 /* AFBHomeHeaderSecKillView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
 				213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */,
 				213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */,
+				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
 				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
 				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
-				213140981DE19958002F7787 /* AFBHomeHeaderRedBagView.m in Sources */,
 				213140A11DE19958002F7787 /* AFBOrderController.m in Sources */,
 				213140AE1DE19958002F7787 /* NSObject+Addition.m in Sources */,
 				32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */,
@@ -581,7 +570,6 @@
 				213140AC1DE19958002F7787 /* NSArray+Log.m in Sources */,
 				213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */,
 				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
-				213140961DE19958002F7787 /* AFBHomeHeaderBeeView.m in Sources */,
 				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
@@ -697,6 +685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LoveFreshBeeSuper/AFB.pch;
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -710,6 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LoveFreshBeeSuper/AFB.pch;
 				INFOPLIST_FILE = LoveFreshBeeSuper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaozhijia.LoveFreshBeeSuper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
