@@ -12,6 +12,7 @@
 #import "AFBOrderRightTableView.h"
 #import "AFBOrderLeftTableView.h"
 #import "AFBOrderSearchController.h"
+#import "AFBDownLoadManager.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -36,6 +37,10 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
     [self addTableView];
     [self addNavigationItem];
+}
+
+- (void)loadData{
+
 }
 
 //MARK:添加 设置NavigationItem
