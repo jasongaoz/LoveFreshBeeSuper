@@ -29,6 +29,8 @@
     [self addSubview:imageView];
     
     UILabel *nameLabel = [[UILabel alloc]init];
+    nameLabel.font = [UIFont systemFontOfSize:20];
+    
     [self addSubview:nameLabel];
     
     UIImageView *selectView = [[UIImageView alloc]init];
@@ -70,7 +72,7 @@
     }];
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.bottom.equalTo(self);
+        make.right.bottom.equalTo(self).offset(-10);
         make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
     
