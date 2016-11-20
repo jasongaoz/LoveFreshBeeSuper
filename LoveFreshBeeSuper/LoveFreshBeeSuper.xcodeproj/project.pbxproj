@@ -314,10 +314,10 @@
 		213140641DE19958002F7787 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */,
-				32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */,
 				213140651DE19958002F7787 /* AFBOrderController.h */,
 				213140661DE19958002F7787 /* AFBOrderController.m */,
+				32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */,
+				32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
