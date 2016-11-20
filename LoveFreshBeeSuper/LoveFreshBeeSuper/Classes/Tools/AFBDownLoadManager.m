@@ -20,13 +20,13 @@ static id _instance;
     return _instance;
 }
 //异步获取首页数据
-- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSArray *arrayH))completeBlock{
+- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *arrayH))completeBlock{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSDictionary *dict = @{@"call":parameter};
     [manager POST:@"http://iosapi.itcast.cn/loveBeen/focus.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
        NSArray *array = responseObject[@"data"];
         if (completeBlock) {
             completeBlock(array);
@@ -51,7 +51,7 @@ static id _instance;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        NSLog(@"%@",error);
+//        NSLog(@"%@",error);
     }];
 
 }

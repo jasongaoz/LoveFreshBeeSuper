@@ -59,12 +59,10 @@ static NSString *cell1 = @"cell";
 - (void)loadData{
     AFBDownLoadManager *manager = [AFBDownLoadManager shareManager];
 
-    [manager getHomeDataWithParameters:@1 CompleteBlock:^(NSArray *arrayH) {
+    [manager getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
         //字典转模型
-//        NSDictionary *dic = arrayH[@"data"];
-//        NSArray *array = dic[@"activities"];
-//        _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:arrayH];
-        NSLog(@"%@",arrayH);
+        NSArray *array = arrayH[@"activities"];
+        _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
     }];
 }
 
@@ -100,7 +98,7 @@ static NSString *cell1 = @"cell";
     if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
         AFBHomeSecondModel *model = _modelList[indexPath.row];
-        
+        cell.model = model;
         return cell;
     }else if (indexPath.section == 2){
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];

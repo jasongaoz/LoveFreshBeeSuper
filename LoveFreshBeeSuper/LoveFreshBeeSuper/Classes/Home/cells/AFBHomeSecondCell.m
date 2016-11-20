@@ -25,7 +25,6 @@
     [self addSubview:imageView];
     self.imageView = imageView;
     
-    imageView.image = [UIImage imageNamed:@"h1"];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
