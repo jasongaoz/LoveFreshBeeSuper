@@ -12,6 +12,7 @@
 		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
 		0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */; };
 		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
+		0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */; };
 		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
 		1B205B451DE1CEC700AC3863 /* AFBHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */; };
 		1B205B481DE1D92200AC3863 /* AFBHeaderButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */; };
@@ -51,6 +52,7 @@
 		213140B51DE19958002F7787 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140921DE19958002F7787 /* UIView+Frame.m */; };
 		213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140941DE19958002F7787 /* UIViewController+Addition.m */; };
 		213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */; };
+		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */; };
@@ -70,6 +72,8 @@
 		0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeCell.m; sourceTree = "<group>"; };
 		0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeSecondModel.h; sourceTree = "<group>"; };
 		0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondModel.m; sourceTree = "<group>"; };
+		0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeThreeModel.h; sourceTree = "<group>"; };
+		0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeModel.m; sourceTree = "<group>"; };
 		1B205B401DE1AB1800AC3863 /* AFBSweepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBSweepViewController.h; sourceTree = "<group>"; };
 		1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBSweepViewController.m; sourceTree = "<group>"; };
 		1B205B431DE1CEC700AC3863 /* AFBHomeFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFirstCell.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		213140941DE19958002F7787 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
 		213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBDownLoadManager.h; sourceTree = "<group>"; };
 		213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDownLoadManager.m; sourceTree = "<group>"; };
+		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
+		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
@@ -199,8 +205,13 @@
 			children = (
 				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
 				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
+<<<<<<< HEAD
 				1B205B461DE1D92200AC3863 /* AFBHeaderButtonModel.h */,
 				1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */,
+=======
+				0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */,
+				0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */,
+>>>>>>> f192c6b1e1e9cccf2d5d93efab27dc45c829c8bc
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 		213140631DE19958002F7787 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				23EA0C761DE1D61F00638F6D /* Models */,
 				213140641DE19958002F7787 /* Controllers */,
 				213140671DE19958002F7787 /* Views */,
 			);
@@ -457,6 +469,15 @@
 				213140941DE19958002F7787 /* UIViewController+Addition.m */,
 			);
 			path = AY_Addition;
+			sourceTree = "<group>";
+		};
+		23EA0C761DE1D61F00638F6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */,
+				23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6F6C6CAE27940B4326C57445 /* Frameworks */ = {
@@ -615,6 +636,7 @@
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
+				0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */,
 				213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */,
 				213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */,
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
@@ -645,6 +667,7 @@
 				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
+				23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

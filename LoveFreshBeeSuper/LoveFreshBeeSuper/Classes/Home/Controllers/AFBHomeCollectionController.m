@@ -13,6 +13,7 @@
 #import "AFBHomeThreeCell.h"
 #import "AFBDownLoadManager.h"
 #import "AFBHomeSecondModel.h"
+#import "AFBHomeThreeModel.h"
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout>
 
@@ -23,6 +24,7 @@ static NSString *cellThree = @"cellThree";
 static NSString *cell1 = @"cell";
 @implementation AFBHomeCollectionController{
     NSArray *_modelList;
+    NSArray *_threeModelList;
 }
 //重新init方法
 - (instancetype)init{
@@ -64,6 +66,11 @@ static NSString *cell1 = @"cell";
         //字典转模型
         NSArray *array = arrayH[@"activities"];
         _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
+    }];
+    [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
+//        NSLog(@"%@",dicH);
+        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
+        NSLog(@"%@",_threeModelList);
     }];
 }
 
@@ -109,6 +116,9 @@ static NSString *cell1 = @"cell";
     }else if (indexPath.section == 2){
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
+        AFBHomeThreeModel *model = _threeModelList[indexPath.row];
+        cell.model = model;
+        
         return cell;
     }
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cell1 forIndexPath:indexPath];
