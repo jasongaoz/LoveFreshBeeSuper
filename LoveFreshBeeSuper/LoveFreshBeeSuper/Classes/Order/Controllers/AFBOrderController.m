@@ -11,6 +11,7 @@
 #import "AFBOrderLeftCell.h"
 #import "AFBOrderRightTableView.h"
 #import "AFBOrderLeftTableView.h"
+#import "AFBOrderSearchController.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -35,7 +36,6 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
     [self addTableView];
     [self addNavigationItem];
-    
 }
 
 //MARK:添加 设置NavigationItem
@@ -59,7 +59,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 
 - (void)clickRightItem{
     NSLog(@"点击了搜索");
+    
+    AFBOrderSearchController *vc = [[AFBOrderSearchController alloc] init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 //MARK:添加 设置tableView
 - (void)addTableView{
