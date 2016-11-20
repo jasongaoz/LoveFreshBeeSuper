@@ -33,6 +33,8 @@ static CGFloat btnWH = 50;
 #pragma mark - 搭建界面
 - (void)setUpUI{
     
+    self.backgroundColor = [UIColor whiteColor];
+    
     //MARK:设置滚动图片视图
     [self setCycleScrollView];
     
