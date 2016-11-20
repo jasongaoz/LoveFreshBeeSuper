@@ -29,7 +29,7 @@
 - (void)setupUI{
     self.navigationItem.title = @"首页";
     
-    //MARK:创建主页的tableView
+    //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
     [self addChildViewController:collVc];
     [self.view addSubview:collVc.view];

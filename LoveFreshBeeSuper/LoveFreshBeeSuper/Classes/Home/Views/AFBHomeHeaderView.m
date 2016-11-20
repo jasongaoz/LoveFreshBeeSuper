@@ -76,7 +76,7 @@ static CGFloat btnWH = 50;
     
     [btnDraw mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(_cycleScrollView.mas_bottom).offset(30);
+        make.top.mas_equalTo(_cycleScrollView.mas_bottom).offset(10);
         make.left.mas_equalTo(self).offset(margin);
     }];
     
