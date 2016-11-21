@@ -7,7 +7,7 @@
 //
 
 #import "AFBOrderRightProductsModel.h"
-#import "AFBOrderRightGoodsModel.h"
+#import "AFBOrderGoodsModel.h"
 
 @implementation AFBOrderRightProductsModel
 

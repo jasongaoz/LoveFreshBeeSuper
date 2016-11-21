@@ -6,7 +6,7 @@
 //  Copyright © 2016年 gao2015. All rights reserved.
 //
 
-#import "AFBOrderRightGoodsModel.h"
+#import "AFBOrderGoodsModel.h"
 
 @implementation AFBOrderGoodsModel
 
