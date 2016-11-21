@@ -15,6 +15,9 @@
 #import "AFBDownLoadManager.h"
 #import "AFBOrderLeftModel.h"
 #import <YYModel.h>
+#import <SVProgressHUD.h>
+#import "AFBSweepViewController.h"
+#import "AFBCommonGoodsModel.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -24,9 +27,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 @end
 
 @implementation AFBOrderController{
-    AFBOrderLeftTableView *_leftTableView;
-    AFBOrderRightTableView *_rightTableView;
-    NSArray<AFBOrderLeftModel *>*_leftDataList;
+    AFBOrderLeftTableView * _leftTableView;
+    AFBOrderRightTableView * _rightTableView;
+    NSArray<AFBOrderLeftModel *> * _leftDataList;
+    NSArray<AFBCommonGoodsModel *> * _rightDataList;
+    NSMutableDictionary*_goodsDataDic;
+    UIView *_bgImageView;
 }
 
 - (void)viewDidLoad {
@@ -39,21 +45,51 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     self.navigationItem.title = @"闪送超市";
     self.view.backgroundColor = [UIColor grayColor];
     
-    [self addTableView];
+    
     [self addNavigationItem];
+    [self setMyView];
 }
 
+//MARK:加载数据
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     
-    
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
+//        [dataDic writeToFile:@"/Users/Yin_Y/Desktop/111.plist" atomically:YES];
+        _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:dataDic[@"categories"]];
+        AFBOrderLeftModel *model = _leftDataList[0];
+        NSLog(@"%@",model.idKey);
+      
+        NSDictionary * tempDic = dataDic[@"products"];
+        [tempDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSArray * obj, BOOL * _Nonnull stop) {
+            
+            NSArray *tempArray = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:obj];
+            
+            [_goodsDataDic setObject:tempArray forKey:key];
+        }];
+        //        dataDic[@"products"];
+        [self addTableView];
         [_leftTableView reloadData];
-        //MARK:让左边tableView默认选中第0行
+        [_bgImageView removeFromSuperview];
+        [SVProgressHUD dismiss];
+        
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
     
+}
+
+//MARK:添加 设置背景占位页面
+- (void)setMyView{
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIImageView * gbImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
+    gbImageView.center = self.view.center;
+    
+    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
+    gbImageView.center = imageCenter;
+    _bgImageView = gbImageView;
+    [self.view addSubview:gbImageView];
+    [SVProgressHUD show];
 }
 
 //MARK:添加 设置NavigationItem
@@ -72,17 +108,17 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)clickLeftItem{
-    NSLog(@"点击了扫一扫");
+    AFBSweepViewController * sweepVC = [AFBSweepViewController new];
+    
+    [self.navigationController pushViewController:sweepVC animated:YES];
 }
 
 - (void)clickRightItem{
-    NSLog(@"点击了搜索");
     
     AFBOrderSearchController *vc = [[AFBOrderSearchController alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 
 //MARK:添加 设置tableView
@@ -109,7 +145,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     [rightTableView registerNib:[UINib nibWithNibName:@"AFBOrderRightCell" bundle:nil] forCellReuseIdentifier:orderRightCellID];
     
     [_leftTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.equalTo(self.view);
+        make.top.equalTo(self.view).offset(64);
+        make.left.bottom.equalTo(self.view);
         make.width.mas_equalTo(80);
     }];
     
@@ -121,9 +158,6 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         
     }];
     
-    //MARK:让左边tableView默认选中第0行
-    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,9 +165,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     // Dispose of any resources that can be recreated.
 }
 
+//MARK:cell的点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _leftTableView) {
-        NSLog(@"如果点击的是左侧cell,切换数据源,当前切换到数据源%zd",indexPath.row+1);
+        NSString * goodsListKey = _leftDataList[indexPath.row].idKey;
+        NSLog(@"%@",goodsListKey);
+        _rightDataList = _goodsDataDic[_leftDataList[indexPath.row].idKey];
+        NSLog(@"%@",_rightDataList);
     }else{
         NSLog(@"push到相对应页面");
     }
@@ -157,7 +195,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         
         return 10;
     }
-    return 5;
+    return _leftDataList.count;
 }
 
 //cell
@@ -172,13 +210,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         return cell;
     }
     else{
-    cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+        cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
     }
     
-    
     return cell;
-    
 }
+
+
 
 /*
  #pragma mark - Navigation

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,8 +38,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3l-Dn-0dd" userLabel="120g">
-                        <rect key="frame" x="86" y="35" width="32" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="86" y="37" width="28" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,6 +47,12 @@
                         <rect key="frame" x="86" y="57" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="0.11892473808657134" blue="0.21162878162064236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-Sa-Dom" userLabel="120g">
+                        <rect key="frame" x="125" y="59" width="28" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -61,11 +67,20 @@
                     <constraint firstItem="NNP-Jx-uMD" firstAttribute="top" secondItem="a3l-Dn-0dd" secondAttribute="bottom" constant="5" id="Ryn-0o-bjA"/>
                     <constraint firstItem="NNP-Jx-uMD" firstAttribute="leading" secondItem="uWC-4W-ywv" secondAttribute="trailing" constant="8" id="Yqv-vG-JCQ"/>
                     <constraint firstItem="uWC-4W-ywv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Yzu-Oz-dkS"/>
+                    <constraint firstItem="7J7-Sa-Dom" firstAttribute="bottom" secondItem="NNP-Jx-uMD" secondAttribute="bottom" id="dAx-sb-mih"/>
+                    <constraint firstItem="7J7-Sa-Dom" firstAttribute="leading" secondItem="NNP-Jx-uMD" secondAttribute="trailing" constant="3" id="heh-i0-CTo"/>
                     <constraint firstAttribute="trailing" secondItem="hGy-YG-i8u" secondAttribute="trailing" constant="8" id="k6p-L6-C61"/>
                     <constraint firstItem="hGy-YG-i8u" firstAttribute="top" secondItem="uWC-4W-ywv" secondAttribute="top" id="pP9-kt-bKo"/>
                     <constraint firstItem="uWC-4W-ywv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sPN-L8-DuO"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="iconView" destination="uWC-4W-ywv" id="Apg-Lp-JMH"/>
+                <outlet property="marketPriceLabel" destination="7J7-Sa-Dom" id="BAb-37-WPY"/>
+                <outlet property="nameLabel" destination="hGy-YG-i8u" id="0Si-le-zYz"/>
+                <outlet property="partnerPriceLabel" destination="NNP-Jx-uMD" id="NuH-Ce-EPJ"/>
+                <outlet property="specificsLabel" destination="a3l-Dn-0dd" id="t1Q-tu-L7f"/>
+            </connections>
             <point key="canvasLocation" x="106" y="-15"/>
         </tableViewCell>
     </objects>

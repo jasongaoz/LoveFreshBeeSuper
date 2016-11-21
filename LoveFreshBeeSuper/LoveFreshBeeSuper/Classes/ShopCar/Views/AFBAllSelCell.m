@@ -8,6 +8,12 @@
 
 #import "AFBAllSelCell.h"
 
+@interface AFBAllSelCell ()
+
+    @property(nonatomic,weak) UIButton *judgeBtn;
+
+@end
+
 @implementation AFBAllSelCell
 
 - (void)awakeFromNib {
@@ -23,10 +29,12 @@
 //布局
 - (void)setupUI{
     UIButton *selbtn = [[UIButton alloc] init];
-    [selbtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [selbtn setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
+    [selbtn setImage:[UIImage imageNamed:@"v2_noselected"] forState:UIControlStateNormal];
+//    [selbtn setImage:[UIImage imageNamed:@"v2_selected"] forState:UIControlStateHighlighted];
+    [selbtn addTarget:self action:@selector(selectTotal) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.contentView addSubview:selbtn];
-    selbtn.backgroundColor = [UIColor redColor];
+//    selbtn.backgroundColor = [UIColor redColor];
     
     UILabel *textL = [[UILabel alloc] init];
     textL.text = @"全选";
@@ -45,10 +53,16 @@
     //假数据
     float price = 0.0;
     [yellowSelBtn setTitle:@"选好了" forState:UIControlStateNormal];
+    [yellowSelBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     [yellowSelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     yellowSelBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    [yellowSelBtn  setTitle:[NSString stringWithFormat:@"满¥%f起送",price] forState:UIControlStateSelected];
-    [yellowSelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [yellowSelBtn addTarget:self action:@selector(clickToJudge) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+//    [yellowSelBtn  setTitle:[NSString stringWithFormat:@"满¥%f起送",price] forState:UIControlStateHighlighted];
+//    [yellowSelBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+//    [yellowSelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    
 //    yellowSelBtn setcolor
 //    [yellowSelBtn  setTitle:[NSString stringWithFormat:@"满¥%f起送",price] forState:UIControlStateNormal];
 //    [yellowSelBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
@@ -82,5 +96,22 @@
 
     // Configure the view for the selected state
 }
+- (void)clickToJudge{
+    //如果选中按钮被勾选,则状态是选中
+//    if(){
+//
+//    
+//    
+//    }
+    
+    
+    
 
+
+}
+
+- (void)selectTotal{
+
+
+}
 @end

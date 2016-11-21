@@ -12,7 +12,7 @@
 #import "AFBShopCarFisrtCell.h"
 #import "AFBShopCarSupermarkerCell.h"
 #import "AFBAdressTimeCell.h"
-//#import "AFBBuyCardCell.h"
+#import "AFBCouDanCell.h"
 #import "AFBBusinessListCell.h"
 #import "AFBCommentCell.h"
 #import "AFBAllSelCell.h"
@@ -79,12 +79,12 @@ static NSString *AllselID = @"allSelID";
         [shopCarView registerNib:[UINib nibWithNibName:@"AFBShopCarFisrtCell" bundle:nil] forCellReuseIdentifier:FirstID];
         [shopCarView registerNib:[UINib nibWithNibName:@"AFBShopCarSupermarkerCell" bundle:nil] forCellReuseIdentifier:shopMakID];
         [shopCarView registerNib:[UINib nibWithNibName:@"AFBAdressTimeCell" bundle:nil] forCellReuseIdentifier:AdressID];
-//        [shopCarView registerNib:[UINib nibWithNibName:@"AFBBuyCardCell" bundle:nil] forCellReuseIdentifier:buyCardID];
+        [shopCarView registerNib:[UINib nibWithNibName:@"AFBCouDanCell" bundle:nil] forCellReuseIdentifier:buyCardID];
         [shopCarView registerClass:[AFBBusinessListCell class] forCellReuseIdentifier:BusiListID];
         [shopCarView registerClass:[AFBCommentCell class] forCellReuseIdentifier:CommentID];
         [shopCarView registerClass:[AFBAllSelCell class] forCellReuseIdentifier:AllselID];
     }else{
-        NSLog(@"创建");
+
         UIImageView *shopView = [[UIImageView alloc] init];
         shopView.image = [UIImage imageNamed:@"v2_shop_empty"];
         [self.view addSubview:shopView];
@@ -133,7 +133,7 @@ static NSString *AllselID = @"allSelID";
 
 //组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    return 4;
 }
 
 //每组的row数
@@ -142,16 +142,12 @@ static NSString *AllselID = @"allSelID";
         return 1;
     }
     else if (section == 1) {
-        return 1 ;
+        return 3 ;
     }
     else if (section == 2){
-        return 1;
-    }else if(section == 3){
-        return _shopModelList.count;
-    }else if (section == 4){
-        return 1;
+       return _shopModelList.count;
     }
-    return 1;
+    return 2;
     
 }
 
@@ -165,20 +161,22 @@ static NSString *AllselID = @"allSelID";
     else if (indexPath.section == 1 && indexPath.row == 0) {
         //创建第二种cell 闪送超市
         AFBShopCarSupermarkerCell *cell = [tableView dequeueReusableCellWithIdentifier:shopMakID forIndexPath:indexPath];
-        cell.height = 40;
         return cell;
     }
-    else if (indexPath.section == 2 && indexPath.row == 0) {
+    else if (indexPath.section == 1 && indexPath.row == 1) {
         //创建第三种cell 收货时间
         AFBAdressTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:AdressID forIndexPath:indexPath];
-//        cell.height = 60;
         return cell;
     }
-    else if(indexPath.section ==3){
+    else if (indexPath.section == 1 && indexPath.row == 2){
+        AFBCouDanCell *cell = [tableView dequeueReusableCellWithIdentifier:buyCardID forIndexPath:indexPath];
+        return cell;
+    }
+    else if(indexPath.section == 2){
         // 商品列表
         AFBBusinessListCell * cell = [tableView dequeueReusableCellWithIdentifier:BusiListID forIndexPath:indexPath];
         //        cell.height = 60;
-        cell.textLabel.text = @"1111";
+//        cell.textLabel.text = @"1111";
         return cell;
     }
 //    else if(indexPath.section == 3 && indexPath.row == 0){
@@ -187,11 +185,11 @@ static NSString *AllselID = @"allSelID";
 ////        cell.height = 60;
 //        return cell;
 //    }
-    else if (indexPath.section == 4 && indexPath.row == 0){
+    else if (indexPath.section == 3 && indexPath.row == 0){
         AFBCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:CommentID forIndexPath:indexPath];
         return cell;
     }
-    else if (indexPath.section ==5 && indexPath.row == 0){
+    else if (indexPath.section == 3 && indexPath.row == 1){
         AFBAllSelCell *cell = [tableView dequeueReusableCellWithIdentifier:AllselID forIndexPath:indexPath];
         return cell;
     }
@@ -214,21 +212,24 @@ static NSString *AllselID = @"allSelID";
     if (indexPath.section == 0) {
         return 100;
     }
-    else if(indexPath.section == 1){
+    else if(indexPath.section == 1 && indexPath.row == 0){
         return 40;
     }
-    else if(indexPath.section == 2){
+    else if(indexPath.section == 1 && indexPath.row == 1 ){
         return 55;
     }
-    else if(indexPath.section == 3){
+    else if(indexPath.section == 2){
         return 80;
-    }
-    else if(indexPath.section == 4 ){
-        return 50;
     }
     return 50;
 }
-
+//cell点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        NSLog(@"点击了第一个cell");
+    }
+    
+}
 
 /*
 #pragma mark - Navigation

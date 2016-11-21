@@ -7,17 +7,21 @@
 //
 
 #import "AFBHomeController.h"
-#import "AFBHomeHeaderView.h"
 
 #import "AFBHomeCollectionController.h"
 
 #import "AFBSweepViewController.h"
 #import "AFBDownLoadManager.h"
 
+#import "AFBDrawViewController.h"
+#import "AFBSecKillViewController.h"
+#import "AFBRedBagViewController.h"
+#import "AFBBeeViewController.h"
+
 #import <PYSearch.h>
 
 
-@interface AFBHomeController ()
+@interface AFBHomeController () <AFBHomeCollectionControllerDelegate>
 
 @end
 
@@ -34,6 +38,7 @@
     
     //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
+    collVc.delegate = self;
     [self addChildViewController:collVc];
     [self.view addSubview:collVc.view];
     
@@ -66,7 +71,7 @@
 }
 
 - (void)clickLeftItem{
-    NSLog(@"点击了扫一扫");
+  
     
     AFBSweepViewController * sweepVC = [AFBSweepViewController new];
     
@@ -74,7 +79,7 @@
 }
 
 - (void)clickRightItem{
-    NSLog(@"点击了搜索");
+  
     // 1. 创建热门搜索数组
     NSArray *hotSeaches = @[@"大闸蟹", @"水", @"中秋月饼", @"酸奶", @"啤酒", @"西瓜", @"大荔冬枣", @"贝儿蛋糕", @"月盛斋", @"方便面"];
     // 2. 创建搜索控制器
@@ -89,5 +94,33 @@
 }
 
 
+#pragma mark - 代理方法实现
+- (void)pushDrawView{
+    NSLog(@"点击了抽奖");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBDrawViewController alloc] init] animated:YES];
+}
+
+- (void)pushSecKillView{
+    NSLog(@"点击了秒杀");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBSecKillViewController alloc] init] animated:YES];
+}
+
+- (void)pushRedBagView{
+    NSLog(@"点击了抢红包");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBRedBagViewController alloc] init] animated:YES];
+}
+
+- (void)pushBeeView{
+    NSLog(@"点击了蜂抱团");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBBeeViewController alloc] init] animated:YES];
+}
 
 @end
