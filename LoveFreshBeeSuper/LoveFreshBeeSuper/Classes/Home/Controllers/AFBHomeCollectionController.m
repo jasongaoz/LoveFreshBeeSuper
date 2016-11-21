@@ -16,7 +16,7 @@
 #import "AFBHomeThreeModel.h"
 #import "AFBHomeFourCell.h"
 
-@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout>
+@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate>
 
 @end
 static NSString *cellFrist = @"cellFrist";
@@ -108,7 +108,7 @@ static NSString *cellFour = @"cellFour";
     
     if (indexPath.section == 0) {
         AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];
-        
+        cell.delegate = self;
         return cell;
     }else if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
@@ -151,7 +151,30 @@ static NSString *cellFour = @"cellFour";
     return CGSizeMake(wigth, 50);
 }
 
+#pragma mark - 代理方法实现
+- (void)willPushDrawView{
+    if ([_delegate respondsToSelector:@selector(pushDrawView)]) {
+        [_delegate pushDrawView];
+    }
+}
 
+- (void)willPushSecKillView{
+    if ([_delegate respondsToSelector:@selector(pushSecKillView)]) {
+        [_delegate pushSecKillView];
+    }
+}
+
+- (void)willPushRedBagView{
+    if ([_delegate respondsToSelector:@selector(pushRedBagView)]) {
+        [_delegate pushRedBagView];
+    }
+}
+
+- (void)willPushBeeView{
+    if ([_delegate respondsToSelector:@selector(pushBeeView)]) {
+        [_delegate pushBeeView];
+    }
+}
 
 #pragma mark <UICollectionViewDelegate>
 

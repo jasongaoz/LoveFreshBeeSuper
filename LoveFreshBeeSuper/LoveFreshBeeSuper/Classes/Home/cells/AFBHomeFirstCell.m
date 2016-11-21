@@ -8,7 +8,12 @@
 
 #import "AFBHomeFirstCell.h"
 
-//static CGFloat btnWH = 50;
+typedef enum : NSUInteger {
+    kBtnDraw = 1,
+    KBtnSecKill = 2,
+    kBtnRedBag = 3,
+    kBtnBee = 4
+} kBtnState;
 
 @implementation AFBHomeFirstCell{
     SDCycleScrollView * _cycleScrollView;
@@ -66,14 +71,20 @@
     //抽奖按钮
     UIButton * btnDraw = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20206_1452163603_icon.jpg" title:@"抽奖"];
     
+    btnDraw.tag = 1;
+    
     [btnDraw mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(_cycleScrollView.mas_bottom);
         make.left.mas_equalTo(self.contentView).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
+    [btnDraw addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
     //秒杀按钮
     UIButton * btnSecKill = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20333_1451871780_icon.jpg" title:@"秒杀"];
+    
+    btnSecKill.tag = 2;
     
     [btnSecKill mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -81,8 +92,12 @@
         make.left.mas_equalTo(btnDraw.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
+    [btnSecKill addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
     //抢红包按钮
     UIButton * btnRedBag = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20596_1452250014_icon.jpg" title:@"抢红包"];
+    
+    btnRedBag.tag = 3;
     
     [btnRedBag mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -90,14 +105,47 @@
         make.left.mas_equalTo(btnSecKill.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
+    [btnRedBag addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
     //蜂抱团按钮
     UIButton * btnBee = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20382_1451896099_icon.jpg" title:@"蜂抱团"];
+    
+    btnBee.tag = 4;
     
     [btnBee mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(btnRedBag);
         make.left.mas_equalTo(btnRedBag.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
+    
+    [btnBee addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - 实现按钮的点击事件
+- (void)clickBtn:(UIButton *)sender{
+    if ([_delegate respondsToSelector:@selector(willPushDrawView)] ||
+        [_delegate respondsToSelector:@selector(willPushSecKillView)] ||
+        [_delegate respondsToSelector:@selector(willPushRedBagView)] ||
+        [_delegate respondsToSelector:@selector(willPushBeeView)]
+        ) {
+        
+        switch (sender.tag) {
+            case kBtnDraw:
+                [_delegate willPushDrawView];
+                break;
+            case KBtnSecKill:
+                [_delegate willPushSecKillView];
+                break;
+            case kBtnRedBag:
+                [_delegate willPushRedBagView];
+                break;
+            case kBtnBee:
+                [_delegate willPushBeeView];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark - 创建按钮
