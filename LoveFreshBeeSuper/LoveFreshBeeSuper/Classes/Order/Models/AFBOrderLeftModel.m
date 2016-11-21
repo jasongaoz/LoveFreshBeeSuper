@@ -10,4 +10,11 @@
 
 @implementation AFBOrderLeftModel
 
+- (void)setValue:(id)value forKey:(NSString *)key{
+    [super setValue:value forKey:key ];
+    if ([key  isEqual: @"id"]) {
+        [super setValue:value forKey:@"idKey"];
+    }
+}
+
 @end

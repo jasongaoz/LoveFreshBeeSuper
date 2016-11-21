@@ -13,6 +13,7 @@
 #import "AFBOrderLeftTableView.h"
 #import "AFBOrderSearchController.h"
 #import "AFBDownLoadManager.h"
+#import "AFBOrderLeftModel.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -24,11 +25,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 @implementation AFBOrderController{
     AFBOrderLeftTableView *_leftTableView;
     AFBOrderRightTableView *_rightTableView;
+    NSArray<AFBOrderLeftModel *>*_leftDataList;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadData];
 }
 
 - (void)setupUI{
@@ -40,7 +43,15 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)loadData{
+    AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
+    [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSArray *arrayCategories, NSDictionary *dicProduct) {
+        NSMutableArray <AFBOrderLeftModel *>*tempArray;
+        [arrayCategories enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [tempArray setValuesForKeysWithDictionary:obj];
+        }];
+//            [_leftDataList setValuesForKeysWithDictionary:obj];
 
+    }];
 }
 
 //MARK:添加 设置NavigationItem
