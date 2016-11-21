@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class AFBOrderLeftModel;
 @interface AFBOrderLeftCell : UITableViewCell
+
+@property(nonatomic, strong) AFBOrderLeftModel * dataModel;
 
 @end

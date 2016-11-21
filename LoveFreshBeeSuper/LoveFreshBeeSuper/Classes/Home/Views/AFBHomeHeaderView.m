@@ -136,11 +136,12 @@ static CGFloat btnWH = 50;
     return btn;
 }
 
+- (void)setModel:(AFBHeaderButtonModel *)model{
 
-#pragma mark - 实现点击事件
-- (void)clickBtn:(UIButton *)sender{
+    _model = model;
     
-    
+    [_icon sd_setImageWithURL:[NSURL URLWithString:model.img]];
+    _title = model.name;
 }
 
 @end

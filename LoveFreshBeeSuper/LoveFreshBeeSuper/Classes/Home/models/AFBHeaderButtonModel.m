@@ -10,4 +10,8 @@
 
 @implementation AFBHeaderButtonModel
 
+- (NSString *)description{
+    return [self yy_modelDescription];
+}
+
 @end

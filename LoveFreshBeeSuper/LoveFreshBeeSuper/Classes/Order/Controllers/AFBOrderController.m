@@ -13,6 +13,8 @@
 #import "AFBOrderLeftTableView.h"
 #import "AFBOrderSearchController.h"
 #import "AFBDownLoadManager.h"
+#import "AFBOrderLeftModel.h"
+#import <YYModel.h>
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -24,11 +26,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 @implementation AFBOrderController{
     AFBOrderLeftTableView *_leftTableView;
     AFBOrderRightTableView *_rightTableView;
+    NSArray<AFBOrderLeftModel *>*_leftDataList;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadData];
 }
 
 - (void)setupUI{
@@ -40,7 +44,16 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)loadData{
-
+    AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
+    
+    
+    [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
+        [_leftTableView reloadData];
+        //MARK:让左边tableView默认选中第0行
+        NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }];
+    
 }
 
 //MARK:添加 设置NavigationItem
@@ -150,11 +163,18 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * cellID = orderLeftCellID;
-    if (tableView == _rightTableView) {
-        cellID = orderRightCellID;
+    UITableViewCell *cell;
+    if (tableView == _leftTableView) {
+        AFBOrderLeftCell * cell = [tableView dequeueReusableCellWithIdentifier:orderLeftCellID forIndexPath:indexPath];
+        
+        cell.dataModel = _leftDataList[indexPath.row];
+        
+        return cell;
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    else{
+    cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+    }
+    
     
     return cell;
     

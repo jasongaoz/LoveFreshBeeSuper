@@ -19,7 +19,7 @@
 - (void)getHomeHotSaleDataParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH,NSString *reqid))completeBlock;
 - (void)getLaunchDataWithBlock:(void(^)(NSDictionary * dic))completeBlock;
 
-- (void)getSuperMarketDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSArray *arrayCategories,NSDictionary *dicProduct))completeBlock;
+- (void)getSuperMarketDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dataDic))completeBlock;
 
 - (void)getMineOrderDataWithcompleteBlock:(void(^)(NSArray *dataArray))completeBlock;
 - (void)getMineCardDataWithconpleteBlock:(void(^)(NSArray *dataArray))completeBlock;
