@@ -24,6 +24,7 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
+    NSArray *_btnList;
     NSArray *_modelList;
     NSArray *_threeModelList;
 }
@@ -67,6 +68,9 @@ static NSString *cellFour = @"cellFour";
         //字典转模型
         NSArray *array = arrayH[@"activities"];
         _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
+        
+        NSArray *arrBtn = arrayH[@"icon"];
+        _modelList = [NSArray yy_modelArrayWithClass:[AFBHeaderButtonModel class] json:arrBtn];
     }];
     [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
 //        NSLog(@"%@",dicH);
