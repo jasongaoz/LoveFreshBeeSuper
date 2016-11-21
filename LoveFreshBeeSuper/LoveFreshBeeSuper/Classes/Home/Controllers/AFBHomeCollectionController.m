@@ -13,6 +13,8 @@
 #import "AFBHomeThreeCell.h"
 #import "AFBDownLoadManager.h"
 #import "AFBHomeSecondModel.h"
+#import "AFBHomeThreeModel.h"
+#import "AFBHomeFourCell.h"
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout>
 
@@ -20,9 +22,10 @@
 static NSString *cellFrist = @"cellFrist";
 static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
-static NSString *cell1 = @"cell";
+static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
     NSArray *_modelList;
+    NSArray *_threeModelList;
 }
 //重新init方法
 - (instancetype)init{
@@ -34,9 +37,9 @@ static NSString *cell1 = @"cell";
     [super viewDidLoad];
     // 加载数据
     [self loadData];
-    self.collectionView.backgroundColor = [UIColor grayColor];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     //注册
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cell1];
+    [self.collectionView registerClass:[AFBHomeFourCell class] forCellWithReuseIdentifier:cellFour];
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
@@ -64,6 +67,11 @@ static NSString *cell1 = @"cell";
         //字典转模型
         NSArray *array = arrayH[@"activities"];
         _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
+    }];
+    [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
+//        NSLog(@"%@",dicH);
+        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
+        
     }];
 }
 
@@ -103,16 +111,19 @@ static NSString *cell1 = @"cell";
         return cell;
     }else if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor whiteColor];
         AFBHomeSecondModel *model = _modelList[indexPath.row];
         cell.model = model;
         return cell;
     }else if (indexPath.section == 2){
-        AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
+        AFBHomeThreeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
+        AFBHomeThreeModel *model = _threeModelList[indexPath.row];
+        cell.model = model;
+        
         return cell;
     }
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cell1 forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor yellowColor];
+    AFBHomeFourCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFour forIndexPath:indexPath];
     return cell;
 }
 
@@ -127,12 +138,12 @@ static NSString *cell1 = @"cell";
         
     }else if (indexPath.section == 1){
         
-        return CGSizeMake(wigth-14, 105);
+        return CGSizeMake(wigth-14, 120);
         
     }else if (indexPath.section == 2){
         
         CGFloat wigth2 = (self.view.bounds.size.width-21)/2;
-        CGFloat height = 189;
+        CGFloat height = 220;
         return CGSizeMake(wigth2,height);
         
     }
