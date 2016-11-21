@@ -43,13 +43,16 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     [self addNavigationItem];
 }
 
+//MARK:加载数据
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSArray *arrayCategories, NSDictionary *dicProduct) {
 
             _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:arrayCategories];
         [_leftTableView reloadData];
-        //MARK:让左边tableView默认选中第0行
+//        [dicProduct writeToFile:@"/Users/Yin_Y/Desktop/好运常来/LoveFreshBeeSuper/LoveFreshBeeSuper/Classes/Order/Models" atomically:YES];
+//        NSLog(@"%@",dicProduct);
+        //让左边tableView默认选中第0行
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
@@ -120,9 +123,6 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         
     }];
     
-    //MARK:让左边tableView默认选中第0行
-    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,7 +156,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         
         return 10;
     }
-    return 5;
+    return _leftDataList.count;
 }
 
 //cell

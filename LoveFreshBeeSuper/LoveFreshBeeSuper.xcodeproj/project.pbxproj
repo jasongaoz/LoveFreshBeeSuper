@@ -54,6 +54,7 @@
 		213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140941DE19958002F7787 /* UIViewController+Addition.m */; };
 		213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
+		23F880EE1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */; };
@@ -154,6 +155,8 @@
 		213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDownLoadManager.m; sourceTree = "<group>"; };
 		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
+		23F880EC1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRigthGoodsModel.h; sourceTree = "<group>"; };
+		23F880ED1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRigthGoodsModel.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
@@ -210,13 +213,10 @@
 			children = (
 				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
 				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
-
 				1B205B461DE1D92200AC3863 /* AFBHeaderButtonModel.h */,
 				1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */,
-
 				0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */,
 				0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */,
-
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -481,6 +481,8 @@
 			children = (
 				23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */,
 				23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */,
+				23F880EC1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.h */,
+				23F880ED1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -647,6 +649,7 @@
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
 				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
 				0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */,
+				23F880EE1DE2AA74000F2A91 /* AFBOrderRigthGoodsModel.m in Sources */,
 				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
 				213140A11DE19958002F7787 /* AFBOrderController.m in Sources */,
 				213140AE1DE19958002F7787 /* NSObject+Addition.m in Sources */,
