@@ -62,7 +62,7 @@
 		2134622F1DE2A8A4005E6F44 /* AFBShopCarSupermarkerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213462261DE2A8A4005E6F44 /* AFBShopCarSupermarkerCell.xib */; };
 		213462351DE2A918005E6F44 /* AFBShopCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213462341DE2A918005E6F44 /* AFBShopCarController.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
-		23F880EE1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.m */; };
+		23F880EE1DE2AA74000F2A91 /* AFBOrderGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */; };
 		23F880F11DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
@@ -177,8 +177,8 @@
 		213462341DE2A918005E6F44 /* AFBShopCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBShopCarController.m; sourceTree = "<group>"; };
 		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
-		23F880EC1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightGoodsModel.h; sourceTree = "<group>"; };
-		23F880ED1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightGoodsModel.m; sourceTree = "<group>"; };
+		23F880EC1DE2AA74000F2A91 /* AFBOrderGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsModel.h; sourceTree = "<group>"; };
+		23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsModel.m; sourceTree = "<group>"; };
 		23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightProductsModel.h; sourceTree = "<group>"; };
 		23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightProductsModel.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
@@ -518,8 +518,8 @@
 			children = (
 				23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */,
 				23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */,
-				23F880EC1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.h */,
-				23F880ED1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.m */,
+				23F880EC1DE2AA74000F2A91 /* AFBOrderGoodsModel.h */,
+				23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */,
 				23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */,
 				23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */,
 			);
@@ -692,7 +692,7 @@
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
 				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
 				0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */,
-				23F880EE1DE2AA74000F2A91 /* AFBOrderRightGoodsModel.m in Sources */,
+				23F880EE1DE2AA74000F2A91 /* AFBOrderGoodsModel.m in Sources */,
 				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
 				213140A11DE19958002F7787 /* AFBOrderController.m in Sources */,
 				2134622A1DE2A8A4005E6F44 /* AFBBusinessListCell.m in Sources */,

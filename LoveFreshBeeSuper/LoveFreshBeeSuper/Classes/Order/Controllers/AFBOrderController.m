@@ -17,6 +17,7 @@
 #import "AFBOrderRightProductsModel.h"
 #import <YYModel.h>
 #import <SVProgressHUD.h>
+#import "AFBSweepViewController.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -96,7 +97,9 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)clickLeftItem{
-    NSLog(@"点击了扫一扫");
+    AFBSweepViewController * sweepVC = [AFBSweepViewController new];
+    
+    [self.navigationController pushViewController:sweepVC animated:YES];
 }
 
 - (void)clickRightItem{

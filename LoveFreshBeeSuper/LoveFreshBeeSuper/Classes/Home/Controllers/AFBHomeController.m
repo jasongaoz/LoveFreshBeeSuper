@@ -65,7 +65,7 @@
 }
 
 - (void)clickLeftItem{
-    NSLog(@"点击了扫一扫");
+  
     
     AFBSweepViewController * sweepVC = [AFBSweepViewController new];
     
@@ -73,7 +73,7 @@
 }
 
 - (void)clickRightItem{
-    NSLog(@"点击了搜索");
+  
     // 1. 创建热门搜索数组
     NSArray *hotSeaches = @[@"大闸蟹", @"水", @"中秋月饼", @"酸奶", @"啤酒", @"西瓜", @"大荔冬枣", @"贝儿蛋糕", @"月盛斋", @"方便面"];
     // 2. 创建搜索控制器

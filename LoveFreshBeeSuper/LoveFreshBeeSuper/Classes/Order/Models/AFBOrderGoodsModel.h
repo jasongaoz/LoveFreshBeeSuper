@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AFBOrderRightGoodsModel : NSObject
+@interface AFBOrderGoodsModel : NSObject
+
+@property(nonatomic, copy) NSString * name;
+@property(nonatomic, copy) NSNumber * number;
 
 @end

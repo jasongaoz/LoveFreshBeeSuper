@@ -8,6 +8,6 @@
 
 #import "AFBOrderRightGoodsModel.h"
 
-@implementation AFBOrderRightGoodsModel
+@implementation AFBOrderGoodsModel
 
 @end
