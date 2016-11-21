@@ -6,8 +6,8 @@
 //  Copyright © 2016年 gao2015. All rights reserved.
 //
 
-#import "AFBOrderRigthGoodsModel.h"
+#import "AFBOrderRightGoodsModel.h"
 
-@implementation AFBOrderRigthGoodsModel
+@implementation AFBOrderRightGoodsModel
 
 @end

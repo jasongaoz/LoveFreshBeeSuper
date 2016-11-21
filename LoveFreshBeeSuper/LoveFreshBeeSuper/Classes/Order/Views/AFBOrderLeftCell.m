@@ -33,7 +33,7 @@
     self.textLabel.font = [UIFont systemFontOfSize:9.7];
     self.textLabel.textColor = [UIColor colorWithWhite:0.3 alpha:1.0];
     
-    
+    self.textLabel.textAlignment = NSTextAlignmentCenter;
     
     //MARK:设置选中状态的背景View
     UIView * selectView = [[UIView alloc]initWithFrame:self.contentView.bounds];
