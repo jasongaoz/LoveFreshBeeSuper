@@ -45,7 +45,7 @@
     
     
     [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
-        NSLog(@"%@",arrayH);
+//        NSLog(@"%@",arrayH);
     }];
 }
 

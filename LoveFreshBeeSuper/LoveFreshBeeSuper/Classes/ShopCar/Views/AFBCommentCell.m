@@ -37,6 +37,7 @@
     UILabel *detalLabel = [[UILabel alloc] init];
     detalLabel.text = @"其他要求 (如带一盒红塔山)";
     detalLabel.font = [UIFont systemFontOfSize:12];
+    detalLabel.numberOfLines = 1;
     detalLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:detalLabel];
     

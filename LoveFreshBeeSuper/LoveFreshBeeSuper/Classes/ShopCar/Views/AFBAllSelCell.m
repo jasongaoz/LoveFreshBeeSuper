@@ -51,7 +51,7 @@
     
     UIButton *yellowSelBtn = [[UIButton alloc] init];
     //假数据
-    float price = 0.0;
+//    float price = 0.0;
     [yellowSelBtn setTitle:@"选好了" forState:UIControlStateNormal];
     [yellowSelBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     [yellowSelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

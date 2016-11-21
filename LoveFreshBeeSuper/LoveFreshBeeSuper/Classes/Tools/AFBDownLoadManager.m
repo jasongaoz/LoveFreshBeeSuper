@@ -26,7 +26,6 @@ static id _instance;
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSDictionary *dict = @{@"call":parameter};
     [manager POST:@"http://iosapi.itcast.cn/loveBeen/focus.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
-//        NSLog(@"%@",responseObject);
        NSDictionary *dic = responseObject[@"data"];
         if (completeBlock) {
             completeBlock(dic);
@@ -51,7 +50,7 @@ static id _instance;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-//        NSLog(@"%@",error);
+        NSLog(@"%@",error);
     }];
 
 }
