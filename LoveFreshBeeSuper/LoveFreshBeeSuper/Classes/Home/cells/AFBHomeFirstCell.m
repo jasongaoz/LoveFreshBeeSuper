@@ -8,7 +8,7 @@
 
 #import "AFBHomeFirstCell.h"
 
-static CGFloat btnWH = 50;
+//static CGFloat btnWH = 50;
 
 @implementation AFBHomeFirstCell{
     SDCycleScrollView * _cycleScrollView;
@@ -62,16 +62,14 @@ static CGFloat btnWH = 50;
 
 #pragma mark - 添加四个按钮
 - (void)addBtn{
-    
-    CGFloat margin = ([UIScreen mainScreen].bounds.size.width - btnWH * 4) / 5;
-    
+ 
     //抽奖按钮
     UIButton * btnDraw = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20206_1452163603_icon.jpg" title:@"抽奖"];
     
     [btnDraw mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(_cycleScrollView.mas_bottom);
-        make.left.mas_equalTo(self.contentView).offset(margin);
+        make.left.mas_equalTo(self.contentView).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
     //秒杀按钮
@@ -80,7 +78,7 @@ static CGFloat btnWH = 50;
     [btnSecKill mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(btnDraw);
-        make.left.mas_equalTo(btnDraw.mas_right).offset(margin);
+        make.left.mas_equalTo(btnDraw.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
     //抢红包按钮
@@ -89,7 +87,7 @@ static CGFloat btnWH = 50;
     [btnRedBag mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(btnSecKill);
-        make.left.mas_equalTo(btnSecKill.mas_right).offset(margin);
+        make.left.mas_equalTo(btnSecKill.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
     
     //蜂抱团按钮
@@ -98,7 +96,7 @@ static CGFloat btnWH = 50;
     [btnBee mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(btnRedBag);
-        make.left.mas_equalTo(btnRedBag.mas_right).offset(margin);
+        make.left.mas_equalTo(btnRedBag.mas_right).offset(([UIScreen mainScreen].bounds.size.width - btnDraw.frame.size.width * 4) / 5);
     }];
 }
 
@@ -113,13 +111,13 @@ static CGFloat btnWH = 50;
 
     UIButton * btn = [[UIButton alloc] init];
     
-    [btn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:image imageWH:btnWH title:title fontSize:14 titleColor:[UIColor blackColor] spacing:3] forState:UIControlStateNormal];
+    [btn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:image imageW:69 imageH:47 title:title fontSize:13 titleColor:[UIColor blackColor] spacing:3] forState:UIControlStateNormal];
     
     btn.titleLabel.numberOfLines = 0;
     
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-//    [btn sizeToFit];
+    [btn sizeToFit];
     
     [self.contentView addSubview:btn];
     
