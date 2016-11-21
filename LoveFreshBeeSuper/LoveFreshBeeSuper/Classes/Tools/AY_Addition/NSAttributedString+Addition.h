@@ -21,4 +21,12 @@
                            titleColor:(UIColor *)titleColor
                               spacing:(CGFloat)spacing;
 
++ (instancetype)ay_imageTextWithImage:(UIImage *)image
+                               imageW:(CGFloat)imageW
+                               imageH:(CGFloat)imageH
+                                title:(NSString *)title
+                             fontSize:(CGFloat)fontSize
+                           titleColor:(UIColor *)titleColor
+                              spacing:(CGFloat)spacing;
+
 @end

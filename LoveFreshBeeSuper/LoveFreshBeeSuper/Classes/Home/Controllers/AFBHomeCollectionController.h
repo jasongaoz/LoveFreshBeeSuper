@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AFBHomeCollectionControllerDelegate <NSObject>
+
+- (void)pushDrawView;
+- (void)pushSecKillView;
+- (void)pushRedBagView;
+- (void)pushBeeView;
+
+@end
+
 @interface AFBHomeCollectionController : UICollectionViewController
+
+@property (nonatomic,weak) id <AFBHomeCollectionControllerDelegate> delegate;
 
 @end
