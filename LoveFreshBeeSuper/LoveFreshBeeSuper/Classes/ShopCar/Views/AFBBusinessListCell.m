@@ -10,7 +10,16 @@
 
 @interface AFBBusinessListCell ()
 
+@property(nonatomic,weak) UIImageView *saleImage;
+
+@property(nonatomic,weak) UILabel *stusLabel;
+
+@property(nonatomic,weak) UILabel *nameLabel;
+
+@property(nonatomic,weak) UILabel *priceLabel;
+
 @end
+
 @implementation AFBBusinessListCell
 
 - (void)awakeFromNib {
@@ -26,52 +35,79 @@
 - (void)setupUI{
     //选中按钮
     UIButton *selBtn = [[UIButton alloc] init];
-    [self addSubview:selBtn];
-    [selBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [selBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
+    [selBtn setImage:[UIImage imageNamed:@"v2_noselecte"] forState:UIControlStateNormal];
+    [self.contentView addSubview:selBtn];
+//    [selBtn setImage:[UIImage imageNamed:@"v2_selecte"] forState:UIControlStateSelected];
     
     //商品图
     UIImageView *saleImage = [[UIImageView alloc] init];
-    saleImage.image = [UIImage imageNamed:@""];
-    [self addSubview:saleImage];
+    saleImage.image = [UIImage imageNamed:@"001.png"];
+    [self.contentView addSubview:saleImage];
     
     //精选按钮
     UILabel *stusLabel = [[UILabel alloc] init];
-    [self addSubview:stusLabel];
+    stusLabel.text = @"精选";
+    stusLabel.textColor = [UIColor redColor];
+     stusLabel.font = [UIFont systemFontOfSize:11];
+    [stusLabel.layer setBorderWidth:0.3];
+    [stusLabel.layer setBorderColor:(__bridge CGColorRef _Nullable)([UIColor redColor])];
+    stusLabel.layer.cornerRadius = 3;
+    [self.contentView addSubview:stusLabel];
     
     //商品名称
     UILabel *nameLabel = [[UILabel alloc] init];
-    [self addSubview:nameLabel];
+    nameLabel.text = @"酱香寿司";
+    nameLabel.font = [UIFont systemFontOfSize:12];
+
+    
+    [self.contentView addSubview:nameLabel];
     
     //商品价钱
     UILabel *priceLabel = [[UILabel alloc] init];
-    [self addSubview:priceLabel];
+    priceLabel.text = @"¥115.1";
+    priceLabel.font = [UIFont systemFontOfSize:13];
+    priceLabel.textColor = [UIColor redColor];
+    [self.contentView addSubview:priceLabel];
     
     //布局
     [selBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.centerY.equalTo(self.contentView);
+        make.left.equalTo(self.contentView).offset(16);
+        make.size.mas_equalTo(CGSizeMake(15, 15));
     }];
     
     [saleImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
+        make.centerY.equalTo(selBtn);
+        make.left.equalTo(selBtn.mas_right).offset(13);
+        make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
     
     [stusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.left.equalTo(saleImage.mas_right).offset(12);
+        make.top.equalTo(self.contentView).offset(10);
     }];
     
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.left.equalTo(stusLabel.mas_right).offset(1);
+        make.top.equalTo(stusLabel.mas_top);
     }];
     
     [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
+        make.left.equalTo(stusLabel.mas_left);
+        make.bottom.equalTo(self.contentView).offset(-10);
+
     }];
     
+}
+
+- (void)setModel:(AFBShopCarBusinessModel *)model{
+    _model = model;
+    
+
 
 }
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
