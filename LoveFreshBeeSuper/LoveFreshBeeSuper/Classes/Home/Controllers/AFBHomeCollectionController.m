@@ -36,6 +36,11 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置collectionview的item穿透状态栏
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.offset(-20);
+    }];
     // 加载数据
     [self loadData];
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
@@ -181,6 +186,19 @@ static NSString *cellFour = @"cellFour";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGPoint offset = scrollView.contentOffset;
+    CGFloat offY = offset.y;
+    CGFloat topH = 120+offY;
+    CGFloat scal = 1.0/(120-64);
+    CGFloat alpth =(topH-64+20)*scal-1;
+    if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
+        [self.delegate getAlpha:alpth];
+    }
+    NSLog(@"alpth = %f,offY=%f",alpth,offY);
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
