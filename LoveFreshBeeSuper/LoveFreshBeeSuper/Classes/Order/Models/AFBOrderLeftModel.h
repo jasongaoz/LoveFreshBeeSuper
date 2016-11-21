@@ -10,4 +10,7 @@
 
 @interface AFBOrderLeftModel : NSObject
 
+@property(nonatomic, copy) NSString * idKey;
+@property(nonatomic, copy) NSString * name;
+
 @end

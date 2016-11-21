@@ -7,6 +7,7 @@
 //
 
 #import "AFBOrderLeftCell.h"
+#import "AFBOrderLeftModel.h"
 
 @implementation AFBOrderLeftCell{
     UILabel *_titleLable;
@@ -17,6 +18,11 @@
         [self setupUI];
     }
     return self;
+}
+
+- (void)setDataModel:(AFBOrderLeftModel *)dataModel{
+    _dataModel = dataModel;
+    self.textLabel.text = dataModel.name;
 }
 
 //MARK:设置UI
