@@ -20,16 +20,16 @@ static id _instance;
     return _instance;
 }
 //异步获取首页数据
-- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *arrayH))completeBlock{
+- (void)getHomeDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dic))completeBlock{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSDictionary *dict = @{@"call":parameter};
     [manager POST:@"http://iosapi.itcast.cn/loveBeen/focus.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
 //        NSLog(@"%@",responseObject);
-       NSArray *array = responseObject[@"data"];
+       NSDictionary *dic = responseObject[@"data"];
         if (completeBlock) {
-            completeBlock(array);
+            completeBlock(dic);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -73,16 +73,15 @@ static id _instance;
 
 }
 //异步获取闪电超时数据
-- (void)getSuperMarketDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSArray *arrayCategories,NSDictionary *dicProduct))completeBlock{
+- (void)getSuperMarketDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dataDic))completeBlock{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSDictionary *dict = @{@"call":parameter};
     [manager POST:@"http://iosapi.itcast.cn/loveBeen/supermarket.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
-        NSArray *array = responseObject[@"data"][@"categories"];
-        NSDictionary * dict = responseObject[@"data"][@"products"];
+        NSDictionary * dict = responseObject[@"data"];
         if (completeBlock) {
-            completeBlock(array,dict);
+            completeBlock(dict);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {        
         NSLog(@"%@",error);
