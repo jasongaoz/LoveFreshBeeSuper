@@ -7,7 +7,7 @@
 //
 
 #import "AFBMineTableViewCell.h"
-#import "Const.h"
+
 
 @interface AFBMineTableViewCell()
 
