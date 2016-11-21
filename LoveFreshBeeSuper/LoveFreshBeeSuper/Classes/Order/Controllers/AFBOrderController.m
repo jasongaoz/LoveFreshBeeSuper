@@ -14,6 +14,7 @@
 #import "AFBOrderSearchController.h"
 #import "AFBDownLoadManager.h"
 #import "AFBOrderLeftModel.h"
+#import <YYModel.h>
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -45,12 +46,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSArray *arrayCategories, NSDictionary *dicProduct) {
-        NSMutableArray <AFBOrderLeftModel *>*tempArray;
-        [arrayCategories enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [tempArray setValuesForKeysWithDictionary:obj];
-        }];
-//            [_leftDataList setValuesForKeysWithDictionary:obj];
 
+            _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:arrayCategories];
+        [_leftTableView reloadData];
+        //MARK:让左边tableView默认选中第0行
+        NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
 }
 
@@ -161,11 +162,18 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * cellID = orderLeftCellID;
-    if (tableView == _rightTableView) {
-        cellID = orderRightCellID;
+    UITableViewCell *cell;
+    if (tableView == _leftTableView) {
+        AFBOrderLeftCell * cell = [tableView dequeueReusableCellWithIdentifier:orderLeftCellID forIndexPath:indexPath];
+        
+        cell.dataModel = _leftDataList[indexPath.row];
+        
+        return cell;
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    else{
+    cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+    }
+    
     
     return cell;
     
