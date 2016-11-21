@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @protocol AFBHomeCollectionControllerDelegate <NSObject>
+//lichao
+- (void)getAlpha:(CGFloat)alpha;
 
 - (void)pushDrawView;
 - (void)pushSecKillView;

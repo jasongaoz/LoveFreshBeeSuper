@@ -13,6 +13,7 @@
 		0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380E1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m */; };
 		0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */; };
 		0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */; };
+		0A71EB9B1DE347F800F10DC6 /* AFBNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A71EB9A1DE347F800F10DC6 /* AFBNavigationBarView.m */; };
 		0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD69C761DE1FDD8003A4544 /* AFBHomeFourCell.m */; };
 		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
 		1B205B451DE1CEC700AC3863 /* AFBHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */; };
@@ -105,6 +106,8 @@
 		0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeSecondModel.m; sourceTree = "<group>"; };
 		0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeThreeModel.h; sourceTree = "<group>"; };
 		0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeThreeModel.m; sourceTree = "<group>"; };
+		0A71EB991DE347F800F10DC6 /* AFBNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBNavigationBarView.h; sourceTree = "<group>"; };
+		0A71EB9A1DE347F800F10DC6 /* AFBNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBNavigationBarView.m; sourceTree = "<group>"; };
 		0AD69C751DE1FDD8003A4544 /* AFBHomeFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFourCell.h; sourceTree = "<group>"; };
 		0AD69C761DE1FDD8003A4544 /* AFBHomeFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeFourCell.m; sourceTree = "<group>"; };
 		1B205B401DE1AB1800AC3863 /* AFBSweepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBSweepViewController.h; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 		1B389C221DE316390042F99D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A71EB991DE347F800F10DC6 /* AFBNavigationBarView.h */,
+				0A71EB9A1DE347F800F10DC6 /* AFBNavigationBarView.m */,
 				1B389C231DE316730042F99D /* AFBDrawViewController.h */,
 				1B389C241DE316730042F99D /* AFBDrawViewController.m */,
 				1B389C261DE320F70042F99D /* AFBSecKillViewController.h */,
@@ -809,6 +814,7 @@
 				2131409F1DE19958002F7787 /* AFBMineController.m in Sources */,
 				213140951DE19958002F7787 /* AFBHomeController.m in Sources */,
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
+				0A71EB9B1DE347F800F10DC6 /* AFBNavigationBarView.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
 				1B389C251DE316730042F99D /* AFBDrawViewController.m in Sources */,
