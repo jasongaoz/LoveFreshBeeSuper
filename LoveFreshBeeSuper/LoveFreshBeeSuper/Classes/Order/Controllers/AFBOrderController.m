@@ -37,6 +37,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _goodsDataDic = [NSMutableDictionary dictionary];
     // Do any additional setup after loading the view.
     [self loadData];
 }
@@ -44,7 +45,6 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 - (void)setupUI{
     self.navigationItem.title = @"闪送超市";
     self.view.backgroundColor = [UIColor grayColor];
-    
     
     [self addNavigationItem];
     [self setMyView];
@@ -55,10 +55,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
-//        [dataDic writeToFile:@"/Users/Yin_Y/Desktop/111.plist" atomically:YES];
+
         _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:dataDic[@"categories"]];
-        AFBOrderLeftModel *model = _leftDataList[0];
-        NSLog(@"%@",model.idKey);
       
         NSDictionary * tempDic = dataDic[@"products"];
         [tempDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSArray * obj, BOOL * _Nonnull stop) {
@@ -67,14 +65,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
             
             [_goodsDataDic setObject:tempArray forKey:key];
         }];
-        //        dataDic[@"products"];
+
         [self addTableView];
-        [_leftTableView reloadData];
+
         [_bgImageView removeFromSuperview];
         [SVProgressHUD dismiss];
         
-        NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
     
 }
@@ -152,11 +148,23 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
     [_rightTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(self.view).offset(64);
+        make.top.equalTo(_leftTableView);
         make.left.equalTo(leftTableView.mas_right);
         make.right.bottom.equalTo(self.view);
         
     }];
+
+    NSInteger defaultSelect = 0;
+    //右侧view默认显示的数据
+    _rightDataList = _goodsDataDic[_leftDataList[defaultSelect].idKey];
+    
+    //刷新两侧的tableView数据
+    [_leftTableView reloadData];
+    [_rightTableView reloadData];
+    
+    //左侧view的默认选中行
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:defaultSelect inSection:0];
+    [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
 }
 
@@ -169,9 +177,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _leftTableView) {
         NSString * goodsListKey = _leftDataList[indexPath.row].idKey;
-        NSLog(@"%@",goodsListKey);
-        _rightDataList = _goodsDataDic[_leftDataList[indexPath.row].idKey];
-        NSLog(@"%@",_rightDataList);
+        _rightDataList = _goodsDataDic[goodsListKey];
+        [_rightTableView reloadData];
     }else{
         NSLog(@"push到相对应页面");
     }
@@ -193,7 +200,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 {
     if (tableView == _rightTableView) {
         
-        return 10;
+        return _rightDataList.count;
     }
     return _leftDataList.count;
 }
@@ -201,7 +208,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
+   
     if (tableView == _leftTableView) {
         AFBOrderLeftCell * cell = [tableView dequeueReusableCellWithIdentifier:orderLeftCellID forIndexPath:indexPath];
         
@@ -210,10 +217,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         return cell;
     }
     else{
-        cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+        AFBOrderRightCell *cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+        cell.dataModel = _rightDataList[indexPath.row];
+        return cell;
     }
     
-    return cell;
+    
 }
 
 
