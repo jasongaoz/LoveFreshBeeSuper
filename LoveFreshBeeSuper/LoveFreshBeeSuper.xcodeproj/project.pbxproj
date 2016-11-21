@@ -208,15 +208,12 @@
 		0A6C38101DE1C41300DEAFDB /* models */ = {
 			isa = PBXGroup;
 			children = (
-				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
-				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
-
 				1B205B461DE1D92200AC3863 /* AFBHeaderButtonModel.h */,
 				1B205B471DE1D92200AC3863 /* AFBHeaderButtonModel.m */,
-
+				0A6C38111DE1C43700DEAFDB /* AFBHomeSecondModel.h */,
+				0A6C38121DE1C43700DEAFDB /* AFBHomeSecondModel.m */,
 				0A6C38141DE1D79000DEAFDB /* AFBHomeThreeModel.h */,
 				0A6C38151DE1D79000DEAFDB /* AFBHomeThreeModel.m */,
-
 			);
 			path = models;
 			sourceTree = "<group>";

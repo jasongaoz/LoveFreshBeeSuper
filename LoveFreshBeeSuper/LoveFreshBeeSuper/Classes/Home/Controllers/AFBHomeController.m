@@ -14,6 +14,8 @@
 #import "AFBSweepViewController.h"
 #import "AFBDownLoadManager.h"
 
+#import <PYSearch.h>
+
 
 @interface AFBHomeController ()
 

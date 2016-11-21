@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYModel.h>
 
 @interface AFBHeaderButtonModel : NSObject
 
-
+@property (nonatomic,copy) NSString * img;
+@property (nonatomic,copy) NSString * name;
+@property (nonatomic,copy) NSString * customURL;
 
 @end
