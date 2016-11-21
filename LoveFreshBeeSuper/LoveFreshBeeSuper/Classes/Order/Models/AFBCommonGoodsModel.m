@@ -10,4 +10,11 @@
 
 @implementation AFBCommonGoodsModel
 
+- (void)setValue:(id)value forKey:(NSString *)key{
+    [super setValue:value forKey:key];
+    if ([key isEqualToString:@"id"]) {
+        [super setValue:value forKey:@"rangeID"];
+    }
+}
+
 @end

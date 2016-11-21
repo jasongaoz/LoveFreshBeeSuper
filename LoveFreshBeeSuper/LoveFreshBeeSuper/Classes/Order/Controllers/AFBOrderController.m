@@ -14,7 +14,6 @@
 #import "AFBOrderSearchController.h"
 #import "AFBDownLoadManager.h"
 #import "AFBOrderLeftModel.h"
-#import "AFBOrderRightProductsModel.h"
 #import <YYModel.h>
 #import <SVProgressHUD.h>
 #import "AFBSweepViewController.h"
@@ -28,11 +27,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 @end
 
 @implementation AFBOrderController{
-    AFBOrderLeftTableView *_leftTableView;
-    AFBOrderRightTableView *_rightTableView;
-    NSArray<AFBOrderLeftModel *>*_leftDataList;
-    NSArray<AFBOrderRightProductsModel *>*_rightDataList;
-    NSMutableDictionary*_goodsDataArrays;
+    AFBOrderLeftTableView * _leftTableView;
+    AFBOrderRightTableView * _rightTableView;
+    NSArray<AFBOrderLeftModel *> * _leftDataList;
+    NSArray<AFBCommonGoodsModel *> * _rightDataList;
+    NSMutableDictionary*_goodsDataDic;
+    UIView *_bgImageView;
 }
 
 - (void)viewDidLoad {
@@ -54,20 +54,23 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     
-    
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
-        [dataDic writeToFile:@"/Users/Yin_Y/Desktop/111.plist" atomically:YES];
+//        [dataDic writeToFile:@"/Users/Yin_Y/Desktop/111.plist" atomically:YES];
         _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:dataDic[@"categories"]];
-        _rightDataList = [NSArray yy_modelArrayWithClass:[AFBOrderRightProductsModel class] json:dataDic[@"products"]];
+        AFBOrderLeftModel *model = _leftDataList[0];
+        NSLog(@"%@",model.idKey);
+      
         NSDictionary * tempDic = dataDic[@"products"];
         [tempDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSArray * obj, BOOL * _Nonnull stop) {
-            NSArray *tempArray;
-            tempArray = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:obj];
-            [_goodsDataArrays setObject:tempArray forKey:key];
+            
+            NSArray *tempArray = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:obj];
+            
+            [_goodsDataDic setObject:tempArray forKey:key];
         }];
         //        dataDic[@"products"];
         [self addTableView];
         [_leftTableView reloadData];
+        [_bgImageView removeFromSuperview];
         [SVProgressHUD dismiss];
         
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -84,6 +87,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
     CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
     gbImageView.center = imageCenter;
+    _bgImageView = gbImageView;
     [self.view addSubview:gbImageView];
     [SVProgressHUD show];
 }
@@ -110,13 +114,11 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)clickRightItem{
-    NSLog(@"点击了搜索");
     
     AFBOrderSearchController *vc = [[AFBOrderSearchController alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 
 //MARK:添加 设置tableView
@@ -163,9 +165,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     // Dispose of any resources that can be recreated.
 }
 
+//MARK:cell的点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _leftTableView) {
-        NSLog(@"如果点击的是左侧cell,切换数据源,当前切换到数据源%zd",indexPath.row+1);
+        NSString * goodsListKey = _leftDataList[indexPath.row].idKey;
+        NSLog(@"%@",goodsListKey);
+        _rightDataList = _goodsDataDic[_leftDataList[indexPath.row].idKey];
+        NSLog(@"%@",_rightDataList);
     }else{
         NSLog(@"push到相对应页面");
     }
@@ -207,10 +213,10 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
     }
     
-    
     return cell;
-    
 }
+
+
 
 /*
  #pragma mark - Navigation
