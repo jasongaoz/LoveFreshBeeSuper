@@ -46,9 +46,9 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //MARK:加载数据
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
-    [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSArray *arrayCategories, NSDictionary *dicProduct) {
-
-            _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:arrayCategories];
+    
+    
+    [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
         [_leftTableView reloadData];
 //        [dicProduct writeToFile:@"/Users/Yin_Y/Desktop/好运常来/LoveFreshBeeSuper/LoveFreshBeeSuper/Classes/Order/Models" atomically:YES];
 //        NSLog(@"%@",dicProduct);
@@ -56,6 +56,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
+    
 }
 
 //MARK:添加 设置NavigationItem
