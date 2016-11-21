@@ -66,7 +66,6 @@
 		2134623D1DE2D0B9005E6F44 /* AFBShopCarBusinessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2134623C1DE2D0B9005E6F44 /* AFBShopCarBusinessModel.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
 		23F880EE1DE2AA74000F2A91 /* AFBCommonGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */; };
-		23F880F11DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9491DE2D05D000A1719 /* MineModel.m */; };
@@ -191,8 +190,6 @@
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
 		23F880EC1DE2AA74000F2A91 /* AFBCommonGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBCommonGoodsModel.h; sourceTree = "<group>"; };
 		23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBCommonGoodsModel.m; sourceTree = "<group>"; };
-		23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightProductsModel.h; sourceTree = "<group>"; };
-		23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightProductsModel.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
@@ -554,8 +551,6 @@
 				23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */,
 				23F880EC1DE2AA74000F2A91 /* AFBCommonGoodsModel.h */,
 				23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */,
-				23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */,
-				23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -755,7 +750,6 @@
 				32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */,
 				213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */,
 				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
-				23F880F11DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m in Sources */,
 				0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */,
 				213462391DE2C09F005E6F44 /* AFBCouDanCell.m in Sources */,
 				213140171DE191A2002F7787 /* AppDelegate.m in Sources */,
