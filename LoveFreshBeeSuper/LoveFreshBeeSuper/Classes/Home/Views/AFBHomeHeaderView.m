@@ -46,12 +46,12 @@ static CGFloat btnWH = 50;
 - (void)setCycleScrollView{
     
 //    SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
-    
-    NSArray * imagesURLString = @[_image1stURLString,
-                                 _image2ndURLString,
-                                  _image3rdURLString,
-                                  _image4thURLString,
-                                  _image5thURLString];
+
+    NSArray * imagesURLString = @[@"http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_focus.jpg@90Q",
+                                 @"http://img01.bqstatic.com/upload/activity/activity_v4_20597_1452325598_focus.jpg@90Q",
+                                  @"http://img01.bqstatic.com/upload/activity/activity_v4_20629_1452324053_focus.jpg@90Q",
+                                  @"http://img01.bqstatic.com/upload/activity/activity_v4_20624_1452392276_focus.jpg@90Q",
+                                  @"http://img01.bqstatic.com/upload/activity/activity_v4_20537_1452476149_focus.jpg@90Q"];
     
     SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero imageURLStringsGroup:imagesURLString];
     
