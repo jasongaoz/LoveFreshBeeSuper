@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AFBHeaderButtonModel.h"
 #import <UIImageView+WebCache.h>
 #import <SDCycleScrollView.h>
 
+@protocol AFBHomeFirstCellDelegate <NSObject>
+
+- (void)willPushDrawView;
+- (void)willPushSecKillView;
+- (void)willPushRedBagView;
+- (void)willPushBeeView;
+
+@end
+
 @interface AFBHomeFirstCell : UICollectionViewCell
+
+@property (nonatomic,weak) id <AFBHomeFirstCellDelegate> delegate;
 
 @end

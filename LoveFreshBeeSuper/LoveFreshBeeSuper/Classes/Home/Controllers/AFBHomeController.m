@@ -13,10 +13,15 @@
 #import "AFBSweepViewController.h"
 #import "AFBDownLoadManager.h"
 
+#import "AFBDrawViewController.h"
+#import "AFBSecKillViewController.h"
+#import "AFBRedBagViewController.h"
+#import "AFBBeeViewController.h"
+
 #import <PYSearch.h>
 
 
-@interface AFBHomeController ()
+@interface AFBHomeController () <AFBHomeCollectionControllerDelegate>
 
 @end
 
@@ -33,6 +38,7 @@
     
     //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
+    collVc.delegate = self;
     [self addChildViewController:collVc];
     [self.view addSubview:collVc.view];
     
@@ -88,5 +94,33 @@
 }
 
 
+#pragma mark - 代理方法实现
+- (void)pushDrawView{
+    NSLog(@"点击了抽奖");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBDrawViewController alloc] init] animated:YES];
+}
+
+- (void)pushSecKillView{
+    NSLog(@"点击了秒杀");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBSecKillViewController alloc] init] animated:YES];
+}
+
+- (void)pushRedBagView{
+    NSLog(@"点击了抢红包");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBRedBagViewController alloc] init] animated:YES];
+}
+
+- (void)pushBeeView{
+    NSLog(@"点击了蜂抱团");
+    
+    //跳转界面
+    [self.navigationController pushViewController:[[AFBBeeViewController alloc] init] animated:YES];
+}
 
 @end

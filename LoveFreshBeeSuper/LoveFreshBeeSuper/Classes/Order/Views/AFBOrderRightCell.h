@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AFBCommonGoodsModel;
 
 @interface AFBOrderRightCell : UITableViewCell
+
+@property(nonatomic, strong) AFBCommonGoodsModel * dataModel;
 
 @end

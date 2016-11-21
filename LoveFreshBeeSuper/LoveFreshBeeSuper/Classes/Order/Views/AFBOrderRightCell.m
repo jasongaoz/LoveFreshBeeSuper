@@ -8,14 +8,36 @@
 
 #import "AFBOrderRightCell.h"
 #import "AFBOrderIncreaseAndReduceView.h"
+#import <UIImageView+WebCache.h>
+#import "AFBCommonGoodsModel.h"
+
+@interface AFBOrderRightCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specificsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *partnerPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *marketPriceLabel;
+
+@end
 
 @implementation AFBOrderRightCell
 
+- (void)setDataModel:(AFBCommonGoodsModel *)dataModel{
+    _dataModel = dataModel;
+    self.nameLabel.text = dataModel.name;
+    self.specificsLabel.text = dataModel.specifics;
+    self.partnerPriceLabel.text = dataModel.partner_price;
+//    self.marketPriceLabel.text = dataModel.market_price;
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:dataModel.img]];
+    NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:dataModel.market_price attributes:attribtDic];
+    
+    self.marketPriceLabel.attributedText = attribtStr;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    
     [self setupUI];
 }
 
@@ -23,7 +45,7 @@
 - (void)setupUI{
     AFBOrderIncreaseAndReduceView *increaseAndReduceView = [[[UINib nibWithNibName:@"AFBOrderIncreaseAndReduceView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
     
-    [self addSubview:increaseAndReduceView];
+    [self.contentView addSubview:increaseAndReduceView];
     
     //increaseAndReduceView的布局size
     CGSize size = increaseAndReduceView.bounds.size;
@@ -31,6 +53,10 @@
         make.size.mas_equalTo(size);
         make.right.bottom.equalTo(self).offset(-8);
     }];
+    
+    //MARK:设置label的加粗
+//    [self.nameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+    [self.partnerPriceLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
     
 }
 

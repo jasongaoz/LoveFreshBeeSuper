@@ -62,6 +62,7 @@
     }];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(imageView.mas_bottom);
+        make.right.equalTo(imageView);
         make.left.equalTo(self).offset(5);
     }];
     [selectView mas_makeConstraints:^(MASConstraintMaker *make) {
