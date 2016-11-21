@@ -17,5 +17,36 @@
 //主题颜色
 #define kBaseColor [UIColor ay_colorWithR:253 G:212 B:50 alpha:1.0]
 
+
+
+
+
+
+
+
+
+
+
+
+// XLX
+// 主屏幕 bounds、size、width、height
+#define kScreenBouns [UIScreen mainScreen].bounds
+#define kScreenSize kScreenBouns.size
+#define kScreenWidth kScreenSize.width
+#define kScreenHeight kScreenSize.height
+
+// RGB
+#define AFBRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+// RGBA
+#define AFBRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+// 随机色
+#define AFBRandomColor PFRGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+// RGB值相同
+#define AFBRGBCommonColor(rgb) [UIColor colorWithRed:(rgb)/255.0 green:(rgb)/255.0 blue:(rgb)/255.0 alpha:1.0]
+
+
+
+
+
 #endif /* AFB_pch */
 ///Users/colbertzhan/Desktop/LoveFreshBeeSuper/LoveFreshBeeSuper/LoveFreshBeeSuper/AFB.pch

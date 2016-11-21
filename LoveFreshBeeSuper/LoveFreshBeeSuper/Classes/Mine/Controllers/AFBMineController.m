@@ -9,73 +9,112 @@
 #import "AFBMineController.h"
 #import "AFBMineTableViewCell.h"
 #import "AFBMineMyCardController.h"
-//#import "NSAttributedString+Additon.h"
-//#import "NSAttributedString+CZAdditon.h"
+#import "AFBHelpController.h"
+#import "TopView.h"
+#import "AFBMyMessageController.h"
+#import "MineModel.h"
+
 
 static NSString *mainFirstCell = @"mainFirstCell";
 
-@interface AFBMineController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AFBMineController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+TopViewDelegate
+>
 
-
-
+@property (nonatomic, strong) NSMutableArray *models;
 
 @end
 
 @implementation AFBMineController
+
+/**
+ *  懒加载
+ */
+- (NSMutableArray *)models
+{
+    if (_models == nil)
+    {
+        _models = [[NSMutableArray alloc] init];
+    }
+    return _models;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBar.alpha = 0;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    /// 创建数据
+    NSArray *icons = @[@"v2_my_address_icon-1", @"v2_store_empty-1", @"fenxiang", @"online_service", @"feedback_opinion"];
+    NSArray *titles = @[@"我的收货地址", @"我的店铺", @"把爱鲜蜂分享给朋友", @"客服帮助", @"意见反馈"];
+    for (int i = 0; i < icons.count; i++) {
+        MineModel *model = [[MineModel alloc] init];
+        model.iconStr = icons[i];
+        model.titleStr = titles[i];
+        [self.models addObject:model];
+    }
 }
-#pragma mark - 搭建界面
-- (void)setupUI{
-    
-    self.view.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:236/255.0 alpha:1];
+#pragma mark - 改变导航条的透明度 使其隐藏
+- (void)viewWillAppear:(BOOL)animated {
     // 设置导航条的透明度
     self.navigationController.navigationBar.alpha = 0;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+#pragma mark - 跳转到其他界面 导航条的透明度恢复
+- (void)viewWillDisappear:(BOOL)animated {
+    // 复原
+    self.navigationController.navigationBar.alpha = 1.0;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bbb.png"] forBarMetrics:UIBarMetricsDefault];
+    //    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+
+#pragma mark - 搭建界面
+- (void)setupUI {
+    
+    self.view.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:236/255.0 alpha:1];
     
     // 1.创建头部headerView
     UIView *headerView = [[UIView alloc] init];
     [self.view addSubview:headerView];
+    
     //1.1 添加一个背景imageView
     UIImageView * imageView = [[UIImageView alloc] init];
     imageView.image = [UIImage imageNamed:@"v2_my_avatar_bg"];
     [headerView addSubview:imageView];
+    
     // 创建个人头像
     UIImageView *cicleView = [[UIImageView alloc] init];
     cicleView.contentMode = UIViewContentModeCenter;
     cicleView.backgroundColor = [UIColor whiteColor];
-    cicleView.layer.cornerRadius = 24;
+    cicleView.layer.cornerRadius = 23;
     cicleView.image = [UIImage imageNamed:@"v2_my"];
     [headerView addSubview:cicleView];
-    cicleView.frame = CGRectMake(155, 25, 48, 48);
+    
     // 添加一个电话lebel
     UILabel *lb_tellphoneNum = [[UILabel alloc] init];
+    lb_tellphoneNum.textAlignment = NSTextAlignmentCenter;
     [headerView addSubview:lb_tellphoneNum];
     lb_tellphoneNum.text = @"18910328555";
     lb_tellphoneNum.textColor = [UIColor whiteColor];
-    lb_tellphoneNum.frame = CGRectMake(122, 85, 140, 20);
+    
     // 1.2 创建一个小view ，添加到头部view中
-    UIView *threeBtnView = [self creatThreeBtnView];
-    threeBtnView.backgroundColor = [UIColor whiteColor];
-    [headerView addSubview:threeBtnView];
+    TopView *topVw = [TopView setupTopViewWithImageStrings:@[@"icon_tuikuan", @"v2_empty_pointsDeatil", @"UMS_comment_normal_white"] andTitles:@[@"我的订单", @"优惠券", @"我的消息"]];
+    topVw.delegate = self;
+    [headerView addSubview:topVw];
     
     // 2. 创建下部的tableView
     UITableView *mineTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    mineTableView.bounces = NO;
     mineTableView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:236/255.0 alpha:1];
     // 2.1 注册
     [mineTableView registerClass:[AFBMineTableViewCell class] forCellReuseIdentifier:mainFirstCell];
     //2.2 设置代理
     mineTableView.dataSource = self;
     mineTableView.delegate = self;
+    // 隐藏系统分割线
+    mineTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:mineTableView];
-    //2.3 添加一个footerView
-    UIView *footerView = [[UIView alloc] init];
-    footerView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:236/255.0 alpha:1];
-    mineTableView.tableFooterView = footerView;
     
     
     // 3.设置约束
@@ -91,83 +130,49 @@ static NSString *mainFirstCell = @"mainFirstCell";
         make.edges.equalTo(headerView);
     }];
     // threebtn的约束
-    [threeBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [topVw mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(headerView);
         make.height.mas_equalTo(55);
     }];
     
-}
-// 封装图文混排的view
-- (UIView *)creatThreeBtnView
-{
-    UIView *threeBtnView = [[UIView alloc] init];
-    threeBtnView.backgroundColor = [UIColor whiteColor];
-    // 设置图文混排的按钮 1
-    UIButton *myOderBtn = [[UIButton alloc] init];
-    [myOderBtn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:[UIImage imageNamed:@"icon_tuikuan"] imageWH:18.0 title:@"我的订单" fontSize:13 titleColor:[UIColor lightGrayColor] spacing:5] forState:UIControlStateNormal];
-    [myOderBtn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-    myOderBtn.tag = 1;
-    // 设置图文混排的按钮 2
-    UIButton *myCardBtn = [[UIButton alloc] init];
-    [myCardBtn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:[UIImage imageNamed:@"v2_empty_pointsDeatil"] imageWH:18.0 title:@"优惠券" fontSize:13 titleColor:[UIColor lightGrayColor] spacing:5] forState:UIControlStateNormal];
-    [myCardBtn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-    myCardBtn.tag = 2;
-    // 设置图文混排的按钮 3
-    UIButton *myMessageBtn = [[UIButton alloc] init];
-    [myMessageBtn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:[UIImage imageNamed:@"UMS_comment_normal_white"] imageWH:18.0 title:@"我的消息" fontSize:13 titleColor:[UIColor lightGrayColor] spacing:5] forState:UIControlStateNormal];
-    [myMessageBtn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-    myMessageBtn.tag = 3;
-    
-    [threeBtnView addSubview:myOderBtn];
-    [threeBtnView addSubview:myCardBtn];
-    [threeBtnView addSubview:myMessageBtn];
-    
-    // 约束
-    float btnW = [UIScreen mainScreen].bounds.size.width / 3;
-    [myOderBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.equalTo(threeBtnView);
-        make.size.width.offset(btnW);
+    [cicleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(headerView);
+        make.top.equalTo(headerView).offset(25);
+        make.size.mas_equalTo(CGSizeMake(46, 46));
     }];
-    
-    [myCardBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(threeBtnView);
-        make.left.equalTo(myOderBtn.mas_right);
-        make.size.width.offset(btnW);
+    [lb_tellphoneNum mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(cicleView);
+        make.top.equalTo(cicleView.mas_bottom).offset(14);
+        make.size.mas_equalTo(CGSizeMake(140, 20));
     }];
-    [myMessageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(threeBtnView);
-        make.size.width.offset(btnW);
-        make.left.equalTo(myCardBtn.mas_right);
-    }];
-    // 设置按钮的相关属性
-    myOderBtn.titleLabel.numberOfLines = 0;
-    myOderBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    myCardBtn.titleLabel.numberOfLines = 0;
-    myCardBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    myMessageBtn.titleLabel.numberOfLines = 0;
-    myMessageBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    
-    return threeBtnView;
 }
-#pragma mark - 三个按钮的点击事件
-- (void)clickBtn:(UIButton *)btn
-{
-    if (btn.tag == 1)
-    {
-        NSLog(@"跳转我的订单控制器");
-    }
-    else if (btn.tag == 2)
-    {
-        AFBMineMyCardController *cardController = [[AFBMineMyCardController alloc] init];
-        [self.navigationController pushViewController:cardController animated:YES];
-    }
-    else
-    {
-        NSLog(@"我的消息");
-    }
+
+
+#pragma mark - TopViewDelegate（三个按钮的点击事件）
+- (void)btn:(UIButton *)btn ofTopView:(TopView *)topView {
     
-    
+    switch (btn.tag) {
+        case 1: {
+            NSLog(@"跳转我的订单控制器");
+            break;
+        }
+        case 2: {
+            AFBMineMyCardController *cardController = [[AFBMineMyCardController alloc] init];
+            [self.navigationController pushViewController:cardController animated:YES];
+            break;
+        }
+        default: {
+            NSLog(@"我的消息");
+            
+            AFBMyMessageController *vc = [[AFBMyMessageController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            break;
+        }
+    }
 }
+
+
 
 #pragma mark - 代理方法
 // 组
@@ -178,51 +183,22 @@ static NSString *mainFirstCell = @"mainFirstCell";
 // 行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 2;
-    }
-    else if (section == 1)
-    {
-        
-        return 1;
-    }
-    else
-    {
-        return 2;
-    }
-    
+    return section == 1 ? 1 : 2;
 }
 // cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AFBMineTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:mainFirstCell forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    if (indexPath.section == 0 && indexPath.row == 0)
-    {
-        cell.lb_title.text = @"我的收货地址";
-        cell.imageView.image = [UIImage imageNamed:@"v2_my_address_icon-1"];
+    if (indexPath.section == 0) {
+        cell.model = self.models[indexPath.row];
+    } else if (indexPath.section == 1) {
+        cell.model = self.models[2];
+    } else {
+        cell.model = self.models[3 + indexPath.row];
     }
-    else if (indexPath.section == 0 && indexPath.row == 1)
-    {
-        cell.lb_title.text = @"我的店铺";
-        cell.iconView.image = [UIImage imageNamed:@"v2_store_empty-1"];
-    }
-    else if (indexPath.section == 1)
-    {
-        cell.lb_title.text = @"把爱鲜蜂分享给朋友";
-        cell.iconView.image = [UIImage imageNamed:@"fenxiang"];
-    }
-    else if (indexPath.section == 2 && indexPath.row == 0)
-    {
-        cell.lb_title.text = @"客服帮助";
-        cell.iconView.image = [UIImage imageNamed:@"online_service"];
-    }
-    else
-    {
-        cell.lb_title.text = @"意见反馈";
-        cell.iconView.image = [UIImage imageNamed:@"feedback_opinion"];
-    }
+    
+    cell.line.hidden = indexPath.row == 1 || indexPath.section == 1;
     
     return cell;
 }
@@ -248,37 +224,13 @@ static NSString *mainFirstCell = @"mainFirstCell";
     }
     else if (indexPath.section == 1)
     {
-        UIAlertController *bottonAlertVC = [UIAlertController alertControllerWithTitle:@"分享到" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *weiXinBtn = [UIAlertAction actionWithTitle:@"微信好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"微信好友");
-        }];
-        
-        UIAlertAction *weiXinFriendBtn = [UIAlertAction actionWithTitle:@"微信朋友圈" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"微信朋友圈");
-        }];
-        
-        UIAlertAction *xinLangWeiboBtn = [UIAlertAction actionWithTitle:@"新浪微博" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"新浪微博");
-        }];
-        
-        UIAlertAction *qqSpace = [UIAlertAction actionWithTitle:@"QQ空间" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"qq空间");
-        }];
-        
-        [bottonAlertVC addAction:weiXinBtn];
-        [bottonAlertVC addAction:weiXinFriendBtn];
-        [bottonAlertVC addAction:xinLangWeiboBtn];
-        [bottonAlertVC addAction:qqSpace];
-        
-        [self presentViewController:bottonAlertVC animated:YES completion:nil];
-        
+        // 分享给朋友
+        [self goToShare];
     }
     else if (indexPath.section == 2 && indexPath.row == 0)
     {
-        
-        
-        
+        AFBHelpController *helpVC = [[AFBHelpController alloc] init];
+        [self.navigationController pushViewController:helpVC animated:YES];
     }
     else
     {
@@ -287,6 +239,42 @@ static NSString *mainFirstCell = @"mainFirstCell";
     
     
     
+    
+}
+
+
+/**
+ 分享给朋友
+ */
+- (void)goToShare {
+    UIAlertController *bottonAlertVC = [UIAlertController alertControllerWithTitle:@"分享到" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *weiXinBtn = [UIAlertAction actionWithTitle:@"微信好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"微信好友");
+    }];
+    
+    UIAlertAction *weiXinFriendBtn = [UIAlertAction actionWithTitle:@"微信朋友圈" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"微信朋友圈");
+    }];
+    
+    UIAlertAction *xinLangWeiboBtn = [UIAlertAction actionWithTitle:@"新浪微博" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"新浪微博");
+    }];
+    
+    UIAlertAction *qqSpace = [UIAlertAction actionWithTitle:@"QQ空间" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"qq空间");
+    }];
+    
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    
+    [bottonAlertVC addAction:weiXinBtn];
+    [bottonAlertVC addAction:weiXinFriendBtn];
+    [bottonAlertVC addAction:xinLangWeiboBtn];
+    [bottonAlertVC addAction:qqSpace];
+    [bottonAlertVC addAction:cancle];
+    
+    [self presentViewController:bottonAlertVC animated:YES completion:nil];
     
 }
 

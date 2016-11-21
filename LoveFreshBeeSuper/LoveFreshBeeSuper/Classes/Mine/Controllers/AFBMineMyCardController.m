@@ -23,14 +23,14 @@
     self.navigationItem.rightBarButtonItem = rightItemBtn;
     [rightItemBtn setTintColor:[UIColor grayColor]];
     
-
+    
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"v2_goback"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];    // 搭建UI
     [self setupUI];
 }
 // 创建界面
 - (void)setupUI
 {
-
+    
     //1. 创建上面的view
     UIView *cardView = [self creatTopView];
     cardView.backgroundColor = [UIColor whiteColor];
@@ -50,8 +50,8 @@
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(cardView.mas_bottom);
     }];
-
-
+    
+    
 }
 // 对上部view的封装
 - (UIView *)creatTopView
@@ -72,13 +72,13 @@
     // 添加按钮（确定）
     UIButton *sureBtn = [[UIButton alloc] init];
     sureBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-
+    
     sureBtn.layer.cornerRadius = 5;
     sureBtn.backgroundColor = [UIColor orangeColor];
     [sureBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [sureBtn setTitle:@"绑定" forState:UIControlStateNormal];
     [cardView addSubview:sureBtn];
-
+    
     [cardNumfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(cardView).offset(10);
         make.top.equalTo(cardView.mas_top).offset(5);
@@ -116,13 +116,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -62,8 +62,14 @@
 		2134622F1DE2A8A4005E6F44 /* AFBShopCarSupermarkerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213462261DE2A8A4005E6F44 /* AFBShopCarSupermarkerCell.xib */; };
 		213462351DE2A918005E6F44 /* AFBShopCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213462341DE2A918005E6F44 /* AFBShopCarController.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
+		23F880EE1DE2AA74000F2A91 /* AFBOrderGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */; };
+		23F880F11DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
+		2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9491DE2D05D000A1719 /* MineModel.m */; };
+		2A92B94D1DE2D08E000A1719 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B94C1DE2D08E000A1719 /* TopView.m */; };
+		2A92B9541DE2D363000A1719 /* AFBHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9511DE2D363000A1719 /* AFBHelpController.m */; };
+		2A92B9551DE2D363000A1719 /* AFBMyMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9531DE2D363000A1719 /* AFBMyMessageController.m */; };
 		32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */; };
 		32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */; };
 		32E2AEA41DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */; };
@@ -175,10 +181,23 @@
 		213462341DE2A918005E6F44 /* AFBShopCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBShopCarController.m; sourceTree = "<group>"; };
 		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
+		23F880EC1DE2AA74000F2A91 /* AFBOrderGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsModel.h; sourceTree = "<group>"; };
+		23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsModel.m; sourceTree = "<group>"; };
+		23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderRightProductsModel.h; sourceTree = "<group>"; };
+		23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderRightProductsModel.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
 		2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMineMyCardController.m; sourceTree = "<group>"; };
+		2A92B9481DE2D05D000A1719 /* MineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineModel.h; sourceTree = "<group>"; };
+		2A92B9491DE2D05D000A1719 /* MineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineModel.m; sourceTree = "<group>"; };
+		2A92B94B1DE2D08E000A1719 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopView.h; path = Views/TopView.h; sourceTree = "<group>"; };
+		2A92B94C1DE2D08E000A1719 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopView.m; path = Views/TopView.m; sourceTree = "<group>"; };
+		2A92B94F1DE2D0B4000A1719 /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		2A92B9501DE2D363000A1719 /* AFBHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHelpController.h; sourceTree = "<group>"; };
+		2A92B9511DE2D363000A1719 /* AFBHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHelpController.m; sourceTree = "<group>"; };
+		2A92B9521DE2D363000A1719 /* AFBMyMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMyMessageController.h; sourceTree = "<group>"; };
+		2A92B9531DE2D363000A1719 /* AFBMyMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMyMessageController.m; sourceTree = "<group>"; };
 		32E2AE9C1DE1A105003E34D3 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFB.pch; sourceTree = "<group>"; };
 		32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderSearchController.h; sourceTree = "<group>"; };
 		32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderSearchController.m; sourceTree = "<group>"; };
@@ -352,6 +371,8 @@
 		2131405C1DE19958002F7787 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				2A92B94E1DE2D0B4000A1719 /* Other */,
+				2A92B9471DE2D05D000A1719 /* Model */,
 				2131405D1DE19958002F7787 /* Controllers */,
 				213140601DE19958002F7787 /* Views */,
 			);
@@ -361,6 +382,10 @@
 		2131405D1DE19958002F7787 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A92B9501DE2D363000A1719 /* AFBHelpController.h */,
+				2A92B9511DE2D363000A1719 /* AFBHelpController.m */,
+				2A92B9521DE2D363000A1719 /* AFBMyMessageController.h */,
+				2A92B9531DE2D363000A1719 /* AFBMyMessageController.m */,
 				2131405E1DE19958002F7787 /* AFBMineController.h */,
 				2131405F1DE19958002F7787 /* AFBMineController.m */,
 				2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */,
@@ -374,6 +399,8 @@
 		213140601DE19958002F7787 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2A92B94B1DE2D08E000A1719 /* TopView.h */,
+				2A92B94C1DE2D08E000A1719 /* TopView.m */,
 				213140611DE19958002F7787 /* AFBMineTableViewCell.h */,
 				213140621DE19958002F7787 /* AFBMineTableViewCell.m */,
 			);
@@ -512,8 +539,29 @@
 			children = (
 				23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */,
 				23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */,
+				23F880EC1DE2AA74000F2A91 /* AFBOrderGoodsModel.h */,
+				23F880ED1DE2AA74000F2A91 /* AFBOrderGoodsModel.m */,
+				23F880EF1DE2BD9D000F2A91 /* AFBOrderRightProductsModel.h */,
+				23F880F01DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A92B9471DE2D05D000A1719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A92B9481DE2D05D000A1719 /* MineModel.h */,
+				2A92B9491DE2D05D000A1719 /* MineModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A92B94E1DE2D0B4000A1719 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2A92B94F1DE2D0B4000A1719 /* Const.h */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		6F6C6CAE27940B4326C57445 /* Frameworks */ = {
@@ -664,6 +712,7 @@
 				1B205B481DE1D92200AC3863 /* AFBHeaderButtonModel.m in Sources */,
 				32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */,
 				2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */,
+				2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */,
 				213462351DE2A918005E6F44 /* AFBShopCarController.m in Sources */,
 				213140B21DE19958002F7787 /* UILabel+Addition.m in Sources */,
 				2131409D1DE19958002F7787 /* AFBTabBarController.m in Sources */,
@@ -682,6 +731,7 @@
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
 				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
 				0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */,
+				23F880EE1DE2AA74000F2A91 /* AFBOrderGoodsModel.m in Sources */,
 				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
 				213140A11DE19958002F7787 /* AFBOrderController.m in Sources */,
 				2134622A1DE2A8A4005E6F44 /* AFBBusinessListCell.m in Sources */,
@@ -690,11 +740,13 @@
 				32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */,
 				213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */,
 				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
+				23F880F11DE2BD9D000F2A91 /* AFBOrderRightProductsModel.m in Sources */,
 				0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */,
 				213140171DE191A2002F7787 /* AppDelegate.m in Sources */,
 				213140AD1DE19958002F7787 /* NSAttributedString+Addition.m in Sources */,
 				213140141DE191A2002F7787 /* main.m in Sources */,
 				213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */,
+				2A92B94D1DE2D08E000A1719 /* TopView.m in Sources */,
 				213462291DE2A8A4005E6F44 /* AFBAllSelCell.m in Sources */,
 				2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */,
 				0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */,
@@ -709,7 +761,9 @@
 				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
 				0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */,
 				1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */,
+				2A92B9551DE2D363000A1719 /* AFBMyMessageController.m in Sources */,
 				213140A81DE19958002F7787 /* AFBOrderRightTableView.m in Sources */,
+				2A92B9541DE2D363000A1719 /* AFBHelpController.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
 				23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */,
