@@ -70,6 +70,7 @@
 		213462401DE2EAC2005E6F44 /* AFBCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2134623F1DE2EAC2005E6F44 /* AFBCommentController.m */; };
 		213462441DE31685005E6F44 /* AFBCommentTopListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213462421DE31685005E6F44 /* AFBCommentTopListCell.m */; };
 		213462451DE31685005E6F44 /* AFBCommentTopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213462431DE31685005E6F44 /* AFBCommentTopListCell.xib */; };
+		2302F2EF1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
 		23F880EE1DE2AA74000F2A91 /* AFBCommonGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
@@ -211,6 +212,8 @@
 		213462411DE31685005E6F44 /* AFBCommentTopListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBCommentTopListCell.h; sourceTree = "<group>"; };
 		213462421DE31685005E6F44 /* AFBCommentTopListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBCommentTopListCell.m; sourceTree = "<group>"; };
 		213462431DE31685005E6F44 /* AFBCommentTopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBCommentTopListCell.xib; sourceTree = "<group>"; };
+		2302F2ED1DE34E750053DD7B /* AFBOrderGoodsArrangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsArrangeView.h; sourceTree = "<group>"; };
+		2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsArrangeView.m; sourceTree = "<group>"; };
 		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
 		23F880EC1DE2AA74000F2A91 /* AFBCommonGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBCommonGoodsModel.h; sourceTree = "<group>"; };
@@ -520,6 +523,8 @@
 				32E2AEA01DE1A5D7003E34D3 /* AFBOrderSearchHeadView.h */,
 				32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */,
 				32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */,
+				2302F2ED1DE34E750053DD7B /* AFBOrderGoodsArrangeView.h */,
+				2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -808,6 +813,7 @@
 				213462271DE2A8A4005E6F44 /* AFBAdressTimeCell.m in Sources */,
 				2131409F1DE19958002F7787 /* AFBMineController.m in Sources */,
 				213140951DE19958002F7787 /* AFBHomeController.m in Sources */,
+				2302F2EF1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m in Sources */,
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,

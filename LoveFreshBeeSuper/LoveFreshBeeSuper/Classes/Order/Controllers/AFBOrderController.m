@@ -31,8 +31,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBOrderRightTableView * _rightTableView;
     NSArray<AFBOrderLeftModel *> * _leftDataList;
     NSArray<AFBCommonGoodsModel *> * _rightDataList;
-    NSMutableDictionary*_goodsDataDic;
-    UIView *_bgImageView;
+    NSMutableDictionary*_goodsDataDic;//右侧所有商品数据
+    UIView *_bgImageView;//占位背景view
 }
 
 - (void)viewDidLoad {
@@ -45,9 +45,10 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 - (void)setupUI{
     self.navigationItem.title = @"闪送超市";
     self.view.backgroundColor = [UIColor grayColor];
-    
+    self.navigationController.navigationBar.translucent = NO;
     [self addNavigationItem];
     [self setMyView];
+    [self addTableView];
 }
 
 //MARK:加载数据
@@ -55,9 +56,9 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     
     [manager getSuperMarketDataWithParameters:@(5) CompleteBlock:^(NSDictionary *dataDic) {
-
+        
         _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:dataDic[@"categories"]];
-      
+        
         NSDictionary * tempDic = dataDic[@"products"];
         [tempDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSArray * obj, BOOL * _Nonnull stop) {
             
@@ -65,9 +66,9 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
             
             [_goodsDataDic setObject:tempArray forKey:key];
         }];
-
-        [self addTableView];
-
+        
+//        [self addTableView];
+        
         [_bgImageView removeFromSuperview];
         [SVProgressHUD dismiss];
         
@@ -75,14 +76,13 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
 }
 
-//MARK:添加 设置背景占位页面
+//MARK:添加 设置等待网络加载页面
 - (void)setMyView{
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView * gbImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
     gbImageView.center = self.view.center;
-    
-    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
-    gbImageView.center = imageCenter;
+//    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
+    gbImageView.center = self.view.center;
     _bgImageView = gbImageView;
     [self.view addSubview:gbImageView];
     [SVProgressHUD show];
@@ -141,7 +141,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     [rightTableView registerNib:[UINib nibWithNibName:@"AFBOrderRightCell" bundle:nil] forCellReuseIdentifier:orderRightCellID];
     
     [_leftTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(64);
+        make.top.equalTo(self.view);
         make.left.bottom.equalTo(self.view);
         make.width.mas_equalTo(80);
     }];
@@ -153,7 +153,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         make.right.bottom.equalTo(self.view);
         
     }];
-
+    
     NSInteger defaultSelect = 0;
     //右侧view默认显示的数据
     _rightDataList = _goodsDataDic[_leftDataList[defaultSelect].idKey];
@@ -176,8 +176,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //MARK:cell的点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _leftTableView) {
-        NSString * goodsListKey = _leftDataList[indexPath.row].idKey;
-        _rightDataList = _goodsDataDic[goodsListKey];
+        //通过左侧类型tableViewModel的idKey属性确定右侧商品tableView的数据源,并刷新右侧商品数据
+        _rightDataList = _goodsDataDic[_leftDataList[indexPath.row].idKey];
         [_rightTableView reloadData];
     }else{
         NSLog(@"push到相对应页面");
@@ -208,7 +208,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 //cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
     if (tableView == _leftTableView) {
         AFBOrderLeftCell * cell = [tableView dequeueReusableCellWithIdentifier:orderLeftCellID forIndexPath:indexPath];
         
