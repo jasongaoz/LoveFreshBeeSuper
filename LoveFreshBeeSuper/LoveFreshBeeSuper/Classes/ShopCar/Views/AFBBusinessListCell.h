@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AFBShopCarBusinessModel;
 
 @interface AFBBusinessListCell : UITableViewCell
+
+
+
+//AFBShopCarBusinessModel 模型
+@property(nonatomic,strong) AFBShopCarBusinessModel *model;
 
 @end

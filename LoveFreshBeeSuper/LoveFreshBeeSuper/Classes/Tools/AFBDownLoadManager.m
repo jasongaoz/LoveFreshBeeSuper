@@ -70,7 +70,6 @@ static id _instance;
         
         NSLog(@"%@",error);
     }];
-
 }
 //异步获取闪电超时数据
 - (void)getSuperMarketDataWithParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dataDic))completeBlock{
