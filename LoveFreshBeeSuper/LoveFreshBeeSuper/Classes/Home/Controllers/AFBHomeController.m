@@ -7,7 +7,6 @@
 //
 
 #import "AFBHomeController.h"
-#import "AFBHomeHeaderView.h"
 
 #import "AFBHomeCollectionController.h"
 
