@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class AFBOrderRigthGoodsModel;
+@class AFBCommonGoodsModel;
 
 @interface AFBOrderRightProductsModel : NSObject
 
-@property(nonatomic, strong) NSArray<AFBOrderRigthGoodsModel *> *  goods;
+@property(nonatomic, strong) NSArray<AFBCommonGoodsModel *> *  goods;
 
 @end

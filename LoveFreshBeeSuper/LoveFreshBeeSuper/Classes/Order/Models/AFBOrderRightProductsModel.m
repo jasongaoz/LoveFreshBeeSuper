@@ -7,11 +7,11 @@
 //
 
 #import "AFBOrderRightProductsModel.h"
-#import "AFBOrderGoodsModel.h"
+#import "AFBCommonGoodsModel.h"
 
 @implementation AFBOrderRightProductsModel
 
-- (void)setGoods:(NSArray<AFBOrderRigthGoodsModel *> *)goods{
+- (void)setGoods:(NSArray<AFBCommonGoodsModel *> *)goods{
 
     _goods = goods;
 

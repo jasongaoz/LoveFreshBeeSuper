@@ -18,6 +18,7 @@
 #import <YYModel.h>
 #import <SVProgressHUD.h>
 #import "AFBSweepViewController.h"
+#import "AFBCommonGoodsModel.h"
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -31,6 +32,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBOrderRightTableView *_rightTableView;
     NSArray<AFBOrderLeftModel *>*_leftDataList;
     NSArray<AFBOrderRightProductsModel *>*_rightDataList;
+    NSMutableDictionary*_goodsDataArrays;
 }
 
 - (void)viewDidLoad {
@@ -57,12 +59,17 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         [dataDic writeToFile:@"/Users/Yin_Y/Desktop/111.plist" atomically:YES];
         _leftDataList = [NSArray yy_modelArrayWithClass:[AFBOrderLeftModel class] json:dataDic[@"categories"]];
         _rightDataList = [NSArray yy_modelArrayWithClass:[AFBOrderRightProductsModel class] json:dataDic[@"products"]];
- 
-        NSLog(@"%@",dataDic[@"products"]);
+        NSDictionary * tempDic = dataDic[@"products"];
+        [tempDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSArray * obj, BOOL * _Nonnull stop) {
+            NSArray *tempArray;
+            tempArray = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:obj];
+            [_goodsDataArrays setObject:tempArray forKey:key];
+        }];
+        //        dataDic[@"products"];
         [self addTableView];
         [_leftTableView reloadData];
         [SVProgressHUD dismiss];
-
+        
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }];
@@ -74,7 +81,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView * gbImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
     gbImageView.center = self.view.center;
-
+    
     CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
     gbImageView.center = imageCenter;
     [self.view addSubview:gbImageView];
@@ -197,7 +204,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         return cell;
     }
     else{
-    cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+        cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
     }
     
     
