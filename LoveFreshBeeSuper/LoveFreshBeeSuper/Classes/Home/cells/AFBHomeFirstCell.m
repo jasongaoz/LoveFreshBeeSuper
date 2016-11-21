@@ -47,11 +47,11 @@ static CGFloat btnWH = 50;
     SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero imageURLStringsGroup:imagesURLString];
     
     
-    [self addSubview:cycleScrollView];
+    [self.contentView addSubview:cycleScrollView];
     
     [cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.left.right.mas_equalTo(self);
+        make.top.left.right.mas_equalTo(self.contentView);
         make.height.mas_equalTo(120);
     }];
     
@@ -66,16 +66,16 @@ static CGFloat btnWH = 50;
     CGFloat margin = ([UIScreen mainScreen].bounds.size.width - btnWH * 4) / 5;
     
     //抽奖按钮
-    UIButton * btnDraw = [self setBtnWithImageName:@"抽奖" title:@"抽奖"];
+    UIButton * btnDraw = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20206_1452163603_icon.jpg" title:@"抽奖"];
     
     [btnDraw mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(_cycleScrollView.mas_bottom).offset(10);
-        make.left.mas_equalTo(self).offset(margin);
+        make.top.mas_equalTo(_cycleScrollView.mas_bottom);
+        make.left.mas_equalTo(self.contentView).offset(margin);
     }];
     
     //秒杀按钮
-    UIButton * btnSecKill = [self setBtnWithImageName:@"秒杀" title:@"秒杀"];
+    UIButton * btnSecKill = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20333_1451871780_icon.jpg" title:@"秒杀"];
     
     [btnSecKill mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -84,7 +84,7 @@ static CGFloat btnWH = 50;
     }];
     
     //抢红包按钮
-    UIButton * btnRedBag = [self setBtnWithImageName:@"抢红包" title:@"抢红包"];
+    UIButton * btnRedBag = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20596_1452250014_icon.jpg" title:@"抢红包"];
     
     [btnRedBag mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -93,7 +93,7 @@ static CGFloat btnWH = 50;
     }];
     
     //蜂抱团按钮
-    UIButton * btnBee = [self setBtnWithImageName:@"蜂抱团" title:@"蜂抱团"];
+    UIButton * btnBee = [self setBtnWithImageURLString:@"http://img01.bqstatic.com/upload/activity/activity_v4_20382_1451896099_icon.jpg" title:@"蜂抱团"];
     
     [btnBee mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -103,18 +103,25 @@ static CGFloat btnWH = 50;
 }
 
 #pragma mark - 创建按钮
-- (UIButton *)setBtnWithImageName:(NSString *)imageName title:(NSString *)title{
+- (UIButton *)setBtnWithImageURLString:(NSString *)imageName title:(NSString *)title{
+    
+    NSURL * url = [NSURL URLWithString:imageName];
+    
+    NSData * data = [NSData dataWithContentsOfURL:url];
+    
+    UIImage * image = [UIImage imageWithData:data];
+
     UIButton * btn = [[UIButton alloc] init];
     
-    [btn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:[UIImage imageNamed:imageName] imageWH:btnWH title:title fontSize:14 titleColor:[UIColor blackColor] spacing:3] forState:UIControlStateNormal];
+    [btn setAttributedTitle:[NSAttributedString ay_imageTextWithImage:image imageWH:btnWH title:title fontSize:14 titleColor:[UIColor blackColor] spacing:3] forState:UIControlStateNormal];
     
     btn.titleLabel.numberOfLines = 0;
     
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    [btn sizeToFit];
+//    [btn sizeToFit];
     
-    [self addSubview:btn];
+    [self.contentView addSubview:btn];
     
     return btn;
 }

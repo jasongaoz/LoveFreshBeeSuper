@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AFBHeaderButtonModel.h"
 #import <UIImageView+WebCache.h>
 #import <SDCycleScrollView.h>
 

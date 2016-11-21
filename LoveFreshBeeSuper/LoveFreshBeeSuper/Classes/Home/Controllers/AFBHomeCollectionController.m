@@ -68,9 +68,6 @@ static NSString *cellFour = @"cellFour";
         //字典转模型
         NSArray *array = arrayH[@"activities"];
         _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
-        
-        NSArray *arrBtn = arrayH[@"icon"];
-        _modelList = [NSArray yy_modelArrayWithClass:[AFBHeaderButtonModel class] json:arrBtn];
     }];
     [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
 //        NSLog(@"%@",dicH);
@@ -138,7 +135,7 @@ static NSString *cellFour = @"cellFour";
     
     if (indexPath.section == 0) {
         
-        return CGSizeMake(wigth, 220);
+        return CGSizeMake(wigth, 200);
         
     }else if (indexPath.section == 1){
         
