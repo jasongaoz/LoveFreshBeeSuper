@@ -28,11 +28,12 @@ static CGFloat btnWH = 50;
 - (void)setUpUI{
 
     self.contentView.backgroundColor = [UIColor whiteColor];
-    [self setCycleScrollView];
     
+    [self setCycleScrollView];
     [self addBtn];
 }
 
+#pragma mark - 设置滚动轮播器视图
 - (void)setCycleScrollView{
     
     //    SDCycleScrollView * cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
@@ -99,8 +100,6 @@ static CGFloat btnWH = 50;
         make.top.mas_equalTo(btnRedBag);
         make.left.mas_equalTo(btnRedBag.mas_right).offset(margin);
     }];
-    
-    
 }
 
 #pragma mark - 创建按钮

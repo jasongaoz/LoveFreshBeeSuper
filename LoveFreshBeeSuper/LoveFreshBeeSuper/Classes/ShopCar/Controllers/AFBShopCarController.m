@@ -84,7 +84,7 @@ static NSString *AllselID = @"allSelID";
         [shopCarView registerClass:[AFBCommentCell class] forCellReuseIdentifier:CommentID];
         [shopCarView registerClass:[AFBAllSelCell class] forCellReuseIdentifier:AllselID];
     }else{
-        NSLog(@"创建");
+
         UIImageView *shopView = [[UIImageView alloc] init];
         shopView.image = [UIImage imageNamed:@"v2_shop_empty"];
         [self.view addSubview:shopView];
