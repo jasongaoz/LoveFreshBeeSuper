@@ -106,8 +106,8 @@ static NSString *cellFour = @"cellFour";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
+        AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];
         
-        AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];        
         return cell;
     }else if (indexPath.section == 1) {
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];

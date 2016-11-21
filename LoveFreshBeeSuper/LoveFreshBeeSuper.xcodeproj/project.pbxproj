@@ -23,7 +23,6 @@
 		213140221DE191A2002F7787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213140211DE191A2002F7787 /* Assets.xcassets */; };
 		213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213140231DE191A2002F7787 /* LaunchScreen.storyboard */; };
 		213140951DE19958002F7787 /* AFBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140451DE19958002F7787 /* AFBHomeController.m */; };
-		2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140501DE19958002F7787 /* AFBHomeHeaderView.m */; };
 		2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140541DE19958002F7787 /* AFBBaseNavgationController.m */; };
 		2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140561DE19958002F7787 /* AFBBaseTableView.m */; };
 		2131409D1DE19958002F7787 /* AFBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213140581DE19958002F7787 /* AFBTabBarController.m */; };
@@ -104,8 +103,6 @@
 		213140261DE191A2002F7787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213140441DE19958002F7787 /* AFBHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeController.h; sourceTree = "<group>"; };
 		213140451DE19958002F7787 /* AFBHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeController.m; sourceTree = "<group>"; };
-		2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeHeaderView.h; sourceTree = "<group>"; };
-		213140501DE19958002F7787 /* AFBHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeHeaderView.m; sourceTree = "<group>"; };
 		213140531DE19958002F7787 /* AFBBaseNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseNavgationController.h; sourceTree = "<group>"; };
 		213140541DE19958002F7787 /* AFBBaseNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBBaseNavgationController.m; sourceTree = "<group>"; };
 		213140551DE19958002F7787 /* AFBBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBBaseTableView.h; sourceTree = "<group>"; };
@@ -310,7 +307,6 @@
 				0A6C38091DE1BD3E00DEAFDB /* cells */,
 				0A6C38051DE1BB7A00DEAFDB /* FlowLayout */,
 				213140431DE19958002F7787 /* Controllers */,
-				213140461DE19958002F7787 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -326,15 +322,6 @@
 				1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		213140461DE19958002F7787 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2131404F1DE19958002F7787 /* AFBHomeHeaderView.h */,
-				213140501DE19958002F7787 /* AFBHomeHeaderView.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		213140511DE19958002F7787 /* Main */ = {
@@ -685,7 +672,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B205B481DE1D92200AC3863 /* AFBHeaderButtonModel.m in Sources */,
-				2131409A1DE19958002F7787 /* AFBHomeHeaderView.m in Sources */,
 				32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */,
 				2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */,
 				213462351DE2A918005E6F44 /* AFBShopCarController.m in Sources */,
