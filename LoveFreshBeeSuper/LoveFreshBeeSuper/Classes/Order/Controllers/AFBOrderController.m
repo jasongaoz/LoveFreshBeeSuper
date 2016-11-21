@@ -48,7 +48,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     self.navigationController.navigationBar.translucent = NO;
     [self addNavigationItem];
     [self setMyView];
-    [self addTableView];
+//    [self addTableView];
 }
 
 //MARK:加载数据
@@ -67,7 +67,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
             [_goodsDataDic setObject:tempArray forKey:key];
         }];
         
-//        [self addTableView];
+        [self addTableView];
         
         [_bgImageView removeFromSuperview];
         [SVProgressHUD dismiss];
