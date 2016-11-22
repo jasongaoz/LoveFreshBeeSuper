@@ -101,7 +101,6 @@ static id _instance;
     }];
 }
 //我的优惠券
-
 - (void)getMineCardDataWithconpleteBlock:(void(^)(NSArray *dataArray))completeBlock{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];

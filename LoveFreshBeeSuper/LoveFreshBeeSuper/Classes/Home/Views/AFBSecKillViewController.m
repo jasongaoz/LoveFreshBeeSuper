@@ -25,6 +25,8 @@
 
     self.navigationItem.title = @"秒杀";
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.view.backgroundColor = [UIColor cyanColor];
     
     UIWebView * webView = [[UIWebView alloc] init];

@@ -24,7 +24,6 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
-    NSArray *_btnList;
     NSArray *_modelList;
     NSArray *_threeModelList;
 }
@@ -142,17 +141,11 @@ static NSString *cellFour = @"cellFour";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CGFloat wigth = self.view.bounds.size.width;
-    
     if (indexPath.section == 0) {
-        
         return CGSizeMake(wigth, 200);
-        
     }else if (indexPath.section == 1){
-        
         return CGSizeMake(wigth-14, 120);
-        
     }else if (indexPath.section == 2){
-        
         CGFloat wigth2 = (self.view.bounds.size.width-2)/3;
         CGFloat height = 220;
         return CGSizeMake(wigth2,height);

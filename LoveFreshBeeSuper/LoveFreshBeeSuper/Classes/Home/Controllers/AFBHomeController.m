@@ -90,10 +90,7 @@
 }
 
 - (void)clickLeftItem{
-  
-    
     AFBSweepViewController * sweepVC = [AFBSweepViewController new];
-    
     [self.navigationController pushViewController:sweepVC animated:YES];
 }
 

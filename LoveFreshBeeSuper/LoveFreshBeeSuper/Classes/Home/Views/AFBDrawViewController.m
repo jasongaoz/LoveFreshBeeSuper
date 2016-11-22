@@ -26,6 +26,8 @@
 - (void)setupUI{
 
     self.navigationItem.title = @"抽奖";
+
+    [self.navigationController setNavigationBarHidden:NO];
     
 //    self.view.backgroundColor = [UIColor greenColor];
     

@@ -30,6 +30,8 @@
     
     self.navigationItem.title = @"抢红包";
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.view.backgroundColor = [UIColor purpleColor];
 
     UIWebView * webView = [[UIWebView alloc] init];
