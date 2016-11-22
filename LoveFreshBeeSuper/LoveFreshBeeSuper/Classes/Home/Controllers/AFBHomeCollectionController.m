@@ -43,7 +43,6 @@ static NSString *cellFour = @"cellFour";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _seletedArray = [NSMutableArray array];
-    [self getRefresh];
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,15 +169,6 @@ static NSString *cellFour = @"cellFour";
     [imaV removeFromSuperview];
     //给购物车赋值
     
-}
-#pragma mark - 添加下拉刷新
-- (void)getRefresh{
-    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
-    [self.collectionView addSubview:refresh];
-
-    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
-    
-    [refresh setAttributedTitle:arrStr];
 }
 
 - (void)didReceiveMemoryWarning {
