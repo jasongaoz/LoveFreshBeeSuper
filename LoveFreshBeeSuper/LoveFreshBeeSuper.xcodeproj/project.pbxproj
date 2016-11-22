@@ -78,7 +78,6 @@
 		23FE50C41DE4155700C59B12 /* AFBPriceArrangeControlText.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE50C11DE4155700C59B12 /* AFBPriceArrangeControlText.m */; };
 		23FE50C51DE4155700C59B12 /* AFBPriceArrangeControlText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */; };
 		23FE50C81DE4159D00C59B12 /* AFBOrderCommonControlBut.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */; };
-		23FE514C1DE4589D00C59B12 /* text.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23FE514B1DE4589D00C59B12 /* text.xib */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9491DE2D05D000A1719 /* MineModel.m */; };
@@ -242,7 +241,6 @@
 		23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBPriceArrangeControlText.xib; sourceTree = "<group>"; };
 		23FE50C61DE4159D00C59B12 /* AFBOrderCommonControlBut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderCommonControlBut.h; sourceTree = "<group>"; };
 		23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderCommonControlBut.m; sourceTree = "<group>"; };
-		23FE514B1DE4589D00C59B12 /* text.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = text.xib; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
@@ -708,7 +706,6 @@
 				23FE50C01DE4155700C59B12 /* AFBPriceArrangeControlText.h */,
 				23FE50C11DE4155700C59B12 /* AFBPriceArrangeControlText.m */,
 				23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */,
-				23FE514B1DE4589D00C59B12 /* text.xib */,
 			);
 			name = right;
 			sourceTree = "<group>";
@@ -841,7 +838,6 @@
 				2134623A1DE2C09F005E6F44 /* AFBCouDanCell.xib in Resources */,
 				32DDBBE31DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib in Resources */,
 				213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */,
-				23FE514C1DE4589D00C59B12 /* text.xib in Resources */,
 				213140A71DE19958002F7787 /* AFBOrderRightCell.xib in Resources */,
 				213140221DE191A2002F7787 /* Assets.xcassets in Resources */,
 				213462281DE2A8A4005E6F44 /* AFBAdressTimeCell.xib in Resources */,

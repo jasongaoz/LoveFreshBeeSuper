@@ -18,7 +18,7 @@
 }
 
 - (void)setupUI{
-    _titleLable = [UILabel ay_labelWithText:@"综合排序" color:[UIColor blackColor] font:13];
+    _titleLable = [UILabel ay_labelWithText:@"" color:[UIColor blackColor] font:13];
     CGPoint titleTextCenter = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
     _titleLable.center = titleTextCenter;
     _titleLable.textAlignment = NSTextAlignmentCenter;
@@ -26,7 +26,7 @@
     [_titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(self);
     }];
-    
+ 
 }
 
 @end

@@ -8,23 +8,22 @@
 
 #import "AFBPriceArrangeControl.h"
 #import "AFBPriceArrangeControlText.h"
-#import "Masonry.h"
 
 @implementation AFBPriceArrangeControl
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-         _titleText = [[[UINib nibWithNibName:@"AFBPriceArrangeControlText" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
+         _textBar = [[[UINib nibWithNibName:@"AFBPriceArrangeControlText" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
         [self setupUI];
-         [self addSubview:_titleText];
+         [self addSubview:_textBar];
     }
     return self;
 }
 
 - (void)setupUI{
-   
+    self.isUP = NO;
     CGPoint titleTextCenter = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
-    _titleText.center = titleTextCenter;
+    _textBar.center = titleTextCenter;
    
 }
 

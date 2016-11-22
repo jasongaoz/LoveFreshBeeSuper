@@ -50,6 +50,8 @@ static NSString *rightHeader = @"rightHeader";
     NSArray *_searchKeyWord;//热搜关键字数据
 }
 
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -64,7 +66,9 @@ static NSString *rightHeader = @"rightHeader";
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationController.navigationBar.translucent = NO;
     [self addNavigationItem];
-    [self setMyView];
+    [self addTableView];
+    [self addArrageView];
+    [self addMyView];
     //    [self addTableView];
 }
 
@@ -84,7 +88,7 @@ static NSString *rightHeader = @"rightHeader";
             [_goodsDataDic setObject:tempArray forKey:key];
         }];
         
-        [self addTableView];
+        [self tableViewReloadData];
         
         [_bgImageView removeFromSuperview];
         [SVProgressHUD dismiss];
@@ -99,15 +103,36 @@ static NSString *rightHeader = @"rightHeader";
     
 }
 
+//MARK:数据初始化
+- (void)tableViewReloadData{
+    NSInteger defaultSelect = 0;
+    //右侧view默认显示的数据
+    _rightDataList = _goodsDataDic[_leftDataList[defaultSelect].idKey];
+    //右侧view数据默认设置为综合排序
+    _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+        return [obj1.product_id integerValue] > [obj2.product_id integerValue];
+    }];
+
+    
+    //刷新两侧的tableView数据
+    [_leftTableView reloadData];
+    [_rightTableView reloadData];
+    
+    //左侧view的默认选中行
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:defaultSelect inSection:0];
+    [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    
+    
+}
+
 //MARK:添加 设置等待网络加载页面
-- (void)setMyView{
-    self.view.backgroundColor = [UIColor whiteColor];
-    UIImageView * gbImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
-    gbImageView.center = self.view.center;
-    //    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
-    gbImageView.center = self.view.center;
-    _bgImageView = gbImageView;
-    [self.view addSubview:gbImageView];
+- (void)addMyView{
+    _bgImageView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    UIImageView * imView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
+    imView.center = _bgImageView.center;
+    _bgImageView.backgroundColor = [UIColor whiteColor];
+    [_bgImageView addSubview:imView];
+    [self.view addSubview:_bgImageView];
     [SVProgressHUD show];
 }
 
@@ -154,23 +179,46 @@ static NSString *rightHeader = @"rightHeader";
 - (void)addArrageView{
     AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, kARViewHeight)];
     _arrangeView = arrangeView;
-    //给综合排序和销量排序添加点击事件
-    [arrangeView.noumBut addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventTouchUpInside];
-    [arrangeView.salesVolumeBut addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventTouchUpInside];
     
-    //给销量排序设置轻点手势
-    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickArrangeControl)];
-    tap.numberOfTapsRequired=1;
-    tap.numberOfTouchesRequired=1;
-    [arrangeView.priceBut addGestureRecognizer:tap];
-
+    //给综合排序和销量排序添加点击事件
+    [arrangeView.noumBut addTarget:self action:@selector(clickArrangeControl:) forControlEvents:UIControlEventTouchUpInside];
+    [arrangeView.salesVolumeBut addTarget:self action:@selector(clickArrangeControl:) forControlEvents:UIControlEventTouchUpInside];
+    [arrangeView.priceBut addTarget:self action:@selector(clickArrangeControl:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:arrangeView];
 }
 
-//点击排序方式
-- (void)clickArrangeControl{
+//MARK:切换排序方法
+- (void)clickArrangeControl:(AFBOrderCommonControlBut *)sender{
     
-    NSLog(@"点击了排序按钮");
+    
+    switch (sender.arrangeType) {
+        case ArrangeType_Noum: //综合排序
+            
+            _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+                return [obj1.product_id integerValue] > [obj2.product_id integerValue];
+            }];
+            break;
+        case ArrangeType_Price:  //价格排序
+          
+            if (_arrangeView.priceBut.isUP) {
+                _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+                    return [obj1.partner_price floatValue] > [obj2.partner_price floatValue];
+                }];
+            }else{
+                _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+                    return [obj1.partner_price floatValue] < [obj2.partner_price floatValue];
+                }];
+            }
+            
+            break;
+        case ArrangeType_SalesVolume:  //销量排序
+            _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+                return [obj1.number integerValue] < [obj2.number integerValue];
+            }];
+            break;
+    }
+    [_rightTableView reloadData];
 }
 
 
@@ -204,18 +252,7 @@ static NSString *rightHeader = @"rightHeader";
     [leftTableView registerClass:[AFBOrderLeftCell class] forCellReuseIdentifier:orderLeftCellID];
     [rightTableView registerNib:[UINib nibWithNibName:@"AFBOrderRightCell" bundle:nil] forCellReuseIdentifier:orderRightCellID];
     
-    NSInteger defaultSelect = 0;
-    //右侧view默认显示的数据
-    _rightDataList = _goodsDataDic[_leftDataList[defaultSelect].idKey];
     
-    //刷新两侧的tableView数据
-    [_leftTableView reloadData];
-    [_rightTableView reloadData];
-    
-    //左侧view的默认选中行
-    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:defaultSelect inSection:0];
-    [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-    [self addArrageView];
 }
 
 
@@ -230,11 +267,15 @@ static NSString *rightHeader = @"rightHeader";
     if (tableView == _leftTableView) {
         //通过左侧类型tableViewModel的idKey属性确定右侧商品tableView的数据源,并刷新右侧商品数据
         _rightDataList = _goodsDataDic[_leftDataList[indexPath.row].idKey];
+        _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
+            return [obj1.product_id integerValue] > [obj2.product_id integerValue];
+        }];
         [_rightTableView reloadData];
     }else{
-        NSLog(@"push到相对应页面");
+        
         AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
         goodsDetailVC.model = _rightDataList[indexPath.row];
+        NSLog(@"%zd",[goodsDetailVC.model.product_id integerValue]);
         [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }
