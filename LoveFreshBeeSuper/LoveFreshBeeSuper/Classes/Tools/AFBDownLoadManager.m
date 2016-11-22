@@ -161,4 +161,40 @@ static id _instance;
     }];
 }
 
+//异步获取搜索出的数据
+//搜索数据暂时用首页新鲜热卖数据
+- (void)getSearchDataParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH))completeBlock{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    NSDictionary *dict = @{@"call":parameter};
+    [manager POST:@"http://iosapi.itcast.cn/loveBeen/firstSell.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
+        NSDictionary *dic = responseObject[@"data"];
+        if (completeBlock) {
+            completeBlock(dic);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
+}
+
+//异步获取热门搜索的关键字数据
+- (void)getSearchKeyWordParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH))completeBlock{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    NSDictionary *dict = @{@"call":parameter};
+    [manager POST:@"http://iosapi.itcast.cn/loveBeen/search.json.php" parameters: dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
+        NSDictionary *dic = responseObject[@"data"];
+        if (completeBlock) {
+            completeBlock(dic);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
+}
 @end

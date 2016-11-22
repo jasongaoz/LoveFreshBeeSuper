@@ -8,47 +8,89 @@
 
 #import "AFBOrderSearchController.h"
 #import "AFBOrderSearchHeadView.h"
+#import "AFBHomeCollectionController.h"
+#import "AFBHomeFlowLayout.h"
+#import "AFBHomeThreeCell.h"
+#import "AFBDownLoadManager.h"
+#import <SVProgressHUD.h>
 
-@interface AFBOrderSearchController ()
+
+static NSString *cellThree = @"cellThree";
+@interface AFBOrderSearchController ()<UICollectionViewDelegateFlowLayout>
 
 @end
-
-@implementation AFBOrderSearchController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupUI];
+@implementation AFBOrderSearchController{
+    NSArray *_threeModelList;
 }
 
+//重新init方法
+- (instancetype)init{
+    AFBHomeFlowLayout *layout = [[AFBHomeFlowLayout alloc]init];
+    return [super initWithCollectionViewLayout:layout];
+}
 
-- (void)setupUI {
-    self.view.backgroundColor = [UIColor grayColor];
+- (void)viewDidLoad {
+    self.navigationItem.backBarButtonItem.title = @"";
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    self.navigationItem.backBarButtonItem.tintColor = [UIColor grayColor];
     
-    //隐藏navigation的返回按钮
-    self.navigationItem.hidesBackButton = YES;
-    //不能设置translucent（穿透效果），否则会自定义view会整体下移
-//    self.navigationController.navigationBar.translucent = NO;
-    //设置navigationbar的透明度为零，否则会遮挡自定义view
-    self.navigationController.navigationBar.alpha = 0;
+    [super viewDidLoad];
+    [SVProgressHUD show];
     
-    AFBOrderSearchHeadView *searchHeadView = [[[UINib nibWithNibName:@"AFBOrderSearchHeadView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
-    [self.view addSubview:searchHeadView];
-    //添加返回按钮的点击事件，pop回原来的控制器
-    [searchHeadView.btn_searchBack addTarget:self action:@selector(backBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    // 加载数据
+    [self loadData];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     
-    CGSize size = searchHeadView.bounds.size;
+    //注册
+    [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
     
-    [searchHeadView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(20);
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(size.height);
+}
+
+//返回按钮点击事件
+- (void)searchNavBackBtnClicked{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - loadData
+- (void)loadData{
+    AFBDownLoadManager *manager = [AFBDownLoadManager shareManager];
+    
+    [manager getSearchDataParameters:@2 CompleteBlock:^(NSDictionary *dicH) {
+        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
+        [self.collectionView reloadData];
+        [SVProgressHUD dismiss];
     }];
+}
+
+#pragma mark <UICollectionViewDataSource>
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
+    return _threeModelList.count;
+    //    return 4;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AFBHomeThreeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellThree forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    AFBHomeThreeModel *model = _threeModelList[indexPath.row];
+    cell.model = model;
+    //    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"抽奖"]];
+    
+    return cell;
+}
+
+#pragma mark - collectiondelegateflowlayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CGFloat wigth = (self.view.bounds.size.width-21)/2;
+    CGFloat height = 220;
+    return CGSizeMake(wigth,height);
 }
 
 - (void)backBtnClicked{
@@ -63,13 +105,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
