@@ -18,6 +18,7 @@
 #import "UITabBar+AFBBage.h"
 
 #import <SVProgressHUD.h>
+#import <MJRefresh.h>
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
@@ -27,6 +28,7 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
+    NSMutableArray *_imageArray;
     NSArray *_modelList;
     NSArray *_threeModelList;
     NSMutableArray<AFBHomeThreeModel *> *_seletedArray;
@@ -40,8 +42,12 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     _seletedArray = [NSMutableArray array];
     [self getRefresh];
+=======
+//    [self getRefresh];
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -56,6 +62,25 @@ static NSString *cellFour = @"cellFour";
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
+    
+    //设置下拉刷新
+    _imageArray = [NSMutableArray array];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh1"]];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh2"]];
+
+    MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    [header setImages:_imageArray forState:MJRefreshStatePulling];
+    [header setImages:_imageArray forState:MJRefreshStateRefreshing];
+    [header setImages:_imageArray forState:MJRefreshStateIdle];
+    self.collectionView.mj_header = header;
+
+    [header setTitle:@"向下拉" forState:MJRefreshStatePulling];
+    [header setTitle:@"努力加载中" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"加载完毕" forState:MJRefreshStateIdle];
+    
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+    [header beginRefreshing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -63,6 +88,7 @@ static NSString *cellFour = @"cellFour";
     [SVProgressHUD dismiss];
 }
 
+<<<<<<< HEAD
 #pragma mark - 实现代理方法传输数据
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell withAddModel:(AFBHomeThreeModel *)Model withStartPoint:(CGPoint)startp{
     //1动画
@@ -82,6 +108,20 @@ static NSString *cellFour = @"cellFour";
     }
 
     
+=======
+#pragma mark - 设置顶部刷新
+- (void)headerRefresh{
+    [self.collectionView reloadData];
+    [self.collectionView.mj_header endRefreshing];
+}
+
+
+#pragma mark - 添加动画
+//实现cell的代理方法
+- (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
+    //1添加动画
+//    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
 }
 //动画实现
 - (void)startAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
@@ -129,6 +169,7 @@ static NSString *cellFour = @"cellFour";
     [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
     [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
 
+<<<<<<< HEAD
 }
 //结束动画后操作
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
@@ -150,6 +191,21 @@ static NSString *cellFour = @"cellFour";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+=======
+//#pragma mark - 添加下拉刷新
+//- (void)getRefresh{
+//    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+//    [self.collectionView addSubview:refresh];
+//
+//    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+//    
+//    [refresh setAttributedTitle:arrStr];
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
 
 /*
 #pragma mark - Navigation

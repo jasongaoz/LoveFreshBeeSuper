@@ -20,8 +20,17 @@
 #import "AFBCommonGoodsModel.h"
 #import <PYSearch.h>
 
+#import "AFBOrderGoodsArrangeView.h"
+
+#define kTopHeight 64
+#define kWidth [UIScreen ay_screenWidth]/4
+
+#import "AFBOrderGoodsDetailController.h"
+
+
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
+static NSString *rightHeader = @"rightHeader";
 
 @interface AFBOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,15 +41,15 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBOrderRightTableView * _rightTableView;
     NSArray<AFBOrderLeftModel *> * _leftDataList;
     NSArray<AFBCommonGoodsModel *> * _rightDataList;
-    
-    //热搜关键字数据
-    NSArray *_searchKeyWord;
-    
     NSMutableDictionary*_goodsDataDic;//右侧所有商品数据
     UIView *_bgImageView;//占位背景view
+    AFBOrderGoodsArrangeView *_arrangeView;//排序方式View
+    
+    NSArray *_searchKeyWord;//热搜关键字数据
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     _goodsDataDic = [NSMutableDictionary dictionary];
     // Do any additional setup after loading the view.
@@ -48,6 +57,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 }
 
 - (void)setupUI{
+    self.navigationController.navigationBar.translucent = NO;
     self.navigationItem.title = @"闪送超市";
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationController.navigationBar.translucent = NO;
@@ -81,7 +91,7 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
     //获取热搜关键字
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        NSLog(@"====%@",dicH[@"hotquery"]);
+//        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWord = dicH[@"hotquery"];
     }];
     
@@ -141,14 +151,22 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 
 //MARK:添加 设置tableView
 - (void)addTableView{
-    AFBOrderLeftTableView * leftTableView = [AFBOrderLeftTableView new];
-    AFBOrderRightTableView * rightTableView = [AFBOrderRightTableView new];
+    CGFloat arViewHeight = 40;
+   
+    AFBOrderLeftTableView * leftTableView = [[AFBOrderLeftTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, [UIScreen ay_screenHeight])];
+    AFBOrderRightTableView * rightTableView = [[AFBOrderRightTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, [UIScreen ay_screenHeight])];
+    rightTableView.contentInset = UIEdgeInsetsMake(arViewHeight, 0, 0, 0);
+     AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, arViewHeight)];
     
+    _arrangeView = arrangeView;
     _leftTableView = leftTableView;
     _rightTableView = rightTableView;
     
+    [arrangeView addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventValueChanged];
+    
     [self.view addSubview:leftTableView];
     [self.view addSubview:rightTableView];
+    [self.view addSubview:arrangeView];
     
     //数据源
     leftTableView.dataSource = self;
@@ -161,20 +179,6 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     //注册cell
     [leftTableView registerClass:[AFBOrderLeftCell class] forCellReuseIdentifier:orderLeftCellID];
     [rightTableView registerNib:[UINib nibWithNibName:@"AFBOrderRightCell" bundle:nil] forCellReuseIdentifier:orderRightCellID];
-    
-    [_leftTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view);
-        make.left.bottom.equalTo(self.view);
-        make.width.mas_equalTo(80);
-    }];
-    
-    [_rightTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.equalTo(_leftTableView);
-        make.left.equalTo(leftTableView.mas_right);
-        make.right.bottom.equalTo(self.view);
-        
-    }];
     
     NSInteger defaultSelect = 0;
     //右侧view默认显示的数据
@@ -190,6 +194,11 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     
 }
 
+//MARK:点击排序方式
+- (void)clickArrangeControl{
+    NSLog(@"点击了排序按钮");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -203,6 +212,8 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         [_rightTableView reloadData];
     }else{
         NSLog(@"push到相对应页面");
+        AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
+        [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }
 
@@ -244,8 +255,9 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         return cell;
     }
     
-    
 }
+
+
 
 
 

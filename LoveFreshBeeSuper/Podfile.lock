@@ -18,6 +18,7 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - Masonry (1.0.2)
+  - MJRefresh (3.1.12)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - AFNetworking
   - FMDB
   - Masonry
+  - MJRefresh
   - MMDrawerController
   - PYSearch
   - SDCycleScrollView
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   PYSearch: d7d89a358545f4f8ef3700197724162d1e0e2029
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
@@ -64,6 +67,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ba15eee8e77717d744a70e59cf96664b0e37fc1d
+PODFILE CHECKSUM: 49d431b2d9b9a3bcbe6e74909122a725afd6db2a
 
 COCOAPODS: 1.1.1

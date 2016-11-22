@@ -17,6 +17,6 @@ typedef enum {
     
 }ArrangeType;
 
-@interface AFBOrderGoodsArrangeView : UIView
+@interface AFBOrderGoodsArrangeView : UIControl
 
 @end

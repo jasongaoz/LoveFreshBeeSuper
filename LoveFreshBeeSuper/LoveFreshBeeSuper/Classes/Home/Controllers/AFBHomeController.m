@@ -23,6 +23,7 @@
 
 #import <PYSearch.h>
 #import <SVProgressHUD.h>
+#import <MJRefresh.h>
 
 
 @interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate>
@@ -35,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self loadData];
     // Do any additional setup after loading the view.
 }
@@ -137,7 +139,7 @@
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        NSLog(@"====%@",dicH[@"hotquery"]);
+//        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWords = dicH[@"hotquery"];
     }];
 }
