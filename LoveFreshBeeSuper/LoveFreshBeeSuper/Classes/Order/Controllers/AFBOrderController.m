@@ -213,6 +213,7 @@ static NSString *rightHeader = @"rightHeader";
     }else{
         NSLog(@"push到相对应页面");
         AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
+        goodsDetailVC.model = _rightDataList[indexPath.row];
         [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }

@@ -11,6 +11,7 @@
 @interface AFBCommonGoodsModel : NSObject
 
 @property(nonatomic, copy) NSString * name;
+@property(nonatomic, copy) NSString * brand_name;//品牌名称
 @property(nonatomic, copy) NSString * img;//图片连接
 @property(nonatomic, copy) NSString * specifics;//净含量
 @property(nonatomic, copy) NSString * market_price;//原价
