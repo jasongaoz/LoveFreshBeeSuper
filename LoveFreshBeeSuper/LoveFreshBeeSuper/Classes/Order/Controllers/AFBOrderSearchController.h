@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AFBOrderSearchController : UIViewController
+@interface AFBOrderSearchController : UICollectionViewController
 
 @end
