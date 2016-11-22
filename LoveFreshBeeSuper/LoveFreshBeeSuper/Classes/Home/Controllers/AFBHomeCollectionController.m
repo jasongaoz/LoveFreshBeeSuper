@@ -14,7 +14,9 @@
 #import "AFBDownLoadManager.h"
 #import "AFBHomeSecondModel.h"
 #import "AFBHomeThreeModel.h"
+#import "AFBCommonGoodsModel.h"
 #import "AFBHomeFourCell.h"
+#import "AFBOrderGoodsDetailController.h"
 #import "UITabBar+AFBBage.h"
 
 #import <SVProgressHUD.h>
@@ -43,7 +45,6 @@ static NSString *cellFour = @"cellFour";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _seletedArray = [NSMutableArray array];
-    [self getRefresh];
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -171,15 +172,6 @@ static NSString *cellFour = @"cellFour";
     //给购物车赋值
     
 }
-#pragma mark - 添加下拉刷新
-- (void)getRefresh{
-    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
-    [self.collectionView addSubview:refresh];
-
-    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
-    
-    [refresh setAttributedTitle:arrStr];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -221,7 +213,7 @@ static NSString *cellFour = @"cellFour";
     }];
     [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
 //        NSLog(@"%@",dicH);
-        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
+        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:dicH];
         [self.collectionView reloadData];
     }];
     
@@ -341,6 +333,10 @@ static NSString *cellFour = @"cellFour";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@",indexPath);
+    
+    AFBOrderGoodsDetailController * goodsDetailController = [[AFBOrderGoodsDetailController alloc] init];
+    goodsDetailController.model = _threeModelList[indexPath.item];
+    [self.navigationController pushViewController:goodsDetailController animated:YES];
 }
 
 /*

@@ -46,6 +46,9 @@
     [super viewDidLoad];
     
     self.navigationItem.title = self.model.name;
+
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];
