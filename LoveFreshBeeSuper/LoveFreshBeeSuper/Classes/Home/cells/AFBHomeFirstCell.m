@@ -52,7 +52,7 @@ typedef enum : NSUInteger {
         make.height.mas_equalTo(120);
     }];
     _cycleScrollView = cycleScrollView;
-    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
 }
 
 #pragma mark - 添加四个按钮

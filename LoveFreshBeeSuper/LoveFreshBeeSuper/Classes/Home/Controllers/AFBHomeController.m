@@ -135,7 +135,7 @@
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        NSLog(@"====%@",dicH[@"hotquery"]);
+//        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWords = dicH[@"hotquery"];
     }];
 }
