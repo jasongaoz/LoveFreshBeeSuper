@@ -61,14 +61,16 @@ static NSString *cellFour = @"cellFour";
     [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh2"]];
 
     MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+
     [header setImages:_imageArray forState:MJRefreshStatePulling];
     [header setImages:_imageArray forState:MJRefreshStateRefreshing];
     [header setImages:_imageArray forState:MJRefreshStateIdle];
     self.collectionView.mj_header = header;
 
-    [header setTitle:@"向下拉" forState:MJRefreshStatePulling];
-    [header setTitle:@"努力加载中" forState:MJRefreshStateRefreshing];
-    [header setTitle:@"加载完毕" forState:MJRefreshStateIdle];
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开立刻刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在刷新" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"正在刷新" forState:MJRefreshStateIdle];
     
     header.lastUpdatedTimeLabel.hidden = YES;
     
