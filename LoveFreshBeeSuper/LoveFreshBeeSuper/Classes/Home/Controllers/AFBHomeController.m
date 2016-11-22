@@ -19,7 +19,10 @@
 #import "AFBBeeViewController.h"
 #import "AFBNavigationBarView.h"
 
+#import "AFBOrderSearchController.h"
+
 #import <PYSearch.h>
+#import <SVProgressHUD.h>
 
 
 @interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate>
@@ -78,21 +81,6 @@
     }];
 }
 
-//#pragma mark - 添加 设置NavigationItem
-//- (void)addNavigationItem{
-//    //左侧
-//    //不让系统渲染图片
-//    UIImage *leftImage = [[UIImage imageNamed:@"icon_black_scancode"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:leftImage style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftItem)];
-//    self.navigationItem.leftBarButtonItem = leftItem;
-//    
-//    //右侧
-//    //不让系统渲染图片
-//    UIImage *rightImage = [[UIImage imageNamed:@"icon_search"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(clickRightItem)];
-//    self.navigationItem.rightBarButtonItem = rightItem;
-//}
-
 #pragma mark - AFBNavigationBarViewDelegate代理方法
 - (void)clickLeftButton{
     AFBSweepViewController * sweepVC = [AFBSweepViewController new];
@@ -106,7 +94,7 @@
     PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入商品关键字" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
         // 开始(点击)搜索时执行以下代码
         // 如：跳转到指定控制器
-        [searchViewController.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+        [searchViewController.navigationController pushViewController:[[AFBOrderSearchController alloc] init] animated:YES];
     }];
     // 3. 跳转到搜索控制器
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];

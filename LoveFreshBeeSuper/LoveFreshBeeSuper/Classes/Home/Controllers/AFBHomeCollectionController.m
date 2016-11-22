@@ -16,6 +16,8 @@
 #import "AFBHomeThreeModel.h"
 #import "AFBHomeFourCell.h"
 
+#import <SVProgressHUD.h>
+
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
 @end
@@ -36,10 +38,11 @@ static NSString *cellFour = @"cellFour";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getRefresh];
+    [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.top.offset(0);
+        make.top.offset(-20);
     }];
     // 加载数据
     [self loadData];
@@ -49,6 +52,11 @@ static NSString *cellFour = @"cellFour";
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
 }
 #pragma mark - 添加动画
 //实现cell的代理方法
@@ -132,6 +140,8 @@ static NSString *cellFour = @"cellFour";
         _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
         [self.collectionView reloadData];
     }];
+    
+    [SVProgressHUD dismiss];
 }
 
 #pragma mark - 设置navigationController
