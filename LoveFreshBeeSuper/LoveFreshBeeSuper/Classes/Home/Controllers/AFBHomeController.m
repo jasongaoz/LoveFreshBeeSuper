@@ -17,12 +17,13 @@
 #import "AFBSecKillViewController.h"
 #import "AFBRedBagViewController.h"
 #import "AFBBeeViewController.h"
+#import "AFBNavigationBarView.h"
 
 #import <PYSearch.h>
 
 
 @interface AFBHomeController () <AFBHomeCollectionControllerDelegate>
-
+@property(nonatomic,weak)AFBNavigationBarView *naviView;
 @end
 
 @implementation AFBHomeController
@@ -30,6 +31,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+#pragma mark - 自定义navigationbar
+- (void)viewWillAppear:(BOOL)animated{
+    
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    AFBNavigationBarView *view = [[AFBNavigationBarView alloc]init];
+    [self.view addSubview:view];
+    self.naviView = view;
+    view.backgroundColor = [UIColor yellowColor];
+    view.backgroundColor = [UIColor ay_colorWithR:254 G:222 B:50 alpha:0];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+        make.height.mas_equalTo(64);
+    }];
+}
+- (void)getAlpha:(CGFloat)alpha{
+    self.naviView.alpth = alpha;
 }
 
 #pragma mark - 搭建界面
@@ -51,7 +70,7 @@
     
     
     [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
-        NSLog(@"%@",arrayH);
+//        NSLog(@"%@",arrayH);
     }];
 }
 

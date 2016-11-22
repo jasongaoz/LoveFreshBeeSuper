@@ -16,6 +16,7 @@
 #import "AFBBusinessListCell.h"
 #import "AFBCommentCell.h"
 #import "AFBAllSelCell.h"
+#import "AFBCommentController.h"
 
 static NSString *FirstID = @"fis_id";
 static NSString *shopMakID = @"shopMak_id";
@@ -155,26 +156,30 @@ static NSString *AllselID = @"allSelID";
     if (indexPath.section == 0) {
         //创建第一种cell
         AFBShopCarFisrtCell *cell = [tableView dequeueReusableCellWithIdentifier:FirstID forIndexPath:indexPath];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.section == 1 && indexPath.row == 0) {
         //创建第二种cell 闪送超市
         AFBShopCarSupermarkerCell *cell = [tableView dequeueReusableCellWithIdentifier:shopMakID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.section == 1 && indexPath.row == 1) {
         //创建第三种cell 收货时间
         AFBAdressTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:AdressID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.section == 1 && indexPath.row == 2){
         AFBCouDanCell *cell = [tableView dequeueReusableCellWithIdentifier:buyCardID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if(indexPath.section == 2){
         // 商品列表
         AFBBusinessListCell * cell = [tableView dequeueReusableCellWithIdentifier:BusiListID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //        cell.height = 60;
 //        cell.textLabel.text = @"1111";
         return cell;
@@ -187,10 +192,12 @@ static NSString *AllselID = @"allSelID";
 //    }
     else if (indexPath.section == 3 && indexPath.row == 0){
         AFBCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:CommentID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.section == 3 && indexPath.row == 1){
         AFBAllSelCell *cell = [tableView dequeueReusableCellWithIdentifier:AllselID forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
@@ -213,22 +220,37 @@ static NSString *AllselID = @"allSelID";
         return 100;
     }
     else if(indexPath.section == 1 && indexPath.row == 0){
-        return 40;
+        return 39;
     }
-    else if(indexPath.section == 1 && indexPath.row == 1 ){
-        return 55;
+    else if((indexPath.section == 1 && indexPath.row == 1) || (indexPath.section == 1 && indexPath.row == 2)) {
+        return 74;
     }
     else if(indexPath.section == 2){
         return 80;
     }
-    return 50;
+    return 60;
 }
 //cell点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NSLog(@"点击了第一个cell");
     }
-    
+    else if (indexPath.section == 1 && indexPath.row == 0){
+        NSLog(@"点击了闪送超时");
+    }
+    else if(indexPath.section == 1 && indexPath.row == 2){
+        NSLog(@"点击凑单专区");
+    }
+    else if(indexPath.section == 2){
+        NSLog(@"点击了商品列表");
+    }
+    else if(indexPath.section == 3 && indexPath.row == 0){
+        NSLog(@"点击了备注");
+        AFBCommentController *comVc = [[AFBCommentController alloc] init];
+        [self.navigationController pushViewController:comVc animated:YES];
+        [self.navigationController hidesBottomBarWhenPushed];
+        
+    }
 }
 
 /*

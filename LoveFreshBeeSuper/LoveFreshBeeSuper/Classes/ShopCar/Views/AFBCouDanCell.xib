@@ -15,45 +15,67 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6T-Sd-FGv">
-                        <rect key="frame" x="22" y="14" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="凑单专区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6T-Sd-FGv">
+                        <rect key="frame" x="13" y="25" width="54" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZ9-xd-tBW">
-                        <rect key="frame" x="113" y="14" width="46" height="42"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xuebi" translatesAutoresizingMaskIntoConstraints="NO" id="dZ9-xd-tBW">
+                        <rect key="frame" x="103" y="8.5" width="50" height="50"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-x0-yWL">
-                        <rect key="frame" x="221" y="14" width="46" height="42"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baishi" translatesAutoresizingMaskIntoConstraints="NO" id="ytV-xa-BDj">
+                        <rect key="frame" x="161" y="8.5" width="50" height="50"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmF-YV-27j">
-                        <rect key="frame" x="275" y="25" width="37" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baishi" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-x0-yWL">
+                        <rect key="frame" x="219" y="8.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="9qa-3U-7X0"/>
+                            <constraint firstAttribute="width" constant="50" id="agx-W7-cIv"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baidu_wallet_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="IP9-dC-psJ">
+                        <rect key="frame" x="306" y="27" width="6" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="DO0-Mf-OW3"/>
+                            <constraint firstAttribute="width" constant="6" id="GQL-HK-ThT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmF-YV-27j">
+                        <rect key="frame" x="277" y="25" width="27" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baidu_wallet_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="IP9-dC-psJ">
-                        <rect key="frame" x="308" y="27" width="4" height="13"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytV-xa-BDj">
-                        <rect key="frame" x="167" y="14" width="46" height="42"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="IP9-dC-psJ" firstAttribute="leading" secondItem="bmF-YV-27j" secondAttribute="trailing" constant="2" id="1U4-iT-lKQ"/>
+                    <constraint firstItem="bmF-YV-27j" firstAttribute="leading" secondItem="tNJ-x0-yWL" secondAttribute="trailing" constant="8" id="98I-yp-nqW"/>
+                    <constraint firstItem="d6T-Sd-FGv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="GNC-1w-epD"/>
+                    <constraint firstItem="tNJ-x0-yWL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GnD-5o-7uO"/>
+                    <constraint firstItem="ytV-xa-BDj" firstAttribute="leading" secondItem="dZ9-xd-tBW" secondAttribute="trailing" constant="8" id="OjL-xJ-Nlh"/>
+                    <constraint firstItem="ytV-xa-BDj" firstAttribute="centerY" secondItem="tNJ-x0-yWL" secondAttribute="centerY" id="TvD-J2-Br3"/>
+                    <constraint firstAttribute="trailing" secondItem="IP9-dC-psJ" secondAttribute="trailing" constant="8" id="YVT-Gp-usx"/>
+                    <constraint firstItem="ytV-xa-BDj" firstAttribute="height" secondItem="tNJ-x0-yWL" secondAttribute="height" id="bFu-oN-Yfk"/>
+                    <constraint firstItem="IP9-dC-psJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bkr-4M-joc"/>
+                    <constraint firstItem="dZ9-xd-tBW" firstAttribute="centerY" secondItem="ytV-xa-BDj" secondAttribute="centerY" id="bus-tQ-dgk"/>
+                    <constraint firstItem="tNJ-x0-yWL" firstAttribute="leading" secondItem="ytV-xa-BDj" secondAttribute="trailing" constant="8" id="cMJ-hZ-ynI"/>
+                    <constraint firstItem="dZ9-xd-tBW" firstAttribute="height" secondItem="ytV-xa-BDj" secondAttribute="height" id="lad-P0-4ed"/>
+                    <constraint firstItem="dZ9-xd-tBW" firstAttribute="width" secondItem="ytV-xa-BDj" secondAttribute="width" id="obI-CF-O1S"/>
+                    <constraint firstItem="d6T-Sd-FGv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="umQ-u3-zK2"/>
+                    <constraint firstItem="bmF-YV-27j" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wt1-qJ-L6h"/>
+                    <constraint firstItem="ytV-xa-BDj" firstAttribute="width" secondItem="tNJ-x0-yWL" secondAttribute="width" id="xzb-9I-wEA"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="25" y="55.5"/>
+            <point key="canvasLocation" x="-58" y="51.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="baidu_wallet_arrow_right" width="6" height="11"/>
+        <image name="baishi" width="300" height="300"/>
+        <image name="xuebi" width="300" height="300"/>
     </resources>
 </document>

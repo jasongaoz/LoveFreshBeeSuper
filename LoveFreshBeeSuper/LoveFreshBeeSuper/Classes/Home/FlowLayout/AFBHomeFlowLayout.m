@@ -14,11 +14,11 @@
     
     self.minimumLineSpacing = 7;
     
-    self.minimumInteritemSpacing = 7;
+    self.minimumInteritemSpacing = 1;
     
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.sectionInset = UIEdgeInsetsMake(0, 7, 20, 7);
+    self.sectionInset = UIEdgeInsetsMake(0, 0, 20, 0);
     
 }
 @end

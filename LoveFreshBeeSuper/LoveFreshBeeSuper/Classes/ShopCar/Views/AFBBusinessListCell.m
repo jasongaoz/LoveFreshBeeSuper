@@ -49,8 +49,8 @@
     stusLabel.text = @"精选";
     stusLabel.textColor = [UIColor redColor];
      stusLabel.font = [UIFont systemFontOfSize:11];
-    [stusLabel.layer setBorderWidth:0.3];
-    [stusLabel.layer setBorderColor:(__bridge CGColorRef _Nullable)([UIColor redColor])];
+    [stusLabel.layer setBorderWidth:0.5];
+    stusLabel.layer.borderColor = [UIColor redColor].CGColor;
     stusLabel.layer.cornerRadius = 3;
     [self.contentView addSubview:stusLabel];
     

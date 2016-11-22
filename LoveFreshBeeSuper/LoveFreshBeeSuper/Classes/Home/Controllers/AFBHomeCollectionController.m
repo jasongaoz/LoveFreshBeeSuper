@@ -36,6 +36,11 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置collectionview的item穿透状态栏
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.offset(-20);
+    }];
     // 加载数据
     [self loadData];
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
@@ -68,14 +73,19 @@ static NSString *cellFour = @"cellFour";
         //字典转模型
         NSArray *array = arrayH[@"activities"];
         _modelList = [NSArray yy_modelArrayWithClass:[AFBHomeSecondModel class] json:array];
+        [self.collectionView reloadData];
     }];
     [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
 //        NSLog(@"%@",dicH);
         _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
-        
+        [self.collectionView reloadData];
     }];
 }
 
+#pragma mark - 设置navigationController
+- (void)setNavigation{
+//    self.navigationController.navigationBar = 
+}
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -90,10 +100,10 @@ static NSString *cellFour = @"cellFour";
             return 1;
             break;
         case 1:
-            return 4;
+            return _modelList.count;
             break;
         case 2:
-            return 30;
+            return _threeModelList.count;
             break;
         case 3:
             return 1;
@@ -143,10 +153,9 @@ static NSString *cellFour = @"cellFour";
         
     }else if (indexPath.section == 2){
         
-        CGFloat wigth2 = (self.view.bounds.size.width-21)/2;
+        CGFloat wigth2 = (self.view.bounds.size.width-2)/3;
         CGFloat height = 220;
         return CGSizeMake(wigth2,height);
-        
     }
     return CGSizeMake(wigth, 50);
 }
@@ -177,6 +186,19 @@ static NSString *cellFour = @"cellFour";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGPoint offset = scrollView.contentOffset;
+    CGFloat offY = offset.y;
+    CGFloat topH = 120+offY;
+    CGFloat scal = 1.0/(120-64);
+    CGFloat alpth =(topH-64+20)*scal-1;
+    if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
+        [self.delegate getAlpha:alpth];
+    }
+    NSLog(@"alpth = %f,offY=%f",alpth,offY);
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
