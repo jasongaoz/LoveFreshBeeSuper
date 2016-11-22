@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A21B6B51DE45B6A0032FB62 /* UITabBar+AFBBage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A21B6B41DE45B6A0032FB62 /* UITabBar+AFBBage.m */; };
 		0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */; };
 		0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */; };
 		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
@@ -108,6 +109,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A21B6B31DE45B6A0032FB62 /* UITabBar+AFBBage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+AFBBage.h"; sourceTree = "<group>"; };
+		0A21B6B41DE45B6A0032FB62 /* UITabBar+AFBBage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+AFBBage.m"; sourceTree = "<group>"; };
 		0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeCollectionController.h; sourceTree = "<group>"; };
 		0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeCollectionController.m; sourceTree = "<group>"; };
 		0A6C38061DE1BBB000DEAFDB /* AFBHomeFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFlowLayout.h; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 				213140921DE19958002F7787 /* UIView+Frame.m */,
 				213140931DE19958002F7787 /* UIViewController+Addition.h */,
 				213140941DE19958002F7787 /* UIViewController+Addition.m */,
+				0A21B6B31DE45B6A0032FB62 /* UITabBar+AFBBage.h */,
+				0A21B6B41DE45B6A0032FB62 /* UITabBar+AFBBage.m */,
 			);
 			path = AY_Addition;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
 				1B389C251DE316730042F99D /* AFBDrawViewController.m in Sources */,
 				0A6C38161DE1D79000DEAFDB /* AFBHomeThreeModel.m in Sources */,
+				0A21B6B51DE45B6A0032FB62 /* UITabBar+AFBBage.m in Sources */,
 				213140B11DE19958002F7787 /* UIColor+Addition.m in Sources */,
 				213140A51DE19958002F7787 /* AFBOrderLeftTableView.m in Sources */,
 				2AC3FD891DE3F7C5006D7CAB /* AFBWebViewController.m in Sources */,

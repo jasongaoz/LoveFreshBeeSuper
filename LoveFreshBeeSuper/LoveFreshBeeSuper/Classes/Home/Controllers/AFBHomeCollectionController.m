@@ -15,8 +15,10 @@
 #import "AFBHomeSecondModel.h"
 #import "AFBHomeThreeModel.h"
 #import "AFBHomeFourCell.h"
+#import "UITabBar+AFBBage.h"
 
 #import <SVProgressHUD.h>
+#import <MJRefresh.h>
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
@@ -26,9 +28,12 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
+    NSMutableArray *_imageArray;
     NSArray *_modelList;
     NSArray *_threeModelList;
+    NSMutableArray<AFBHomeThreeModel *> *_seletedArray;
 }
+
 //重新init方法
 - (instancetype)init{
     AFBHomeFlowLayout *layout = [[AFBHomeFlowLayout alloc]init];
@@ -37,7 +42,7 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getRefresh];
+    _seletedArray = [NSMutableArray array];
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,69 +57,138 @@ static NSString *cellFour = @"cellFour";
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
+    
+    //设置下拉刷新
+    _imageArray = [NSMutableArray array];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh1"]];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh2"]];
+
+    MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+
+    [header setImages:_imageArray forState:MJRefreshStatePulling];
+    [header setImages:_imageArray forState:MJRefreshStateRefreshing];
+    [header setImages:_imageArray forState:MJRefreshStateIdle];
+    self.collectionView.mj_header = header;
+
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开立刻刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在刷新" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"正在刷新" forState:MJRefreshStateIdle];
+    
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+    [header beginRefreshing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [SVProgressHUD dismiss];
 }
+
+#pragma mark - 实现代理方法传输数据
+- (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell withAddModel:(AFBHomeThreeModel *)Model withStartPoint:(CGPoint)startp{
+    //1动画
+    [self startAnimationWithStartPoint:startp cell:homeThreeCell];
+    //2数据
+    if (![_seletedArray containsObject:Model]) {
+        [_seletedArray addObject:Model];
+    }
+    //总的商品个数
+    if (_modelList) {
+        __block NSInteger countAll = 0;
+        [_seletedArray enumerateObjectsUsingBlock:^(AFBHomeThreeModel * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            countAll += obj.buyCount;
+        }];
+        NSString *countStr = [NSString stringWithFormat:@"%zd",countAll];
+        [self.tabBarController.tabBar showBadgeOnItemIndex:2 withBadge:countStr];
+    }
+}
+
+#pragma mark - 设置顶部刷新
+- (void)headerRefresh{
+    [self.collectionView reloadData];
+    [self.collectionView.mj_header endRefreshing];
+}
+
+
 #pragma mark - 添加动画
 //实现cell的代理方法
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
     //1添加动画
 //    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
-    
 }
-////添加动画方法
-//- (void)addAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
-//    
-////    UIView *view = [[UIView alloc]initWithFrame:cell.frame];
-////    [view.layer addSublayer:cell.layer];
-//    UIImageView *imV = [[UIImageView alloc]init];
-//    imV.image =
-//    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(view);
-//    }];
-//    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-//    [keyWindow addSubview:view];
-//    
-//    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-//    UIBezierPath *path = [UIBezierPath bezierPath];
-//    //起点
-//    [path moveToPoint:startP];
-//    //最高点
-//    CGPoint controlP = CGPointMake(startP.x, startP.y-100);
-//    //终点
-//    CGPoint endP = CGPointMake(300, [UIScreen mainScreen].bounds.size.height-40);
-//    
-//    [path addQuadCurveToPoint:endP controlPoint:controlP];
-//    
-//    key.path = path.CGPath;
-//    key.duration = 1;
-//    key.delegate =self;
-//    
-//    [key setValue:view forKey:@"key"];
-//    
-//    [view.layer addAnimation:key forKey:@"keyAmimation"];
-//    
-//}
-
-#pragma mark - 动画结束后将空间移除window
-
-
-#pragma mark - 添加下拉刷新
-- (void)getRefresh{
-    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
-    [self.collectionView addSubview:refresh];
-
-    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+//动画实现
+- (void)startAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
+    UIImage *ima = cell.imageView.image;
+    UIImageView *imaV = [[UIImageView alloc]initWithImage:ima];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:imaV];
+    imaV.center = startP;
+    imaV.bounds = CGRectMake(0, 0, 160, 160);
     
-    [refresh setAttributedTitle:arrStr];
+    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    CABasicAnimation *basicScale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    CABasicAnimation *basicOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //keyAnimation
+    CGFloat wigth = [UIScreen mainScreen].bounds.size.width/8;
+    CGFloat endX = wigth*5;
+    [path moveToPoint:startP];
+    CGPoint controlP = CGPointMake(startP.x, startP.y-200);
+    CGPoint endP = CGPointMake(endX, [UIScreen mainScreen].bounds.size.height-40);
+    [path addQuadCurveToPoint:endP controlPoint:controlP];
+    key.path = path.CGPath;
+    key.duration = 1;
+    [key setValue:imaV forKey:@"key"];
+    key.removedOnCompletion = NO;
+    key.fillMode = kCAFillModeForwards;
+    
+    //basicScale
+    basicScale.fromValue = @(1);
+    basicScale.toValue = @(0.1);
+    basicScale.duration = 1;
+    basicScale.removedOnCompletion = NO;
+    basicScale.fillMode = kCAFillModeForwards;
+    
+    //basicOpacity
+    basicOpacity.duration = 1;
+    basicOpacity.fromValue = @(1);
+    basicOpacity.toValue = @(0.5);
+    basicOpacity.removedOnCompletion = NO;
+    basicOpacity.fillMode = kCAFillModeForwards;
+    
+    //添加动画
+    key.delegate = self;
+    [imaV.layer addAnimation:key forKey:@"keyAmimation"];
+    [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
+    [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
+}
+//结束动画后操作
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    UIImageView *imaV = [anim valueForKey:@"key"];
+    [imaV removeFromSuperview];
+    //给购物车赋值
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+//#pragma mark - 添加下拉刷新
+//- (void)getRefresh{
+//    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+//    [self.collectionView addSubview:refresh];
+//
+//    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+//    
+//    [refresh setAttributedTitle:arrStr];
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
+
 
 /*
 #pragma mark - Navigation
@@ -253,6 +327,10 @@ static NSString *cellFour = @"cellFour";
     if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
         [self.delegate getAlpha:alpth];
     }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",indexPath);
 }
 
 /*

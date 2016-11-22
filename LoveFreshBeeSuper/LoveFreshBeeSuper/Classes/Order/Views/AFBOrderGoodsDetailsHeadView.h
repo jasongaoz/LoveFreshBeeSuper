@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFBCommonGoodsModel.h"
 
 @interface AFBOrderGoodsDetailsHeadView : UIView
+
+@property (nonatomic, strong)AFBCommonGoodsModel *model;
 
 @end
