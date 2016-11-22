@@ -42,12 +42,8 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     _seletedArray = [NSMutableArray array];
     [self getRefresh];
-=======
-//    [self getRefresh];
->>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +86,6 @@ static NSString *cellFour = @"cellFour";
     [SVProgressHUD dismiss];
 }
 
-<<<<<<< HEAD
 #pragma mark - 实现代理方法传输数据
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell withAddModel:(AFBHomeThreeModel *)Model withStartPoint:(CGPoint)startp{
     //1动画
@@ -108,9 +103,8 @@ static NSString *cellFour = @"cellFour";
         NSString *countStr = [NSString stringWithFormat:@"%zd",countAll];
         [self.tabBarController.tabBar showBadgeOnItemIndex:2 withBadge:countStr];
     }
+}
 
-    
-=======
 #pragma mark - 设置顶部刷新
 - (void)headerRefresh{
     [self.collectionView reloadData];
@@ -123,7 +117,6 @@ static NSString *cellFour = @"cellFour";
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
     //1添加动画
 //    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
->>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
 }
 //动画实现
 - (void)startAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
@@ -170,8 +163,6 @@ static NSString *cellFour = @"cellFour";
     [imaV.layer addAnimation:key forKey:@"keyAmimation"];
     [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
     [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
-
-<<<<<<< HEAD
 }
 //结束动画后操作
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
@@ -193,7 +184,7 @@ static NSString *cellFour = @"cellFour";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-=======
+
 //#pragma mark - 添加下拉刷新
 //- (void)getRefresh{
 //    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
@@ -207,7 +198,7 @@ static NSString *cellFour = @"cellFour";
 //- (void)didReceiveMemoryWarning {
 //    [super didReceiveMemoryWarning];
 //}
->>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
+
 
 /*
 #pragma mark - Navigation
