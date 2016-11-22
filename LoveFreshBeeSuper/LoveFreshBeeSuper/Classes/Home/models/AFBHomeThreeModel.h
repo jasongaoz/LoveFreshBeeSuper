@@ -16,4 +16,7 @@
 @property(nonatomic,copy)NSString *market_price;
 @property(nonatomic,copy)NSString *partner_price;
 
+//购买一个商品的个数。
+@property(nonatomic,assign)NSInteger buyCount;
+
 @end

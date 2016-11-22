@@ -111,8 +111,6 @@ typedef enum : NSUInteger {
     
 }
 - (void)setAlpth:(CGFloat)alpth{
-    NSLog(@"%f",alpth);
-    
     self.backgroundColor = [UIColor ay_colorWithR:254 G:222 B:50 alpha:alpth];
     if (alpth>0) {
         self.leftView.transform = CGAffineTransformMakeScale(alpth+1, alpth+1);
@@ -151,9 +149,7 @@ typedef enum : NSUInteger {
         }
     }
 }
-- (void)dealloc{
-    NSLog(@"navigationbar");
-}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

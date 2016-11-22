@@ -29,6 +29,7 @@
     self.partnerPriceLabel.text = dataModel.partner_price;
 //    self.marketPriceLabel.text = dataModel.market_price;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:dataModel.img]];
+    //中划线
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
     
     NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:dataModel.market_price attributes:attribtDic];
