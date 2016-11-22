@@ -97,7 +97,7 @@ static NSString *rightHeader = @"rightHeader";
     
     //获取热搜关键字
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        //        NSLog(@"====%@",dicH[@"hotquery"]);
+ 
         _searchKeyWord = dicH[@"hotquery"];
     }];
     
@@ -275,7 +275,7 @@ static NSString *rightHeader = @"rightHeader";
         
         AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
         goodsDetailVC.model = _rightDataList[indexPath.row];
-        NSLog(@"%zd",[goodsDetailVC.model.product_id integerValue]);
+
         [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }

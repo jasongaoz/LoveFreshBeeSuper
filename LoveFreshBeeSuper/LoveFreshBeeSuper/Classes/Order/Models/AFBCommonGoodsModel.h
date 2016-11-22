@@ -22,5 +22,8 @@
 @property(nonatomic, copy) NSNumber * store_nums;//库存
 
 
+//购买数量
+@property(nonatomic,assign)NSInteger buyCount;
+
 
 @end
