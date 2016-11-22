@@ -15,6 +15,7 @@
 #import "AFBHomeSecondModel.h"
 #import "AFBHomeThreeModel.h"
 #import "AFBHomeFourCell.h"
+#import "UITabBar+AFBBage.h"
 
 #import <SVProgressHUD.h>
 #import <MJRefresh.h>
@@ -30,7 +31,9 @@ static NSString *cellFour = @"cellFour";
     NSMutableArray *_imageArray;
     NSArray *_modelList;
     NSArray *_threeModelList;
+    NSMutableArray<AFBHomeThreeModel *> *_seletedArray;
 }
+
 //重新init方法
 - (instancetype)init{
     AFBHomeFlowLayout *layout = [[AFBHomeFlowLayout alloc]init];
@@ -39,7 +42,12 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
+    _seletedArray = [NSMutableArray array];
+    [self getRefresh];
+=======
 //    [self getRefresh];
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,6 +90,27 @@ static NSString *cellFour = @"cellFour";
     [SVProgressHUD dismiss];
 }
 
+<<<<<<< HEAD
+#pragma mark - 实现代理方法传输数据
+- (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell withAddModel:(AFBHomeThreeModel *)Model withStartPoint:(CGPoint)startp{
+    //1动画
+    [self startAnimationWithStartPoint:startp cell:homeThreeCell];
+    //2数据
+    if (![_seletedArray containsObject:Model]) {
+        [_seletedArray addObject:Model];
+    }
+    //总的商品个数
+    if (_modelList) {
+        __block NSInteger countAll = 0;
+        [_seletedArray enumerateObjectsUsingBlock:^(AFBHomeThreeModel * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            countAll += obj.buyCount;
+        }];
+        NSString *countStr = [NSString stringWithFormat:@"%zd",countAll];
+        [self.tabBarController.tabBar showBadgeOnItemIndex:2 withBadge:countStr];
+    }
+
+    
+=======
 #pragma mark - 设置顶部刷新
 - (void)headerRefresh{
     [self.collectionView reloadData];
@@ -94,44 +123,77 @@ static NSString *cellFour = @"cellFour";
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
     //1添加动画
 //    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
 }
-////添加动画方法
-//- (void)addAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
-//    
-////    UIView *view = [[UIView alloc]initWithFrame:cell.frame];
-////    [view.layer addSublayer:cell.layer];
-//    UIImageView *imV = [[UIImageView alloc]init];
-//    imV.image =
-//    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(view);
-//    }];
-//    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-//    [keyWindow addSubview:view];
-//    
-//    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-//    UIBezierPath *path = [UIBezierPath bezierPath];
-//    //起点
-//    [path moveToPoint:startP];
-//    //最高点
-//    CGPoint controlP = CGPointMake(startP.x, startP.y-100);
-//    //终点
-//    CGPoint endP = CGPointMake(300, [UIScreen mainScreen].bounds.size.height-40);
-//    
-//    [path addQuadCurveToPoint:endP controlPoint:controlP];
-//    
-//    key.path = path.CGPath;
-//    key.duration = 1;
-//    key.delegate =self;
-//    
-//    [key setValue:view forKey:@"key"];
-//    
-//    [view.layer addAnimation:key forKey:@"keyAmimation"];
-//    
-//}
+//动画实现
+- (void)startAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
+    UIImage *ima = cell.imageView.image;
+    UIImageView *imaV = [[UIImageView alloc]initWithImage:ima];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:imaV];
+    imaV.center = startP;
+    imaV.bounds = CGRectMake(0, 0, 160, 160);
+    
+    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    CABasicAnimation *basicScale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    CABasicAnimation *basicOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //keyAnimation
+    CGFloat wigth = [UIScreen mainScreen].bounds.size.width/8;
+    CGFloat endX = wigth*5;
+    [path moveToPoint:startP];
+    CGPoint controlP = CGPointMake(startP.x, startP.y-200);
+    CGPoint endP = CGPointMake(endX, [UIScreen mainScreen].bounds.size.height-40);
+    [path addQuadCurveToPoint:endP controlPoint:controlP];
+    key.path = path.CGPath;
+    key.duration = 1;
+    [key setValue:imaV forKey:@"key"];
+    key.removedOnCompletion = NO;
+    key.fillMode = kCAFillModeForwards;
+    
+    //basicScale
+    basicScale.fromValue = @(1);
+    basicScale.toValue = @(0.1);
+    basicScale.duration = 1;
+    basicScale.removedOnCompletion = NO;
+    basicScale.fillMode = kCAFillModeForwards;
+    
+    //basicOpacity
+    basicOpacity.duration = 1;
+    basicOpacity.fromValue = @(1);
+    basicOpacity.toValue = @(0.5);
+    basicOpacity.removedOnCompletion = NO;
+    basicOpacity.fillMode = kCAFillModeForwards;
+    
+    //添加动画
+    key.delegate = self;
+    [imaV.layer addAnimation:key forKey:@"keyAmimation"];
+    [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
+    [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
 
-#pragma mark - 动画结束后将空间移除window
+<<<<<<< HEAD
+}
+//结束动画后操作
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    UIImageView *imaV = [anim valueForKey:@"key"];
+    [imaV removeFromSuperview];
+    //给购物车赋值
+    
+}
+#pragma mark - 添加下拉刷新
+- (void)getRefresh{
+    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+    [self.collectionView addSubview:refresh];
 
+    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+    
+    [refresh setAttributedTitle:arrStr];
+}
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+=======
 //#pragma mark - 添加下拉刷新
 //- (void)getRefresh{
 //    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
@@ -145,6 +207,7 @@ static NSString *cellFour = @"cellFour";
 //- (void)didReceiveMemoryWarning {
 //    [super didReceiveMemoryWarning];
 //}
+>>>>>>> c03c44e0e72cd6d61ee892c49a784ec3ac702c13
 
 /*
 #pragma mark - Navigation
@@ -283,6 +346,10 @@ static NSString *cellFour = @"cellFour";
     if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
         [self.delegate getAlpha:alpth];
     }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",indexPath);
 }
 
 /*

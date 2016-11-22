@@ -13,7 +13,7 @@
 
 @protocol AFBHomeThreeCellDelegate <NSObject>
 
-- (void)homeThreeCell:(AFBHomeThreeCell*)homeThreeCell startP:(CGPoint)startP;
+- (void)homeThreeCell:(AFBHomeThreeCell*)homeThreeCell withAddModel:(AFBHomeThreeModel *)Model withStartPoint:(CGPoint)startp;
 
 @end
 @interface AFBHomeThreeCell : UICollectionViewCell
