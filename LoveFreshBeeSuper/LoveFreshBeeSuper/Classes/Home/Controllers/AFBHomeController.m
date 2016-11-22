@@ -63,6 +63,7 @@
 
 #pragma mark - 搭建界面
 - (void)setupUI{
+    
     self.navigationItem.title = @"首页";
     //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];

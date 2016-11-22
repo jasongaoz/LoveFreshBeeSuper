@@ -30,8 +30,8 @@
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
-    
 }
+
 - (void)clickButton:(UIButton *)sender{
     
 }
