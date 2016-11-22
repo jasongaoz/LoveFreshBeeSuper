@@ -39,7 +39,7 @@ static NSString *cellFour = @"cellFour";
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.top.offset(-20);
+        make.top.offset(0);
     }];
     // 加载数据
     [self loadData];

@@ -51,6 +51,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"扫一扫";
+    [self.navigationController setNavigationBarHidden:NO];
     self.view.backgroundColor = [UIColor grayColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
