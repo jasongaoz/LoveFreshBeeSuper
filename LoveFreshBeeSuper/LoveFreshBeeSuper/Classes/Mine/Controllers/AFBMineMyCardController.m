@@ -7,8 +7,9 @@
 //
 
 #import "AFBMineMyCardController.h"
+#import "AFBMyCardCell.h"
 
-@interface AFBMineMyCardController ()
+@interface AFBMineMyCardController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -39,7 +40,10 @@
     UITableView *cardTableView = [[UITableView alloc] init];
     cardTableView.rowHeight = 80;
     [self.view addSubview:cardTableView];
+    cardTableView.delegate = self;
+    cardTableView.dataSource = self;
     
+    [cardTableView registerClass:[AFBMyCardCell class] forCellReuseIdentifier:@"cardCell"];
     // 设置约束
     [cardView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
@@ -100,12 +104,7 @@
     }];
     return cardView;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+// 按钮的点击事件
 - (void)clickrightBtn:(UIBarButtonItem *)btn
 {
     NSLog(@"我是使用规则");
@@ -115,14 +114,22 @@
     [self popoverPresentationController];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - 代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    AFBMyCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
+    
+    return cell;
+    
+}
 
 @end
