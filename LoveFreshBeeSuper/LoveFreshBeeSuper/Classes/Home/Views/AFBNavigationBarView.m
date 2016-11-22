@@ -16,6 +16,12 @@
 @property(nonatomic,weak)UIButton *centerButton;
 
 @end
+
+typedef enum : NSUInteger {
+    kBtnLeft = 1,
+    kBtnRight = 2
+} kBtnState;
+
 @implementation AFBNavigationBarView
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -51,17 +57,21 @@
     [buttonLeft setImage:[UIImage imageNamed:@"icon_white_scancode"] forState:UIControlStateNormal];
     [self addSubview:buttonLeft];
     self.leftButton = buttonLeft;
+    buttonLeft.tag = 1;
+    [buttonLeft addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonRight = [[UIButton alloc]init];
     [buttonRight setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateHighlighted];
     [buttonRight setImage:[UIImage imageNamed:@"UMS_find"] forState:UIControlStateNormal];
     [self addSubview:buttonRight];
     self.rightButton = buttonLeft;
+    buttonRight.tag = 2;
+    [buttonRight addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonCenter = [[UIButton alloc]init];
     [buttonCenter setTitle:@"配送到：西三旗众腾建华大厦，建材西路23" forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     buttonCenter.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:buttonCenter];
     self.centerButton = buttonCenter;
@@ -101,6 +111,8 @@
     
 }
 - (void)setAlpth:(CGFloat)alpth{
+    NSLog(@"%f",alpth);
+    
     self.backgroundColor = [UIColor ay_colorWithR:254 G:222 B:50 alpha:alpth];
     if (alpth>0) {
         self.leftView.transform = CGAffineTransformMakeScale(alpth+1, alpth+1);
@@ -113,21 +125,35 @@
     if (alpth>=0.5) {
         [self.leftButton setHighlighted:YES];
         [self.centerButton setHighlighted:YES];
+        [self.rightButton setHighlighted:YES];
     }else{
         [self.leftButton setHighlighted:NO];
         [self.centerButton setHighlighted:NO];
+        [self.rightButton setHighlighted:NO];
     }
-//    if (alpth<0) {
-//        self.leftButton.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//        self.leftView.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//    }
 
 }
 
+
+#pragma mark - 实现案件点击事件
+- (void)clickBtn:(UIButton *)sender{
+    if ([_delegate respondsToSelector:@selector(clickLeftButton)]
+        || [_delegate respondsToSelector:@selector(clickRightButton)]) {
+        switch (sender.tag) {
+            case kBtnLeft:
+                [_delegate clickLeftButton];
+                break;
+            case kBtnRight:
+                [_delegate clickRightButton];
+                break;
+            default:
+                break;
+        }
+    }
+}
+- (void)dealloc{
+    NSLog(@"navigationbar");
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

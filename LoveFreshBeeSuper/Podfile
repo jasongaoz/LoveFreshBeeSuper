@@ -17,4 +17,5 @@ target 'LoveFreshBeeSuper' do
     pod 'SVProgressHUD'
     pod 'SDCycleScrollView'
     pod 'PYSearch'
+    pod 'MJRefresh'
 end

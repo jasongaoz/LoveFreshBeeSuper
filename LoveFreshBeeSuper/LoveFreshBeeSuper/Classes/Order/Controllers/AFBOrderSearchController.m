@@ -1,4 +1,4 @@
-//
+ //
 //  AFBOrderSearchController.m
 //  LoveFreshBee
 //
@@ -7,7 +7,6 @@
 //
 
 #import "AFBOrderSearchController.h"
-#import "AFBOrderSearchHeadView.h"
 #import "AFBHomeCollectionController.h"
 #import "AFBHomeFlowLayout.h"
 #import "AFBHomeThreeCell.h"
@@ -80,7 +79,6 @@ static NSString *cellThree = @"cellThree";
     cell.backgroundColor = [UIColor whiteColor];
     AFBHomeThreeModel *model = _threeModelList[indexPath.row];
     cell.model = model;
-    //    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"抽奖"]];
     
     return cell;
 }

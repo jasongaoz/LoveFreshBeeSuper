@@ -19,10 +19,14 @@
 #import "AFBSweepViewController.h"
 #import "AFBCommonGoodsModel.h"
 #import <PYSearch.h>
+
 #import "AFBOrderGoodsArrangeView.h"
 
 #define kTopHeight 64
 #define kWidth [UIScreen ay_screenWidth]/4
+
+#import "AFBOrderGoodsDetailController.h"
+
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -87,7 +91,7 @@ static NSString *rightHeader = @"rightHeader";
     
     //获取热搜关键字
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        NSLog(@"====%@",dicH[@"hotquery"]);
+//        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWord = dicH[@"hotquery"];
     }];
     
@@ -208,6 +212,8 @@ static NSString *rightHeader = @"rightHeader";
         [_rightTableView reloadData];
     }else{
         NSLog(@"push到相对应页面");
+        AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
+        [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }
 
