@@ -8,7 +8,7 @@
 
 #import "AFBOrderRightTableView.h"
 #import "AFBOrderRightTableViewFootView.h"
-#import "AFBOrderGoodsArrangeView.h"
+
 
 
 @implementation AFBOrderRightTableView
@@ -25,7 +25,7 @@
     self.rowHeight = 80;
     self.tableFooterView = [[AFBOrderRightTableViewFootView alloc]initWithFrame:CGRectMake(0, 0, self.width, 80)];
     self.contentInset = UIEdgeInsetsMake(0, 0, 40, 0);
-    self.tableHeaderView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(0, 0, self.width, 40)];
+//    self.tableHeaderView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(0, 0, self.width, 40)];
 }
 
 @end

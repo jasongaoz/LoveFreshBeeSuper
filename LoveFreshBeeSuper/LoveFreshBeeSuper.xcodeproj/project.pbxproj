@@ -71,14 +71,23 @@
 		213462401DE2EAC2005E6F44 /* AFBCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2134623F1DE2EAC2005E6F44 /* AFBCommentController.m */; };
 		213462441DE31685005E6F44 /* AFBCommentTopListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213462421DE31685005E6F44 /* AFBCommentTopListCell.m */; };
 		213462451DE31685005E6F44 /* AFBCommentTopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213462431DE31685005E6F44 /* AFBCommentTopListCell.xib */; };
-		2302F2EF1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */; };
 		23EA0C791DE1D71B00638F6D /* AFBOrderLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */; };
 		23F880EE1DE2AA74000F2A91 /* AFBCommonGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */; };
+		23FE50C31DE4155700C59B12 /* AFBPriceArrangeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE50BF1DE4155700C59B12 /* AFBPriceArrangeControl.m */; };
+		23FE50C41DE4155700C59B12 /* AFBPriceArrangeControlText.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE50C11DE4155700C59B12 /* AFBPriceArrangeControlText.m */; };
+		23FE50C51DE4155700C59B12 /* AFBPriceArrangeControlText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */; };
+		23FE50C81DE4159D00C59B12 /* AFBOrderCommonControlBut.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */; };
 		2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */; };
 		2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EF8CB1DE1AD77006EC1F0 /* AFBMineMyCardController.m */; };
 		2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9491DE2D05D000A1719 /* MineModel.m */; };
 		2A92B9541DE2D363000A1719 /* AFBHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9511DE2D363000A1719 /* AFBHelpController.m */; };
 		2A92B9551DE2D363000A1719 /* AFBMyMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A92B9531DE2D363000A1719 /* AFBMyMessageController.m */; };
+
+		32DDBBDE1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */; };
+		32DDBBE11DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */; };
+		32DDBBE31DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */; };
+		32DDBBE61DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBE51DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.m */; };
+
 		2AC3FD761DE3F6EE006D7CAB /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD751DE3F6EE006D7CAB /* TopView.m */; };
 		2AC3FD7D1DE3F77F006D7CAB /* AFBHolderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD781DE3F77F006D7CAB /* AFBHolderView.m */; };
 		2AC3FD7E1DE3F77F006D7CAB /* AFBMyCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD7A1DE3F77F006D7CAB /* AFBMyCardCell.m */; };
@@ -87,9 +96,8 @@
 		2AC3FD891DE3F7C5006D7CAB /* AFBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD841DE3F7C5006D7CAB /* AFBWebViewController.m */; };
 		2AC3FD8A1DE3F7C5006D7CAB /* SystemMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */; };
 		2AC3FD8B1DE3F7C5006D7CAB /* UserMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */; };
+
 		32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */; };
-		32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */; };
-		32E2AEA41DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */; };
 		3E0A645B2979DF7F6855365E /* libPods-LoveFreshBeeSuper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7A0DD64C29D4B8D8C248FE /* libPods-LoveFreshBeeSuper.a */; };
 		46EDF8F31DE2FC5D00C98ECB /* AFBOrderFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EDF8F21DE2FC5D00C98ECB /* AFBOrderFormController.m */; };
 		46EDF8F61DE2FC8100C98ECB /* AFBOrderFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EDF8F51DE2FC8100C98ECB /* AFBOrderFormModel.m */; };
@@ -222,12 +230,17 @@
 		213462411DE31685005E6F44 /* AFBCommentTopListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBCommentTopListCell.h; sourceTree = "<group>"; };
 		213462421DE31685005E6F44 /* AFBCommentTopListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBCommentTopListCell.m; sourceTree = "<group>"; };
 		213462431DE31685005E6F44 /* AFBCommentTopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBCommentTopListCell.xib; sourceTree = "<group>"; };
-		2302F2ED1DE34E750053DD7B /* AFBOrderGoodsArrangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsArrangeView.h; sourceTree = "<group>"; };
-		2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsArrangeView.m; sourceTree = "<group>"; };
 		23EA0C771DE1D71B00638F6D /* AFBOrderLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderLeftModel.h; sourceTree = "<group>"; };
 		23EA0C781DE1D71B00638F6D /* AFBOrderLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderLeftModel.m; sourceTree = "<group>"; };
 		23F880EC1DE2AA74000F2A91 /* AFBCommonGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBCommonGoodsModel.h; sourceTree = "<group>"; };
 		23F880ED1DE2AA74000F2A91 /* AFBCommonGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBCommonGoodsModel.m; sourceTree = "<group>"; };
+		23FE50BE1DE4155700C59B12 /* AFBPriceArrangeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBPriceArrangeControl.h; sourceTree = "<group>"; };
+		23FE50BF1DE4155700C59B12 /* AFBPriceArrangeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBPriceArrangeControl.m; sourceTree = "<group>"; };
+		23FE50C01DE4155700C59B12 /* AFBPriceArrangeControlText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBPriceArrangeControlText.h; sourceTree = "<group>"; };
+		23FE50C11DE4155700C59B12 /* AFBPriceArrangeControlText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBPriceArrangeControlText.m; sourceTree = "<group>"; };
+		23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBPriceArrangeControlText.xib; sourceTree = "<group>"; };
+		23FE50C61DE4159D00C59B12 /* AFBOrderCommonControlBut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderCommonControlBut.h; sourceTree = "<group>"; };
+		23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderCommonControlBut.m; sourceTree = "<group>"; };
 		2A1EF8C81DE1AD77006EC1F0 /* AFBAlerShardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBAlerShardController.h; sourceTree = "<group>"; };
 		2A1EF8C91DE1AD77006EC1F0 /* AFBAlerShardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBAlerShardController.m; sourceTree = "<group>"; };
 		2A1EF8CA1DE1AD77006EC1F0 /* AFBMineMyCardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMineMyCardController.h; sourceTree = "<group>"; };
@@ -239,6 +252,15 @@
 		2A92B9511DE2D363000A1719 /* AFBHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHelpController.m; sourceTree = "<group>"; };
 		2A92B9521DE2D363000A1719 /* AFBMyMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBMyMessageController.h; sourceTree = "<group>"; };
 		2A92B9531DE2D363000A1719 /* AFBMyMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBMyMessageController.m; sourceTree = "<group>"; };
+
+		32DDBBDC1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsArrangeView.h; sourceTree = "<group>"; };
+		32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsArrangeView.m; sourceTree = "<group>"; };
+		32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsDetailsHeadView.h; sourceTree = "<group>"; };
+		32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsDetailsHeadView.m; sourceTree = "<group>"; };
+		32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBOrderGoodsDetailsHeadView.xib; sourceTree = "<group>"; };
+		32DDBBE41DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsDetailController.h; sourceTree = "<group>"; };
+		32DDBBE51DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsDetailController.m; sourceTree = "<group>"; };
+
 		2AC3FD741DE3F6EE006D7CAB /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
 		2AC3FD751DE3F6EE006D7CAB /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		2AC3FD771DE3F77F006D7CAB /* AFBHolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHolderView.h; sourceTree = "<group>"; };
@@ -255,12 +277,10 @@
 		2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMessageController.m; sourceTree = "<group>"; };
 		2AC3FD871DE3F7C5006D7CAB /* UserMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageController.h; sourceTree = "<group>"; };
 		2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageController.m; sourceTree = "<group>"; };
+
 		32E2AE9C1DE1A105003E34D3 /* AFB.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFB.pch; sourceTree = "<group>"; };
 		32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderSearchController.h; sourceTree = "<group>"; };
 		32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderSearchController.m; sourceTree = "<group>"; };
-		32E2AEA01DE1A5D7003E34D3 /* AFBOrderSearchHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderSearchHeadView.h; sourceTree = "<group>"; };
-		32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderSearchHeadView.m; sourceTree = "<group>"; };
-		32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFBOrderSearchHeadView.xib; sourceTree = "<group>"; };
 		46EDF8F11DE2FC5D00C98ECB /* AFBOrderFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderFormController.h; sourceTree = "<group>"; };
 		46EDF8F21DE2FC5D00C98ECB /* AFBOrderFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderFormController.m; sourceTree = "<group>"; };
 		46EDF8F41DE2FC8100C98ECB /* AFBOrderFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderFormModel.h; sourceTree = "<group>"; };
@@ -537,6 +557,8 @@
 				213140661DE19958002F7787 /* AFBOrderController.m */,
 				32E2AE9D1DE1A561003E34D3 /* AFBOrderSearchController.h */,
 				32E2AE9E1DE1A561003E34D3 /* AFBOrderSearchController.m */,
+				32DDBBE41DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.h */,
+				32DDBBE51DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -544,6 +566,12 @@
 		213140671DE19958002F7787 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+
+				23FE51491DE42D8200C59B12 /* common */,
+				23FE51481DE42D6400C59B12 /* right */,
+				23FE51471DE42D3E00C59B12 /* left */,
+				23FE514A1DE42DB500C59B12 /* Other */,
+
 				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
 				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
 				2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */,
@@ -558,11 +586,12 @@
 				213140731DE19958002F7787 /* AFBOrderRightTableView.m */,
 				213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */,
 				213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */,
-				32E2AEA01DE1A5D7003E34D3 /* AFBOrderSearchHeadView.h */,
-				32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */,
-				32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */,
-				2302F2ED1DE34E750053DD7B /* AFBOrderGoodsArrangeView.h */,
-				2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */,
+				32DDBBDC1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.h */,
+				32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */,
+				32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */,
+				32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */,
+				32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */,
+
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -670,6 +699,60 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		23FE51471DE42D3E00C59B12 /* left */ = {
+			isa = PBXGroup;
+			children = (
+				2131406B1DE19958002F7787 /* AFBOrderLeftCell.h */,
+				2131406C1DE19958002F7787 /* AFBOrderLeftCell.m */,
+				2131406D1DE19958002F7787 /* AFBOrderLeftTableView.h */,
+				2131406E1DE19958002F7787 /* AFBOrderLeftTableView.m */,
+			);
+			name = left;
+			sourceTree = "<group>";
+		};
+		23FE51481DE42D6400C59B12 /* right */ = {
+			isa = PBXGroup;
+			children = (
+				213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */,
+				213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */,
+				2131406F1DE19958002F7787 /* AFBOrderRightCell.h */,
+				213140701DE19958002F7787 /* AFBOrderRightCell.m */,
+				213140711DE19958002F7787 /* AFBOrderRightCell.xib */,
+				213140721DE19958002F7787 /* AFBOrderRightTableView.h */,
+				213140731DE19958002F7787 /* AFBOrderRightTableView.m */,
+				2302F2ED1DE34E750053DD7B /* AFBOrderGoodsArrangeView.h */,
+				2302F2EE1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m */,
+				23FE50C61DE4159D00C59B12 /* AFBOrderCommonControlBut.h */,
+				23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */,
+				23FE50BE1DE4155700C59B12 /* AFBPriceArrangeControl.h */,
+				23FE50BF1DE4155700C59B12 /* AFBPriceArrangeControl.m */,
+				23FE50C01DE4155700C59B12 /* AFBPriceArrangeControlText.h */,
+				23FE50C11DE4155700C59B12 /* AFBPriceArrangeControlText.m */,
+				23FE50C21DE4155700C59B12 /* AFBPriceArrangeControlText.xib */,
+			);
+			name = right;
+			sourceTree = "<group>";
+		};
+		23FE51491DE42D8200C59B12 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
+				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
+				2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		23FE514A1DE42DB500C59B12 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				32E2AEA01DE1A5D7003E34D3 /* AFBOrderSearchHeadView.h */,
+				32E2AEA11DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m */,
+				32E2AEA21DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		2A92B9471DE2D05D000A1719 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,13 +857,14 @@
 			files = (
 				2134622F1DE2A8A4005E6F44 /* AFBShopCarSupermarkerCell.xib in Resources */,
 				2134622D1DE2A8A4005E6F44 /* AFBShopCarFisrtCell.xib in Resources */,
-				32E2AEA41DE1A5D7003E34D3 /* AFBOrderSearchHeadView.xib in Resources */,
 				213462451DE31685005E6F44 /* AFBCommentTopListCell.xib in Resources */,
 				2134623A1DE2C09F005E6F44 /* AFBCouDanCell.xib in Resources */,
+				32DDBBE31DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib in Resources */,
 				213140251DE191A2002F7787 /* LaunchScreen.storyboard in Resources */,
 				213140A71DE19958002F7787 /* AFBOrderRightCell.xib in Resources */,
 				213140221DE191A2002F7787 /* Assets.xcassets in Resources */,
 				213462281DE2A8A4005E6F44 /* AFBAdressTimeCell.xib in Resources */,
+				23FE50C51DE4155700C59B12 /* AFBPriceArrangeControlText.xib in Resources */,
 				213140A31DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,7 +924,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				23FE50C31DE4155700C59B12 /* AFBPriceArrangeControl.m in Sources */,
 				32E2AEA31DE1A5D7003E34D3 /* AFBOrderSearchHeadView.m in Sources */,
+
 				2A1EF8CC1DE1AD77006EC1F0 /* AFBAlerShardController.m in Sources */,
 				2AC3FD7F1DE3F77F006D7CAB /* SystemMessageCell.m in Sources */,
 				2A92B94A1DE2D05D000A1719 /* MineModel.m in Sources */,
@@ -854,9 +941,13 @@
 				213462271DE2A8A4005E6F44 /* AFBAdressTimeCell.m in Sources */,
 				2131409F1DE19958002F7787 /* AFBMineController.m in Sources */,
 				213140951DE19958002F7787 /* AFBHomeController.m in Sources */,
+
+
 				2AC3FD821DE3F796006D7CAB /* SystemMessageModel.h.m in Sources */,
 				2302F2EF1DE34E750053DD7B /* AFBOrderGoodsArrangeView.m in Sources */,
+
 				2131409B1DE19958002F7787 /* AFBBaseNavgationController.m in Sources */,
+				32DDBBE61DE3F4D300C0DD02 /* AFBOrderGoodsDetailController.m in Sources */,
 				0A71EB9B1DE347F800F10DC6 /* AFBNavigationBarView.m in Sources */,
 				213140A21DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m in Sources */,
 				213140B41DE19958002F7787 /* UIView+Addition.m in Sources */,
@@ -867,6 +958,7 @@
 				2AC3FD891DE3F7C5006D7CAB /* AFBWebViewController.m in Sources */,
 				2A1EF8CD1DE1AD77006EC1F0 /* AFBMineMyCardController.m in Sources */,
 				213140B51DE19958002F7787 /* UIView+Frame.m in Sources */,
+				32DDBBDE1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m in Sources */,
 				0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */,
 				23F880EE1DE2AA74000F2A91 /* AFBCommonGoodsModel.m in Sources */,
 				213140A61DE19958002F7787 /* AFBOrderRightCell.m in Sources */,
@@ -894,6 +986,7 @@
 				2134622C1DE2A8A4005E6F44 /* AFBShopCarFisrtCell.m in Sources */,
 				2AC3FD7D1DE3F77F006D7CAB /* AFBHolderView.m in Sources */,
 				1B389C2E1DE3217C0042F99D /* AFBBeeViewController.m in Sources */,
+				32DDBBE11DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m in Sources */,
 				213140201DE191A2002F7787 /* LoveFreshBeeSuper.xcdatamodeld in Sources */,
 				2131409E1DE19958002F7787 /* AFBBaseViewController.m in Sources */,
 				46EDF9051DE2FDE900C98ECB /* AFBEditAddressCell.m in Sources */,
@@ -903,8 +996,10 @@
 				0A6C380F1DE1BEFE00DEAFDB /* AFBHomeThreeCell.m in Sources */,
 				213140AC1DE19958002F7787 /* NSArray+Log.m in Sources */,
 				213140AB1DE19958002F7787 /* NSArray+Addition.m in Sources */,
+				23FE50C41DE4155700C59B12 /* AFBPriceArrangeControlText.m in Sources */,
 				0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */,
 				213140A01DE19958002F7787 /* AFBMineTableViewCell.m in Sources */,
+				23FE50C81DE4159D00C59B12 /* AFBOrderCommonControlBut.m in Sources */,
 				0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */,
 				2AC3FD8A1DE3F7C5006D7CAB /* SystemMessageController.m in Sources */,
 				1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */,

@@ -70,8 +70,8 @@ typedef enum : NSUInteger {
     
     UIButton *buttonCenter = [[UIButton alloc]init];
     [buttonCenter setTitle:@"配送到：西三旗众腾建华大厦，建材西路23" forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     buttonCenter.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:buttonCenter];
     self.centerButton = buttonCenter;
@@ -111,6 +111,8 @@ typedef enum : NSUInteger {
     
 }
 - (void)setAlpth:(CGFloat)alpth{
+    NSLog(@"%f",alpth);
+    
     self.backgroundColor = [UIColor ay_colorWithR:254 G:222 B:50 alpha:alpth];
     if (alpth>0) {
         self.leftView.transform = CGAffineTransformMakeScale(alpth+1, alpth+1);
@@ -123,18 +125,12 @@ typedef enum : NSUInteger {
     if (alpth>=0.5) {
         [self.leftButton setHighlighted:YES];
         [self.centerButton setHighlighted:YES];
+        [self.rightButton setHighlighted:YES];
     }else{
         [self.leftButton setHighlighted:NO];
         [self.centerButton setHighlighted:NO];
+        [self.rightButton setHighlighted:NO];
     }
-//    if (alpth<0) {
-//        self.leftButton.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//        self.leftView.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//    }
 
 }
 
@@ -154,6 +150,9 @@ typedef enum : NSUInteger {
                 break;
         }
     }
+}
+- (void)dealloc{
+    NSLog(@"navigationbar");
 }
 
 /*

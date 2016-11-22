@@ -13,6 +13,7 @@
 @property(nonatomic,copy)NSString *img;
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,copy)NSString *specifics;
-
+@property(nonatomic,copy)NSString *market_price;
+@property(nonatomic,copy)NSString *partner_price;
 
 @end
