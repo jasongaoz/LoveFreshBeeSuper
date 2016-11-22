@@ -40,7 +40,6 @@
 }
 #pragma mark - 自定义navigationbar
 - (void)viewWillAppear:(BOOL)animated{
-    
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     AFBNavigationBarView *view = [[AFBNavigationBarView alloc]init];
@@ -54,6 +53,9 @@
         make.height.mas_equalTo(64);
     }];
 }
+- (void)viewDidDisappear:(BOOL)animated{
+    [self.naviView removeFromSuperview];
+}
 
 - (void)getAlpha:(CGFloat)alpha{
     self.naviView.alpth = alpha;
@@ -62,7 +64,6 @@
 #pragma mark - 搭建界面
 - (void)setupUI{
     self.navigationItem.title = @"首页";
-    
     //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
     collVc.delegate = self;
@@ -75,7 +76,6 @@
 
     //MARK:添加NavigationItem
 //    [self addNavigationItem];
-    
     
     [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
 //        NSLog(@"%@",arrayH);

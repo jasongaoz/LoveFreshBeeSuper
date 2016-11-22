@@ -113,7 +113,7 @@
 }
 //button点击事件
 - (void)clickButton:(UIButton *)sender{
-    //1坐标转换
+#pragma mark - 动画
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     _startP = [self convertPoint:self.imageView.center toView:window];
 
@@ -160,6 +160,9 @@
     [imaV.layer addAnimation:key forKey:@"keyAmimation"];
     [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
     [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
+    
+#pragma mark - 数据传递
+    
     
 }
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{

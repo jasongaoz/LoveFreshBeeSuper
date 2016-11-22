@@ -111,6 +111,7 @@ typedef enum : NSUInteger {
     
 }
 - (void)setAlpth:(CGFloat)alpth{
+    NSLog(@"%f",alpth);
     
     self.backgroundColor = [UIColor ay_colorWithR:254 G:222 B:50 alpha:alpth];
     if (alpth>0) {
@@ -149,6 +150,9 @@ typedef enum : NSUInteger {
                 break;
         }
     }
+}
+- (void)dealloc{
+    NSLog(@"navigationbar");
 }
 
 /*
