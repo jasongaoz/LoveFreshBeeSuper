@@ -22,6 +22,8 @@
 @property(nonatomic,weak)UIImageView *selectView;
 @property(nonatomic,weak)UIImageView *payView;
 @property(nonatomic,weak)UILabel *countLabel;
+@property(nonatomic,weak)UILabel *partner_price;
+@property(nonatomic,weak)UILabel *market_price;
 
 @property(nonatomic,strong)AFBHomeThreeModel *model;
 //动画开始起点

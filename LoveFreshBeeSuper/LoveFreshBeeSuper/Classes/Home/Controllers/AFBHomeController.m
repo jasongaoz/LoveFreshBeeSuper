@@ -47,6 +47,7 @@
         make.height.mas_equalTo(64);
     }];
 }
+
 - (void)getAlpha:(CGFloat)alpha{
     self.naviView.alpth = alpha;
 }
