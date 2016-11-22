@@ -27,4 +27,9 @@
 - (void)getMineMessageDataWithconpleteBlock:(void(^)(NSArray *dataArray))completeBlock;
 - (void)getMineAdressDataWithconpleteBlock:(void(^)(NSArray *dataArray))completeBlock;
 
+//异步获取搜索出的数据
+- (void)getSearchDataParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH))completeBlock;
+//异步获取热门搜索的关键字数据
+- (void)getSearchKeyWordParameters:(NSNumber *)parameter CompleteBlock:(void(^)(NSDictionary *dicH))completeBlock;
+
 @end

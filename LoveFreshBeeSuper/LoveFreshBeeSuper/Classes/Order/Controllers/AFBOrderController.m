@@ -18,6 +18,7 @@
 #import <SVProgressHUD.h>
 #import "AFBSweepViewController.h"
 #import "AFBCommonGoodsModel.h"
+#import <PYSearch.h>
 
 static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
@@ -31,6 +32,10 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
     AFBOrderRightTableView * _rightTableView;
     NSArray<AFBOrderLeftModel *> * _leftDataList;
     NSArray<AFBCommonGoodsModel *> * _rightDataList;
+    
+    //热搜关键字数据
+    NSArray *_searchKeyWord;
+    
     NSMutableDictionary*_goodsDataDic;//右侧所有商品数据
     UIView *_bgImageView;//占位背景view
 }
@@ -74,6 +79,12 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
         
     }];
     
+    //获取热搜关键字
+    [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
+        NSLog(@"====%@",dicH[@"hotquery"]);
+        _searchKeyWord = dicH[@"hotquery"];
+    }];
+    
 }
 
 //MARK:添加 设置等待网络加载页面
@@ -111,9 +122,20 @@ static NSString *orderLeftCellID = @"orderLeftCellID";
 
 - (void)clickRightItem{
     
-    AFBOrderSearchController *vc = [[AFBOrderSearchController alloc] init];
+    //获取热度搜索关键字
     
-    [self.navigationController pushViewController:vc animated:YES];
+    NSArray *hotSeaches = _searchKeyWord;
+    
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入商品名称" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        
+        // 跳转到指定控制器
+        AFBOrderSearchController *vc = [[AFBOrderSearchController alloc] init];
+        
+        [searchViewController.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav  animated:NO completion:nil];
 }
 
 
