@@ -9,8 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "AFBHomeThreeModel.h"
 #import <UIImageView+WebCache.h>
+@class AFBHomeThreeCell;
 
+@protocol AFBHomeThreeCellDelegate <NSObject>
+
+- (void)homeThreeCell:(AFBHomeThreeCell*)homeThreeCell startP:(CGPoint)startP;
+
+@end
 @interface AFBHomeThreeCell : UICollectionViewCell
+@property(nonatomic,weak)UIImageView *imageView;
+@property(nonatomic,weak)UILabel *nameLabel;
+@property(nonatomic,weak)UIImageView *selectView;
+@property(nonatomic,weak)UIImageView *payView;
+@property(nonatomic,weak)UILabel *countLabel;
+
 @property(nonatomic,strong)AFBHomeThreeModel *model;
+//动画开始起点
+@property(nonatomic,assign)CGPoint startP;
+@property(nonatomic,weak)id<AFBHomeThreeCellDelegate> delegate;
 
 @end
