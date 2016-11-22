@@ -35,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];
