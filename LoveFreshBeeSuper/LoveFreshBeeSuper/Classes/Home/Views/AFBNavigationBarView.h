@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AFBNavigationBarViewDelegate <NSObject>
+
+- (void)clickLeftButton;
+- (void)clickRightButton;
+
+@end
+
+
 @interface AFBNavigationBarView : UIView
-@property(nonatomic,assign)CGFloat alpth;
+
+@property (nonatomic,assign) CGFloat alpth;
+
+@property (nonatomic,weak) id <AFBNavigationBarViewDelegate> delegate;
 
 @end

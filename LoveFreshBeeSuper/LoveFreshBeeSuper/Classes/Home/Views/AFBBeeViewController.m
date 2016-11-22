@@ -25,6 +25,8 @@
     
     self.navigationItem.title = @"蜂抱团";
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
     UIWebView * webView = [[UIWebView alloc] init];

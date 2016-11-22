@@ -16,7 +16,9 @@
 #import "AFBHomeThreeModel.h"
 #import "AFBHomeFourCell.h"
 
-@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate>
+#import <SVProgressHUD.h>
+
+@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
 @end
 static NSString *cellFrist = @"cellFrist";
@@ -24,7 +26,6 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
-    NSArray *_btnList;
     NSArray *_modelList;
     NSArray *_threeModelList;
 }
@@ -36,6 +37,8 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getRefresh];
+    [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
@@ -49,7 +52,64 @@ static NSString *cellFour = @"cellFour";
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
+#pragma mark - 添加动画
+//实现cell的代理方法
+- (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
+    //1添加动画
+//    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
     
+}
+////添加动画方法
+//- (void)addAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
+//    
+////    UIView *view = [[UIView alloc]initWithFrame:cell.frame];
+////    [view.layer addSublayer:cell.layer];
+//    UIImageView *imV = [[UIImageView alloc]init];
+//    imV.image =
+//    [cell mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(view);
+//    }];
+//    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+//    [keyWindow addSubview:view];
+//    
+//    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+//    UIBezierPath *path = [UIBezierPath bezierPath];
+//    //起点
+//    [path moveToPoint:startP];
+//    //最高点
+//    CGPoint controlP = CGPointMake(startP.x, startP.y-100);
+//    //终点
+//    CGPoint endP = CGPointMake(300, [UIScreen mainScreen].bounds.size.height-40);
+//    
+//    [path addQuadCurveToPoint:endP controlPoint:controlP];
+//    
+//    key.path = path.CGPath;
+//    key.duration = 1;
+//    key.delegate =self;
+//    
+//    [key setValue:view forKey:@"key"];
+//    
+//    [view.layer addAnimation:key forKey:@"keyAmimation"];
+//    
+//}
+
+#pragma mark - 动画结束后将空间移除window
+
+
+#pragma mark - 添加下拉刷新
+- (void)getRefresh{
+    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+    [self.collectionView addSubview:refresh];
+
+    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+    
+    [refresh setAttributedTitle:arrStr];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +140,8 @@ static NSString *cellFour = @"cellFour";
         _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
         [self.collectionView reloadData];
     }];
+    
+    [SVProgressHUD dismiss];
 }
 
 #pragma mark - 设置navigationController
@@ -131,7 +193,7 @@ static NSString *cellFour = @"cellFour";
         cell.backgroundColor = [UIColor whiteColor];
         AFBHomeThreeModel *model = _threeModelList[indexPath.row];
         cell.model = model;
-        
+        cell.delegate = self;
         return cell;
     }
     AFBHomeFourCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFour forIndexPath:indexPath];
@@ -142,17 +204,11 @@ static NSString *cellFour = @"cellFour";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CGFloat wigth = self.view.bounds.size.width;
-    
     if (indexPath.section == 0) {
-        
         return CGSizeMake(wigth, 200);
-        
     }else if (indexPath.section == 1){
-        
         return CGSizeMake(wigth-14, 120);
-        
     }else if (indexPath.section == 2){
-        
         CGFloat wigth2 = (self.view.bounds.size.width-2)/3;
         CGFloat height = 220;
         return CGSizeMake(wigth2,height);
@@ -197,7 +253,6 @@ static NSString *cellFour = @"cellFour";
     if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
         [self.delegate getAlpha:alpth];
     }
-    NSLog(@"alpth = %f,offY=%f",alpth,offY);
 }
 
 /*
