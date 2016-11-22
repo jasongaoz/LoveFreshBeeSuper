@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class AFBOrderCommonControlBut;
+@class AFBPriceArrangeControl;
+
 //排序模式
 typedef enum {
     
@@ -17,6 +20,12 @@ typedef enum {
     
 }ArrangeType;
 
-@interface AFBOrderGoodsArrangeView : UIControl
+@interface AFBOrderGoodsArrangeView : UIView
+
+@property(nonatomic, strong) UIButton * noumBut;
+@property(nonatomic, strong) AFBPriceArrangeControl * priceBut;
+@property(nonatomic, strong) UIButton * salesVolumeBut;
+
+@property(nonatomic, assign) ArrangeType arrageType;
 
 @end

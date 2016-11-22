@@ -19,11 +19,13 @@
 #import "AFBSweepViewController.h"
 #import "AFBCommonGoodsModel.h"
 #import <PYSearch.h>
-
 #import "AFBOrderGoodsArrangeView.h"
+#import "AFBPriceArrangeControl.h"
+
 
 #define kTopHeight 64
 #define kWidth [UIScreen ay_screenWidth]/4
+#define kARViewHeight 40
 
 #import "AFBOrderGoodsDetailController.h"
 
@@ -63,7 +65,7 @@ static NSString *rightHeader = @"rightHeader";
     self.navigationController.navigationBar.translucent = NO;
     [self addNavigationItem];
     [self setMyView];
-//    [self addTableView];
+    //    [self addTableView];
 }
 
 //MARK:加载数据
@@ -91,7 +93,7 @@ static NSString *rightHeader = @"rightHeader";
     
     //获取热搜关键字
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-//        NSLog(@"====%@",dicH[@"hotquery"]);
+        //        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWord = dicH[@"hotquery"];
     }];
     
@@ -102,7 +104,7 @@ static NSString *rightHeader = @"rightHeader";
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView * gbImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bookbottomdefault"]];
     gbImageView.center = self.view.center;
-//    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
+    //    CGPoint imageCenter = CGPointMake(self.view.center.x, self.view.center.y+50);
     gbImageView.center = self.view.center;
     _bgImageView = gbImageView;
     [self.view addSubview:gbImageView];
@@ -148,25 +150,47 @@ static NSString *rightHeader = @"rightHeader";
     [self presentViewController:nav  animated:NO completion:nil];
 }
 
+//MARK:添加设置选择排序条
+- (void)addArrageView{
+    AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, kARViewHeight)];
+    _arrangeView = arrangeView;
+    //给综合排序和销量排序添加点击事件
+    [arrangeView.noumBut addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventTouchUpInside];
+    [arrangeView.salesVolumeBut addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventTouchUpInside];
+    
+    //给销量排序设置轻点手势
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickArrangeControl)];
+    tap.numberOfTapsRequired=1;
+    tap.numberOfTouchesRequired=1;
+    [arrangeView.priceBut addGestureRecognizer:tap];
+
+    [self.view addSubview:arrangeView];
+}
+
+//点击排序方式
+- (void)clickArrangeControl{
+    
+    NSLog(@"点击了排序按钮");
+}
+
 
 //MARK:添加 设置tableView
 - (void)addTableView{
-    CGFloat arViewHeight = 40;
-   
+    
+    
     AFBOrderLeftTableView * leftTableView = [[AFBOrderLeftTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, [UIScreen ay_screenHeight])];
     AFBOrderRightTableView * rightTableView = [[AFBOrderRightTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, [UIScreen ay_screenHeight])];
-    rightTableView.contentInset = UIEdgeInsetsMake(arViewHeight, 0, 0, 0);
-     AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, arViewHeight)];
+    rightTableView.contentInset = UIEdgeInsetsMake(kARViewHeight, 0, 0, 0);
     
-    _arrangeView = arrangeView;
+    
     _leftTableView = leftTableView;
     _rightTableView = rightTableView;
     
-    [arrangeView addTarget:self action:@selector(clickArrangeControl) forControlEvents:UIControlEventValueChanged];
+    
     
     [self.view addSubview:leftTableView];
     [self.view addSubview:rightTableView];
-    [self.view addSubview:arrangeView];
+    
     
     //数据源
     leftTableView.dataSource = self;
@@ -191,13 +215,10 @@ static NSString *rightHeader = @"rightHeader";
     //左侧view的默认选中行
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:defaultSelect inSection:0];
     [_leftTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-    
+    [self addArrageView];
 }
 
-//MARK:点击排序方式
-- (void)clickArrangeControl{
-    NSLog(@"点击了排序按钮");
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

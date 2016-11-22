@@ -22,16 +22,20 @@
 
 - (void)setupUI{
     self.backgroundColor = [UIColor whiteColor];
-    AFBOrderCommonControlBut * controlNoum = [[AFBOrderCommonControlBut alloc]initWithFrame:CGRectMake(0, 0, self.width/3, self.height)];
-    controlNoum.titleLable.text = @"综合排序";
-    [self addSubview:controlNoum];
+
+    UIButton * noumBut = [UIButton ay_textButton:@"综合排序" fontSize:13 normalColor:[UIColor blackColor] selectedColor:[UIColor orangeColor]];
+    noumBut.frame = CGRectMake(0, 0, self.width/3, self.height);
+    self.noumBut = noumBut;
+    [self addSubview:noumBut];
+
+    AFBPriceArrangeControl * priceBut = [[AFBPriceArrangeControl alloc]initWithFrame:CGRectMake(self.width/3, 0, self.width/3, self.height)];
+    self.priceBut = priceBut;
+    [self addSubview:priceBut];
     
-    AFBPriceArrangeControl * controlPrice= [[AFBPriceArrangeControl alloc]initWithFrame:CGRectMake(self.width/3, 0, self.width/3, self.height)];
-    [self addSubview:controlPrice];
-    
-    AFBOrderCommonControlBut * controlSalesVolume= [[AFBOrderCommonControlBut alloc]initWithFrame:CGRectMake(self.width/3*2, 0, self.width/3, self.height)];
-    controlSalesVolume.titleLable.text = @"按销量";
-    [self addSubview:controlSalesVolume];
+    UIButton * salesVolumeBut= [UIButton ay_textButton:@"按销量" fontSize:13 normalColor:[UIColor blackColor] selectedColor:[UIColor orangeColor]];
+    salesVolumeBut.frame = CGRectMake(self.width/3*2, 0, self.width/3, self.height);
+    self.salesVolumeBut = salesVolumeBut;
+    [self addSubview:salesVolumeBut];
       
 }
 
