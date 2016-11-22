@@ -8,12 +8,8 @@
 
 #import "AFBHomeThreeCell.h"
 
-@interface AFBHomeThreeCell()
-@property(nonatomic,weak)UIImageView *imageView;
-@property(nonatomic,weak)UILabel *nameLabel;
-@property(nonatomic,weak)UIImageView *selectView;
-@property(nonatomic,weak)UIImageView *payView;
-@property(nonatomic,weak)UILabel *countLabel;
+@interface AFBHomeThreeCell()<CAAnimationDelegate>
+
 @end
 
 @implementation AFBHomeThreeCell
@@ -94,7 +90,58 @@
 }
 //button点击事件
 - (void)clickButton:(UIButton *)sender{
+    //1坐标转换
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    _startP = [self convertPoint:self.imageView.center toView:window];
+
+    UIImage *ima = self.imageView.image;
+    UIImageView *imaV = [[UIImageView alloc]initWithImage:ima];
+    [window addSubview:imaV];
+    imaV.center = _startP;
+    imaV.bounds = CGRectMake(0, 0, 160, 160);
     
+    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    CABasicAnimation *basicScale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    CABasicAnimation *basicOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //keyAnimation
+    CGFloat wigth = [UIScreen mainScreen].bounds.size.width/8;
+    CGFloat endX = wigth*5;
+    [path moveToPoint:_startP];
+    CGPoint controlP = CGPointMake(_startP.x, _startP.y-200);
+    CGPoint endP = CGPointMake(endX, [UIScreen mainScreen].bounds.size.height-40);
+    [path addQuadCurveToPoint:endP controlPoint:controlP];
+    key.path = path.CGPath;
+    key.duration = 1;
+    [key setValue:imaV forKey:@"key"];
+    key.removedOnCompletion = NO;
+    key.fillMode = kCAFillModeForwards;
+    
+    //basicScale
+    basicScale.fromValue = @(1);
+    basicScale.toValue = @(0.1);
+    basicScale.duration = 1;
+    basicScale.removedOnCompletion = NO;
+    basicScale.fillMode = kCAFillModeForwards;
+    
+    //basicOpacity
+    basicOpacity.duration = 1;
+    basicOpacity.fromValue = @(1);
+    basicOpacity.toValue = @(0.5);
+    basicOpacity.removedOnCompletion = NO;
+    basicOpacity.fillMode = kCAFillModeForwards;
+    
+    //添加动画
+
+    key.delegate = self;
+    [imaV.layer addAnimation:key forKey:@"keyAmimation"];
+    [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
+    [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
+    
+}
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    UIImageView *imaV = [anim valueForKey:@"key"];
+    [imaV removeFromSuperview];
 }
 //设置数据
 - (void)setModel:(AFBHomeThreeModel *)model{
@@ -103,6 +150,5 @@
     self.nameLabel.text = model.name;
     self.countLabel.text = model.specifics;
 }
-
 
 @end
