@@ -17,6 +17,7 @@
 #import "AFBHomeFourCell.h"
 
 #import <SVProgressHUD.h>
+#import <MJRefresh.h>
 
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
@@ -26,6 +27,7 @@ static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
 static NSString *cellFour = @"cellFour";
 @implementation AFBHomeCollectionController{
+    NSMutableArray *_imageArray;
     NSArray *_modelList;
     NSArray *_threeModelList;
 }
@@ -37,7 +39,7 @@ static NSString *cellFour = @"cellFour";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getRefresh];
+//    [self getRefresh];
     [SVProgressHUD show];
     //设置collectionview的item穿透状态栏
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,18 +54,44 @@ static NSString *cellFour = @"cellFour";
     [self.collectionView registerClass:[AFBHomeFirstCell class] forCellWithReuseIdentifier:cellFrist];
     [self.collectionView registerClass:[AFBHomeSecondCell class] forCellWithReuseIdentifier:cellSecond];
     [self.collectionView registerClass:[AFBHomeThreeCell class] forCellWithReuseIdentifier:cellThree];
+    
+    //设置下拉刷新
+    _imageArray = [NSMutableArray array];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh1"]];
+    [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh2"]];
+
+    MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    [header setImages:_imageArray forState:MJRefreshStatePulling];
+    [header setImages:_imageArray forState:MJRefreshStateRefreshing];
+    [header setImages:_imageArray forState:MJRefreshStateIdle];
+    self.collectionView.mj_header = header;
+
+    [header setTitle:@"向下拉" forState:MJRefreshStatePulling];
+    [header setTitle:@"努力加载中" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"加载完毕" forState:MJRefreshStateIdle];
+    
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+    [header beginRefreshing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [SVProgressHUD dismiss];
 }
+
+#pragma mark - 设置顶部刷新
+- (void)headerRefresh{
+    [self.collectionView reloadData];
+    [self.collectionView.mj_header endRefreshing];
+}
+
+
 #pragma mark - 添加动画
 //实现cell的代理方法
 - (void)homeThreeCell:(AFBHomeThreeCell *)homeThreeCell startP:(CGPoint)startP{
     //1添加动画
 //    [self addAnimationWithStartPoint:startP cell:homeThreeCell];
-    
 }
 ////添加动画方法
 //- (void)addAnimationWithStartPoint:(CGPoint)startP cell:(AFBHomeThreeCell *)cell{
@@ -102,19 +130,19 @@ static NSString *cellFour = @"cellFour";
 #pragma mark - 动画结束后将空间移除window
 
 
-#pragma mark - 添加下拉刷新
-- (void)getRefresh{
-    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
-    [self.collectionView addSubview:refresh];
-
-    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
-    
-    [refresh setAttributedTitle:arrStr];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+//#pragma mark - 添加下拉刷新
+//- (void)getRefresh{
+//    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+//    [self.collectionView addSubview:refresh];
+//
+//    NSAttributedString *arrStr = [[NSAttributedString alloc]initWithString:@"努力刷新" attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+//    
+//    [refresh setAttributedTitle:arrStr];
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
 
 /*
 #pragma mark - Navigation
