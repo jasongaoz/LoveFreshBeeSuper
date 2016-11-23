@@ -13,17 +13,18 @@
 
 @protocol AFBOrderGoodsArrangeViewDelegate <NSObject>
 
-- (void)arrangeViewChangeSelectBtnColorWithBtn:(AFBOrderCommonControlBut *)btn;
+- (void)arrangeViewChangeSelectBtnColorWithBtn:(AFBOrderCommonControlBut *)sender;
 
 @end
 
 @interface AFBOrderGoodsArrangeView : UIView
 
-@property(nonatomic, weak) id <AFBOrderGoodsArrangeViewDelegate> dalegate;
+@property(nonatomic, weak) id <AFBOrderGoodsArrangeViewDelegate> delegate;
 
 @property(nonatomic, strong) AFBOrderCommonControlBut * noumBut;
 @property(nonatomic, strong) AFBPriceArrangeControl * priceBut;
 @property(nonatomic, strong) AFBOrderCommonControlBut * salesVolumeBut;
 
+- (void)clickBtn:(AFBOrderCommonControlBut *)sender;
 
 @end

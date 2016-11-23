@@ -28,6 +28,8 @@
 }
 
 
+
+
 //通过点击了的按钮设置选中按钮,来修改各个按钮的状态
 - (void)clickBtn:(AFBOrderCommonControlBut *)sender
 {

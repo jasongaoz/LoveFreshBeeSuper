@@ -34,7 +34,7 @@ static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
 static NSString *rightHeader = @"rightHeader";
 
-@interface AFBOrderController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AFBOrderController ()<UITableViewDelegate,UITableViewDataSource,AFBOrderGoodsArrangeViewDelegate>
 
 @end
 
@@ -179,6 +179,7 @@ static NSString *rightHeader = @"rightHeader";
 - (void)addArrageView{
     AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, kARViewHeight)];
     _arrangeView = arrangeView;
+//    arrangeView.delegate = self;
     
     //给综合排序和销量排序添加点击事件
     [arrangeView.noumBut addTarget:self action:@selector(clickArrangeControl:) forControlEvents:UIControlEventTouchUpInside];
@@ -191,7 +192,7 @@ static NSString *rightHeader = @"rightHeader";
 //MARK:切换排序方法
 - (void)clickArrangeControl:(AFBOrderCommonControlBut *)sender{
     
-    
+
     switch (sender.arrangeType) {
         case ArrangeType_Noum: //综合排序
             
@@ -220,6 +221,8 @@ static NSString *rightHeader = @"rightHeader";
     }
     [_rightTableView reloadData];
 }
+
+
 
 
 //MARK:添加 设置tableView
@@ -270,6 +273,8 @@ static NSString *rightHeader = @"rightHeader";
         _rightDataList = [_rightDataList sortedArrayUsingComparator:^NSComparisonResult(AFBCommonGoodsModel * obj1, AFBCommonGoodsModel * obj2) {
             return [obj1.product_id integerValue] > [obj2.product_id integerValue];
         }];
+        [_arrangeView clickBtn:_arrangeView.noumBut];
+        [self clickArrangeControl:_arrangeView.noumBut];
         [_rightTableView reloadData];
     }else{
         
@@ -279,6 +284,64 @@ static NSString *rightHeader = @"rightHeader";
         [self.navigationController pushViewController:goodsDetailVC animated:YES];
     }
 }
+
+
+
+//MARK:动画
+//动画实现
+- (void)startAnimationWithStartPoint:(CGPoint)startP cell:(AFBOrderRightCell *)cell{
+    UIImage *ima = cell.imageView.image;
+    UIImageView *imaV = [[UIImageView alloc]initWithImage:ima];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:imaV];
+    imaV.center = startP;
+    imaV.bounds = CGRectMake(0, 0, 160, 160);
+    
+    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    CABasicAnimation *basicScale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    CABasicAnimation *basicOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //keyAnimation
+    CGFloat wigth = [UIScreen mainScreen].bounds.size.width/8;
+    CGFloat endX = wigth*5;
+    [path moveToPoint:startP];
+    CGPoint controlP = CGPointMake(startP.x, startP.y-200);
+    CGPoint endP = CGPointMake(endX, [UIScreen mainScreen].bounds.size.height-40);
+    [path addQuadCurveToPoint:endP controlPoint:controlP];
+    key.path = path.CGPath;
+    key.duration = 1;
+    [key setValue:imaV forKey:@"key"];
+    key.removedOnCompletion = NO;
+    key.fillMode = kCAFillModeForwards;
+    
+    //basicScale
+    basicScale.fromValue = @(1);
+    basicScale.toValue = @(0.1);
+    basicScale.duration = 1;
+    basicScale.removedOnCompletion = NO;
+    basicScale.fillMode = kCAFillModeForwards;
+    
+    //basicOpacity
+    basicOpacity.duration = 1;
+    basicOpacity.fromValue = @(1);
+    basicOpacity.toValue = @(0.5);
+    basicOpacity.removedOnCompletion = NO;
+    basicOpacity.fillMode = kCAFillModeForwards;
+    
+    //添加动画
+    key.delegate = self;
+    [imaV.layer addAnimation:key forKey:@"keyAmimation"];
+    [imaV.layer addAnimation:basicScale forKey:@"basicScale"];
+    [imaV.layer addAnimation:basicOpacity forKey:@"basicOpacity"];
+}
+//结束动画后操作
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    UIImageView *imaV = [anim valueForKey:@"key"];
+    [imaV removeFromSuperview];
+    //给购物车赋值
+    
+}
+
 
 #pragma mark - 实现数据源方法
 //组
@@ -314,6 +377,7 @@ static NSString *rightHeader = @"rightHeader";
     }
     else{
         AFBOrderRightCell *cell = [tableView dequeueReusableCellWithIdentifier:orderRightCellID forIndexPath:indexPath];
+        
         cell.dataModel = _rightDataList[indexPath.row];
         return cell;
     }
