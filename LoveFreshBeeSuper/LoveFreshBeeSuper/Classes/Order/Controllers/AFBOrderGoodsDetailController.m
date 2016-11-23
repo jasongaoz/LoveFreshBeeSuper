@@ -8,12 +8,14 @@
 
 #import "AFBOrderGoodsDetailController.h"
 #import "AFBOrderGoodsDetailsHeadView.h"
+#import "AFBOrderGoodsDetailsFootView.h"
 
 
 @interface AFBOrderGoodsDetailController ()
 
 @property (nonatomic, weak)UIScrollView *scrollView;
 @property (nonatomic, weak)AFBOrderGoodsDetailsHeadView *headView;
+@property (nonatomic, strong)AFBOrderGoodsDetailsFootView *footView;
 
 @end
 
@@ -32,9 +34,19 @@
     return _headView;
 }
 
+- (AFBOrderGoodsDetailsFootView *)footView{
+    if (_footView == nil) {
+        _footView = [[AFBOrderGoodsDetailsFootView alloc] init];
+    }
+    
+    return _footView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = self.model.name;
+
     [self.navigationController setNavigationBarHidden:NO];
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -56,8 +68,10 @@
     //商品介绍视图
     UIImageView *detailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"goodsDetails"]];
     detailView.backgroundColor = [UIColor redColor];
-//    detailView.image = [UIImage imageNamed:@"goodsDetails"];
     [contentView addSubview:detailView];
+    
+    //底部视图
+    [contentView addSubview:self.footView];
     
     //布局
     CGFloat screenW = self.view.bounds.size.width;
@@ -74,6 +88,13 @@
         make.left.equalTo(contentView);
         make.width.mas_equalTo(screenW);
         make.height.mas_equalTo(detailH);
+    }];
+    
+    CGFloat footH = self.footView.bounds.size.height;
+    [self.footView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.equalTo(self.view);
+        make.width.mas_equalTo(screenW);
+        make.height.mas_equalTo(footH);
     }];
     
     scrView.contentSize = CGSizeMake(self.view.bounds.size.width, headH + detailH);

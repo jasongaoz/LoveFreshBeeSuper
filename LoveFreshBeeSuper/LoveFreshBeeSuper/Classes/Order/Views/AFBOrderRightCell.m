@@ -26,13 +26,13 @@
     _dataModel = dataModel;
     self.nameLabel.text = dataModel.name;
     self.specificsLabel.text = dataModel.specifics;
-    self.partnerPriceLabel.text = dataModel.partner_price;
+    self.partnerPriceLabel.text = [NSString stringWithFormat:@"¥%@",dataModel.partner_price];
 //    self.marketPriceLabel.text = dataModel.market_price;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:dataModel.img]];
     //中划线
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
     
-    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:dataModel.market_price attributes:attribtDic];
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"¥%@",dataModel.market_price] attributes:attribtDic];
     
     self.marketPriceLabel.attributedText = attribtStr;
 }

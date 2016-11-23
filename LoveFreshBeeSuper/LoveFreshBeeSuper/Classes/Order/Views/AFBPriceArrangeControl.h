@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFBOrderCommonControlBut.h"
 
 @class AFBPriceArrangeControlText;
 
-@interface AFBPriceArrangeControl : UIControl
+@interface AFBPriceArrangeControl :  AFBOrderCommonControlBut
 
-@property(nonatomic, strong) AFBPriceArrangeControlText * titleText;
+@property(nonatomic, strong) AFBPriceArrangeControlText * textBar;
+@property(nonatomic, assign) BOOL isUP; //设置一个属性保存价格的升降序
 
 @end
