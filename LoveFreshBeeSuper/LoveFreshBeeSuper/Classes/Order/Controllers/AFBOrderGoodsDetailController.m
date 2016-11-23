@@ -71,7 +71,7 @@
     [contentView addSubview:detailView];
     
     //底部视图
-    [contentView addSubview:self.footView];
+    [self.view addSubview:self.footView];
     
     //布局
     CGFloat screenW = self.view.bounds.size.width;
@@ -100,6 +100,9 @@
     scrView.contentSize = CGSizeMake(self.view.bounds.size.width, headH + detailH);
     
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

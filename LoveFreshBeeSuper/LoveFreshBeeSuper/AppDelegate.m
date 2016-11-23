@@ -28,7 +28,6 @@
 - (void)launchView{
     ///设置启动页
     [WZXLaunchViewController showWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height) ImageURL:@"http://img01.bqstatic.com/upload/activity/2016011111271981.jpg" advertisingURL:@"http://www.jianshu.com/p/7205047eadf7" timeSecond:5 hideSkip:YES imageLoadGood:^(UIImage *image, NSString *imageURL) {
-        
         //点击广告
     } clickImage:^(UIViewController *WZXlaunchVC){
         NSLog(@"点击了广告");

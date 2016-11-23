@@ -64,7 +64,7 @@
 
 // 响应方法
 - (void)selectItem:(UISegmentedControl *)segment {
-    self.scrollView.contentOffset = CGPointMake(kScreenWidth * (CGFloat)segment.selectedSegmentIndex, -64);
+    self.scrollView.contentOffset = CGPointMake(kScreenWidth * (CGFloat)segment.selectedSegmentIndex,0);
 }
 
 
@@ -87,7 +87,7 @@
 - (void)setupSubviewsOfScrollView {
     
     SystemMessageController *sysVC = [[SystemMessageController alloc] init];
-    //    [self addChildViewController:sysVC];
+    [self addChildViewController:sysVC];
     sysVC.tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64);
     [self.scrollView addSubview:sysVC.tableView];
     
