@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
+#import <MJRefresh.h>
 
 @protocol AFBHomeCollectionControllerDelegate <NSObject>
 //lichao
@@ -18,6 +17,9 @@
 - (void)pushSecKillView;
 - (void)pushRedBagView;
 - (void)pushBeeView;
+
+- (void)refreshStart;
+- (void)refreshEnd;
 
 @end
 
