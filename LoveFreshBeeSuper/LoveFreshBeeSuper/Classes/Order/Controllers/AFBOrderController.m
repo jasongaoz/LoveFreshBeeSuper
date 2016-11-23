@@ -34,7 +34,7 @@ static NSString *orderRightCellID = @"orderRightCellID";
 static NSString *orderLeftCellID = @"orderLeftCellID";
 static NSString *rightHeader = @"rightHeader";
 
-@interface AFBOrderController ()<UITableViewDelegate,UITableViewDataSource,AFBOrderGoodsArrangeViewDelegate>
+@interface AFBOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -62,6 +62,7 @@ static NSString *rightHeader = @"rightHeader";
 
 - (void)setupUI{
     self.navigationController.navigationBar.translucent = NO;
+   
     self.navigationItem.title = @"闪送超市";
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationController.navigationBar.translucent = NO;
@@ -179,7 +180,6 @@ static NSString *rightHeader = @"rightHeader";
 - (void)addArrageView{
     AFBOrderGoodsArrangeView *arrangeView = [[AFBOrderGoodsArrangeView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, kARViewHeight)];
     _arrangeView = arrangeView;
-//    arrangeView.delegate = self;
     
     //给综合排序和销量排序添加点击事件
     [arrangeView.noumBut addTarget:self action:@selector(clickArrangeControl:) forControlEvents:UIControlEventTouchUpInside];
@@ -222,22 +222,17 @@ static NSString *rightHeader = @"rightHeader";
     [_rightTableView reloadData];
 }
 
-
-
-
 //MARK:添加 设置tableView
 - (void)addTableView{
     
-    
     AFBOrderLeftTableView * leftTableView = [[AFBOrderLeftTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, [UIScreen ay_screenHeight])];
-    AFBOrderRightTableView * rightTableView = [[AFBOrderRightTableView alloc]initWithFrame:CGRectMake(kWidth, 0, kWidth*3, [UIScreen ay_screenHeight])];
-    rightTableView.contentInset = UIEdgeInsetsMake(kARViewHeight, 0, 0, 0);
-    
+    //关闭左侧tableView的水平滚动指示器
+    leftTableView.showsVerticalScrollIndicator = NO;
+    AFBOrderRightTableView * rightTableView = [[AFBOrderRightTableView alloc]initWithFrame:CGRectMake(kWidth, kARViewHeight, kWidth*3, [UIScreen ay_screenHeight])];
+    rightTableView.contentInset = UIEdgeInsetsMake(0, 0, kARViewHeight*4, 0);
     
     _leftTableView = leftTableView;
     _rightTableView = rightTableView;
-    
-    
     
     [self.view addSubview:leftTableView];
     [self.view addSubview:rightTableView];
@@ -254,8 +249,7 @@ static NSString *rightHeader = @"rightHeader";
     //注册cell
     [leftTableView registerClass:[AFBOrderLeftCell class] forCellReuseIdentifier:orderLeftCellID];
     [rightTableView registerNib:[UINib nibWithNibName:@"AFBOrderRightCell" bundle:nil] forCellReuseIdentifier:orderRightCellID];
-    
-    
+
 }
 
 
@@ -276,6 +270,8 @@ static NSString *rightHeader = @"rightHeader";
         [_arrangeView clickBtn:_arrangeView.noumBut];
         [self clickArrangeControl:_arrangeView.noumBut];
         [_rightTableView reloadData];
+        
+        [_rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }else{
         
         AFBOrderGoodsDetailController *goodsDetailVC = [[AFBOrderGoodsDetailController alloc] init];
@@ -383,9 +379,6 @@ static NSString *rightHeader = @"rightHeader";
     }
     
 }
-
-
-
 
 
 /*
