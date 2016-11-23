@@ -24,7 +24,7 @@
 #import <PYSearch.h>
 #import <SVProgressHUD.h>
 
-@interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate>
+@interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate,UIGestureRecognizerDelegate>
 @property(nonatomic,weak)AFBNavigationBarView *naviView;
 @end
 
@@ -38,6 +38,7 @@
     [self loadData];
     // Do any additional setup after loading the view.
 }
+
 #pragma mark - 自定义navigationbar
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.translucent = YES;
@@ -80,6 +81,17 @@
     
     [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
 //        NSLog(@"%@",arrayH);
+    }];
+}
+
+#pragma mark - 拖拽手势的实现
+- (void)panGR:(UIPanGestureRecognizer *)sender{
+    CGPoint offset = [sender translationInView:sender.view];
+    NSLog(@"%f",offset.y);
+    [UIView animateWithDuration:0.5 animations:^{
+        if (offset.y > 0) {
+            _naviView.alpha = 0;
+        }
     }];
 }
 
@@ -131,6 +143,18 @@
     
     //跳转界面
     [self.navigationController pushViewController:[[AFBBeeViewController alloc] init] animated:YES];
+}
+
+- (void)refreshStart{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.naviView.alpha = 0;
+    }];
+}
+
+- (void)refreshEnd{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.naviView.alpha = 1;
+    }];
 }
 
 #pragma mark - 加载数据

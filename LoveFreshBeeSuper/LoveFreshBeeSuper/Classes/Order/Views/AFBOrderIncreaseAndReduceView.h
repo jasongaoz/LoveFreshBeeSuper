@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@class AFBOrderIncreaseAndReduceView;
+@protocol AFBOrderIncreaseAndReduceViewDelegate <NSObject>
+
+
+@optional
+- (void)minusPlusView:(AFBOrderIncreaseAndReduceView *)iarView withCount:(NSInteger)goodsCount;
+
+
+@end
+
 @interface AFBOrderIncreaseAndReduceView : UIView
+
+@property (nonatomic, weak) id<AFBOrderIncreaseAndReduceViewDelegate >delegate;
+
++ (instancetype)orderIncreaseAndReduceView;
+
+@property(nonatomic, assign) NSInteger goodsCount;//商品个数
+
+@property(nonatomic, assign) BOOL isPlus;
 
 @end

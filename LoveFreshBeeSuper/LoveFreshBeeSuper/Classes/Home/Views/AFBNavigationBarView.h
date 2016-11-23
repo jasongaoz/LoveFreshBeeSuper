@@ -20,6 +20,8 @@
 
 @property (nonatomic,assign) CGFloat alpth;
 
+@property(nonatomic,weak)UIView *rightView;
+
 @property (nonatomic,weak) id <AFBNavigationBarViewDelegate> delegate;
 
 @end
