@@ -29,6 +29,7 @@
 
 - (void)setModel:(AFBCommonGoodsModel *)model{
     _model = model;
+    
     self.nameLable.text = model.name;
     self.specificsLabel.text = model.specifics;
     self.partnerPriceLabel.text = [NSString stringWithFormat:@"¥%@",model.partner_price];

@@ -17,6 +17,12 @@
     }
 }
 
+//yymodel过滤key的方法
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"rangeID":@"id"};
+}
+
+
 
 
 @end

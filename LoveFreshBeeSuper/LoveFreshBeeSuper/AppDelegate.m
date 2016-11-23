@@ -21,6 +21,7 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self launchView];
     [_window makeKeyAndVisible];
+    
     return YES;
 }
 #pragma mark - 加载广告

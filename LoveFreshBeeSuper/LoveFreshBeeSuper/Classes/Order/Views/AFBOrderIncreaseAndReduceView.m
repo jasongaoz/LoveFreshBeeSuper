@@ -7,6 +7,7 @@
 //
 
 #import "AFBOrderIncreaseAndReduceView.h"
+#import "AFBCommonGoodsModel.h"
 
 @interface AFBOrderIncreaseAndReduceView ()
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
@@ -14,29 +15,23 @@
 
 @end
 
+
 @implementation AFBOrderIncreaseAndReduceView
+
+- (void)setModel:(AFBCommonGoodsModel *)model{
+    _model = model;
+//    if (model.buyCount == 0) {
+//        self.subBtn.hidden = YES;
+//        self.countLabel.hidden = YES;
+//    }
+    self.goodsCount = model.buyCount;
+}
+
 - (IBAction)clickPlusBtn:(id)sender {
     _isPlus = YES;
     
-    self.goodsCount++;
-    
-    //因为正常的传递需要 3层 : 加减VIew --->cell --->tableView ---> self,view
-    // 转换成 相对于 keyWIndow
-    //MARK:1.坐标转换
-    
-    //1.获取主窗口
-//    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    
-    //2.转换
-    
-    //self  将谁身上的点 -- > minusPlusView
-    // point: view 身上的将要转换的这个点
-    // toVIew: 转换到谁身上
-//    _startP = [self convertPoint:sender.center toView:keyWindow];
-    
-    
-//    NSLog(@"%@",NSStringFromCGPoint(_startP));
-    
+    _ShopCarAdd(self.model);
+    self.goodsCount = self.model.buyCount;
     
     if([_delegate respondsToSelector:@selector(minusPlusView:withCount:)]){
         
@@ -47,7 +42,7 @@
 
 - (void)setGoodsCount:(NSInteger)goodsCount{
     _goodsCount = goodsCount;
-    
+
     //如果个数为0 隐藏 减号 和 数量Label
     _subBtn.hidden = (goodsCount == 0);
     _countLabel.hidden = (goodsCount == 0);
@@ -61,7 +56,7 @@
     _isPlus = NO;
     
     self.goodsCount--;
-    
+    _ShopCarSub(self.model);
     if([_delegate respondsToSelector:@selector(minusPlusView:withCount:)]){
         
         [_delegate minusPlusView:self withCount:self.goodsCount];

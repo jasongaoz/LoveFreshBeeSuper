@@ -12,7 +12,6 @@
 #import "AFBCommonGoodsModel.h"
 
 
-
 @interface AFBOrderRightCell ()<AFBOrderIncreaseAndReduceViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -25,13 +24,19 @@
 
 @end
 
-@implementation AFBOrderRightCell
+@implementation AFBOrderRightCell{
+    AFBOrderIncreaseAndReduceView *_minusPlusView;
+}
 
 - (void)setDataModel:(AFBCommonGoodsModel *)dataModel{
+
     _dataModel = dataModel;
+    _minusPlusView.model = dataModel;
     self.nameLabel.text = dataModel.name;
     self.specificsLabel.text = dataModel.specifics;
     self.partnerPriceLabel.text = [NSString stringWithFormat:@"¥%@",dataModel.partner_price];
+    //将模型传给加减按钮view
+    _minusPlusView.model = dataModel;
 //    self.marketPriceLabel.text = dataModel.market_price;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:dataModel.img]];
     //原价按钮中划线
@@ -44,6 +49,7 @@
     self.hotLabel.layer.borderColor = [UIColor redColor].CGColor;
     self.hotLabel.textColor = [UIColor redColor];
     self.hotLabel.layer.cornerRadius = 5;
+    
 }
 
 - (void)awakeFromNib {
@@ -51,40 +57,20 @@
     [self setupUI];
 }
 
-//实现加减View的代理方法
+
 - (void)minusPlusView:(AFBOrderIncreaseAndReduceView *)iarView withCount:(NSInteger)goodsCount{
-    
-        //MARK:1.接收加减号的数量修改模型中的个数
-        _dataModel.buyCount = goodsCount;
-        
-        
         if (iarView.isPlus) {//增加
-            
-            //MARK:2.通过代理 将cell的数据 传递给控制器
-//            if([_delegate respondsToSelector:@selector(rightCell:withPlusModel:withStartPoint:)]){
-//                
-//                [_delegate rightCell:self withPlusModel:_model withStartPoint:minusV.startP];
-//                
-//                
-//            }
             
         }else{
             
-            //MARK:2.通过代理 将cell的数据 传递给控制器
-//            if([_delegate respondsToSelector:@selector(rightCell:withMinusModel:)]){
-//                
-//                [_delegate rightCell:self withMinusModel:_model];
-//                
-//            }
-            
         }
-
 }
 
 //加载添加和减少购物数量的view
 - (void)setupUI{
     AFBOrderIncreaseAndReduceView *increaseAndReduceView = [AFBOrderIncreaseAndReduceView orderIncreaseAndReduceView];
     
+    _minusPlusView = increaseAndReduceView;
     increaseAndReduceView.delegate = self;
     
     [self.contentView addSubview:increaseAndReduceView];
