@@ -55,6 +55,7 @@ TopViewDelegate
         [self.models addObject:model];
     }
 }
+
 #pragma mark - 改变导航条的透明度 使其隐藏
 - (void)viewWillAppear:(BOOL)animated {
     // 设置导航条的透明度
@@ -62,6 +63,7 @@ TopViewDelegate
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
+
 #pragma mark - 跳转到其他界面 导航条的透明度恢复
 - (void)viewWillDisappear:(BOOL)animated {
     // 复原

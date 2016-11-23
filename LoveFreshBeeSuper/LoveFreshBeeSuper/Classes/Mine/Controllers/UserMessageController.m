@@ -33,7 +33,7 @@ static NSString *twoCellID = @"twoCell";
 
 
 - (void)setupAFBHolderView {
-    _holderView = [AFBHolderView creatHolderView];
+    _holderView = [AFBHolderView creatHolderViewWithImageName:@"pushlistview_up" lbName:@"没有消息呦"];
     _holderView.frame = CGRectMake(100, 230, 150, 80);
     [self.tableView addSubview:_holderView];
     
