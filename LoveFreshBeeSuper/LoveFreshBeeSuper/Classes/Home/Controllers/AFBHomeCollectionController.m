@@ -14,15 +14,25 @@
 #import "AFBDownLoadManager.h"
 #import "AFBHomeSecondModel.h"
 #import "AFBHomeThreeModel.h"
+#import "AFBCommonGoodsModel.h"
 #import "AFBHomeFourCell.h"
+#import "AFBOrderGoodsDetailController.h"
 #import "UITabBar+AFBBage.h"
 
 #import <SVProgressHUD.h>
 #import <MJRefresh.h>
 
-@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
+typedef enum : NSUInteger {
+    kRefreshStatePulling = 1,
+    kRefreshStateRefreshing = 2
+} kRefreshState;
+
+
+@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
+@property(nonatomic,assign)kRefreshState refreshState;
 @end
+
 static NSString *cellFrist = @"cellFrist";
 static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";
@@ -211,7 +221,7 @@ static NSString *cellFour = @"cellFour";
     }];
     [manager getHomeHotSaleDataParameters:@2 CompleteBlock:^(NSDictionary *dicH, NSString *reqid) {
 //        NSLog(@"%@",dicH);
-        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBHomeThreeModel class] json:dicH];
+        _threeModelList = [NSArray yy_modelArrayWithClass:[AFBCommonGoodsModel class] json:dicH];
         [self.collectionView reloadData];
     }];
     
@@ -331,6 +341,10 @@ static NSString *cellFour = @"cellFour";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@",indexPath);
+    
+    AFBOrderGoodsDetailController * goodsDetailController = [[AFBOrderGoodsDetailController alloc] init];
+    goodsDetailController.model = _threeModelList[indexPath.item];
+    [self.navigationController pushViewController:goodsDetailController animated:YES];
 }
 
 /*

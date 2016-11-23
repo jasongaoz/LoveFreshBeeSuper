@@ -93,6 +93,10 @@
 		2AC3FD891DE3F7C5006D7CAB /* AFBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD841DE3F7C5006D7CAB /* AFBWebViewController.m */; };
 		2AC3FD8A1DE3F7C5006D7CAB /* SystemMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */; };
 		2AC3FD8B1DE3F7C5006D7CAB /* UserMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */; };
+
+
+		32C646F21DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */; };
+
 		32DDBBDE1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */; };
 		32DDBBE11DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */; };
 		32DDBBE31DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */; };
@@ -274,6 +278,11 @@
 		2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMessageController.m; sourceTree = "<group>"; };
 		2AC3FD871DE3F7C5006D7CAB /* UserMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageController.h; sourceTree = "<group>"; };
 		2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageController.m; sourceTree = "<group>"; };
+
+
+		32C646F01DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsDetailsFootView.h; sourceTree = "<group>"; };
+		32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsDetailsFootView.m; sourceTree = "<group>"; };
+
 		32DDBBDC1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsArrangeView.h; sourceTree = "<group>"; };
 		32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsArrangeView.m; sourceTree = "<group>"; };
 		32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsDetailsHeadView.h; sourceTree = "<group>"; };
@@ -592,6 +601,11 @@
 				32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */,
 				32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */,
 				32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */,
+
+				32C646F01DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.h */,
+				32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */,
+
+
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -715,6 +729,18 @@
 		23FE51481DE42D6400C59B12 /* right */ = {
 			isa = PBXGroup;
 			children = (
+
+
+				213140721DE19958002F7787 /* AFBOrderRightTableView.h */,
+				213140731DE19958002F7787 /* AFBOrderRightTableView.m */,
+				213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */,
+				213140751DE19958002F7787 /* AFBOrderRightTableViewFootView.m */,
+				32DDBBDC1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.h */,
+				32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */,
+				2131406F1DE19958002F7787 /* AFBOrderRightCell.h */,
+				213140701DE19958002F7787 /* AFBOrderRightCell.m */,
+				213140711DE19958002F7787 /* AFBOrderRightCell.xib */,
+
 				23FE50C61DE4159D00C59B12 /* AFBOrderCommonControlBut.h */,
 				23FE50C71DE4159D00C59B12 /* AFBOrderCommonControlBut.m */,
 				23FE50BE1DE4155700C59B12 /* AFBPriceArrangeControl.h */,
@@ -729,6 +755,13 @@
 		23FE51491DE42D8200C59B12 /* common */ = {
 			isa = PBXGroup;
 			children = (
+
+
+				32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */,
+				32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */,
+				32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */,
+
+
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -736,6 +769,13 @@
 		23FE514A1DE42DB500C59B12 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+
+
+
+				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
+				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
+				2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */,
+
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -953,6 +993,7 @@
 				0A673CC71DE5377F007E050A /* WZXLaunchViewController.m in Sources */,
 				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
 				0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */,
+				32C646F21DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m in Sources */,
 				46EDF8F31DE2FC5D00C98ECB /* AFBOrderFormController.m in Sources */,
 				213462391DE2C09F005E6F44 /* AFBCouDanCell.m in Sources */,
 				46EDF8FC1DE2FDCF00C98ECB /* AFBAddressController.m in Sources */,

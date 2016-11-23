@@ -11,7 +11,7 @@
 @interface AFBPriceArrangeControlText : UIView
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
-@property(nonatomic, strong) UIImage * topImage;
-@property(nonatomic, strong) UIImage * bottomImage;
+@property(nonatomic, weak) UIImage * topImage;
+@property(nonatomic, weak) UIImage * bottomImage;
 
 @end

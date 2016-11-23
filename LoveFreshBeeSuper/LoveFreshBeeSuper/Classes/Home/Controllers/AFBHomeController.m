@@ -23,8 +23,6 @@
 
 #import <PYSearch.h>
 #import <SVProgressHUD.h>
-#import <MJRefresh.h>
-
 
 @interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate>
 @property(nonatomic,weak)AFBNavigationBarView *naviView;
