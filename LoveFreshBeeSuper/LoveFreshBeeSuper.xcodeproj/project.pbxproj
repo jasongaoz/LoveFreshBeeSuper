@@ -20,6 +20,7 @@
 		0AD69C771DE1FDD8003A4544 /* AFBHomeFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD69C761DE1FDD8003A4544 /* AFBHomeFourCell.m */; };
 		1B205B421DE1AB1800AC3863 /* AFBSweepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */; };
 		1B205B451DE1CEC700AC3863 /* AFBHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */; };
+		1B2856DF1DE5966B00E3F133 /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2856DE1DE5966A00E3F133 /* CALayer+XibConfiguration.m */; };
 		1B389C251DE316730042F99D /* AFBDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B389C241DE316730042F99D /* AFBDrawViewController.m */; };
 		1B389C281DE320F70042F99D /* AFBSecKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B389C271DE320F70042F99D /* AFBSecKillViewController.m */; };
 		1B389C2B1DE321510042F99D /* AFBRedBagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B389C2A1DE321510042F99D /* AFBRedBagViewController.m */; };
@@ -137,6 +138,8 @@
 		1B205B411DE1AB1800AC3863 /* AFBSweepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBSweepViewController.m; sourceTree = "<group>"; };
 		1B205B431DE1CEC700AC3863 /* AFBHomeFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFirstCell.h; sourceTree = "<group>"; };
 		1B205B441DE1CEC700AC3863 /* AFBHomeFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeFirstCell.m; sourceTree = "<group>"; };
+		1B2856DD1DE5966A00E3F133 /* CALayer+XibConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+XibConfiguration.h"; path = "../ShopCar/Views/CALayer+XibConfiguration.h"; sourceTree = "<group>"; };
+		1B2856DE1DE5966A00E3F133 /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+XibConfiguration.m"; path = "../ShopCar/Views/CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
 		1B389C231DE316730042F99D /* AFBDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBDrawViewController.h; sourceTree = "<group>"; };
 		1B389C241DE316730042F99D /* AFBDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBDrawViewController.m; sourceTree = "<group>"; };
 		1B389C261DE320F70042F99D /* AFBSecKillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBSecKillViewController.h; sourceTree = "<group>"; };
@@ -609,6 +612,8 @@
 				0A673CC31DE5377F007E050A /* WZXLaunchAd.m */,
 				0A673CC41DE5377F007E050A /* WZXLaunchViewController.h */,
 				0A673CC51DE5377F007E050A /* WZXLaunchViewController.m */,
+				1B2856DD1DE5966A00E3F133 /* CALayer+XibConfiguration.h */,
+				1B2856DE1DE5966A00E3F133 /* CALayer+XibConfiguration.m */,
 				213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */,
 				213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */,
 				2131407B1DE19958002F7787 /* AY_Addition */,
@@ -968,6 +973,7 @@
 				213140B61DE19958002F7787 /* UIViewController+Addition.m in Sources */,
 				46EDF9081DE2FDF200C98ECB /* AFBEditAddressModel.m in Sources */,
 				213462291DE2A8A4005E6F44 /* AFBAllSelCell.m in Sources */,
+				1B2856DF1DE5966B00E3F133 /* CALayer+XibConfiguration.m in Sources */,
 				2131409C1DE19958002F7787 /* AFBBaseTableView.m in Sources */,
 				0A6C38131DE1C43700DEAFDB /* AFBHomeSecondModel.m in Sources */,
 				46EDF8F91DE2FD0100C98ECB /* AFBOrderFormCell.m in Sources */,

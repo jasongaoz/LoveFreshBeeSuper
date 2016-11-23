@@ -225,6 +225,7 @@ static NSString *cellFour = @"cellFour";
 - (void)setNavigation{
 //    self.navigationController.navigationBar = 
 }
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -259,7 +260,7 @@ static NSString *cellFour = @"cellFour";
         AFBHomeFirstCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellFrist forIndexPath:indexPath];
         cell.delegate = self;
         return cell;
-    }else if (indexPath.section == 1) {
+    }else if (indexPath.section == 1){
         AFBHomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellSecond forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
         AFBHomeSecondModel *model = _modelList[indexPath.row];
