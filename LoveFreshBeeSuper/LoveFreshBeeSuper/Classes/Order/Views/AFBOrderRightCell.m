@@ -13,7 +13,7 @@
 
 
 
-@interface AFBOrderRightCell ()
+@interface AFBOrderRightCell ()<AFBOrderIncreaseAndReduceViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specificsLabel;
@@ -46,9 +46,41 @@
     [self setupUI];
 }
 
+//实现加减View的代理方法
+- (void)minusPlusView:(AFBOrderIncreaseAndReduceView *)iarView withCount:(NSInteger)goodsCount{
+    
+        //MARK:1.接收加减号的数量修改模型中的个数
+        _dataModel.buyCount = goodsCount;
+        
+        
+        if (iarView.isPlus) {//增加
+            
+            //MARK:2.通过代理 将cell的数据 传递给控制器
+//            if([_delegate respondsToSelector:@selector(rightCell:withPlusModel:withStartPoint:)]){
+//                
+//                [_delegate rightCell:self withPlusModel:_model withStartPoint:minusV.startP];
+//                
+//                
+//            }
+            
+        }else{
+            
+            //MARK:2.通过代理 将cell的数据 传递给控制器
+//            if([_delegate respondsToSelector:@selector(rightCell:withMinusModel:)]){
+//                
+//                [_delegate rightCell:self withMinusModel:_model];
+//                
+//            }
+            
+        }
+
+}
+
 //加载添加和减少购物数量的view
 - (void)setupUI{
-    AFBOrderIncreaseAndReduceView *increaseAndReduceView = [[[UINib nibWithNibName:@"AFBOrderIncreaseAndReduceView" bundle:nil] instantiateWithOwner:nil options:nil] lastObject];
+    AFBOrderIncreaseAndReduceView *increaseAndReduceView = [AFBOrderIncreaseAndReduceView orderIncreaseAndReduceView];
+    
+    increaseAndReduceView.delegate = self;
     
     [self.contentView addSubview:increaseAndReduceView];
     
