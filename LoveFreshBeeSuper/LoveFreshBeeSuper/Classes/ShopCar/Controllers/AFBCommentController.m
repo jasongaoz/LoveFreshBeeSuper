@@ -32,6 +32,8 @@ static NSString *footID = @"foot_id";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     self.navigationItem.title = @"订单备注";
     [self.tableView registerClass:[AFBCommentTopListCell class] forCellReuseIdentifier:cellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"AFBCommentTopListCell"bundle:nil] forCellReuseIdentifier:cellID];
@@ -45,8 +47,6 @@ static NSString *footID = @"foot_id";
     [footView addSubview:textview];
     self.textViewV = textview;
     textview.keyboardType = UIKeyboardTypeDefault;
-    textview.layer.borderWidth = 0.5;
-    textview.layer.borderColor = [UIColor blackColor].CGColor;
     textview.font = [UIFont fontWithName:@"Arial" size:16];
     textview.delegate = self;
 
@@ -69,6 +69,8 @@ static NSString *footID = @"foot_id";
     //完成按钮
     UIButton *completeBtn = [[UIButton alloc] init];
     self.commitBtn = completeBtn;
+    completeBtn.layer.cornerRadius = 10;
+    completeBtn.layer.masksToBounds = YES;
     [footView addSubview:completeBtn];
     //默认状态的按钮
     [completeBtn setTitle:@"完成" forState:UIControlStateDisabled];
@@ -77,10 +79,15 @@ static NSString *footID = @"foot_id";
     completeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     //输入文字后的按钮
     [completeBtn setTitle:@"完成" forState:UIControlStateNormal];
-     [completeBtn setBackgroundImage:[UIImage imageNamed:@"juhuang"] forState:UIControlStateNormal];
+    [completeBtn setBackgroundImage:[UIImage imageNamed:@"juhuang"] forState:UIControlStateNormal];
     [completeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     completeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     completeBtn.enabled = NO;
+    
+    //设置分割线
+    UIView * line = [UIView new];
+    line.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    [footView addSubview:line];
 
     
     
@@ -88,9 +95,14 @@ static NSString *footID = @"foot_id";
 //    [completeBtn addTarget:self action:@selector(clickComplete) forControlEvents:UIControlEventTouchUpInside];
     
     //布局
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.mas_equalTo(footView);
+        make.height.mas_equalTo(0.5);
+    }];
     [textview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(self.view.bounds.size.width, 200));
-        make.left.top.right.equalTo(footView);
+        make.top.mas_equalTo(line.mas_bottom);
+        make.left.right.mas_equalTo(footView);
+        make.height.mas_equalTo(200);
     }];
     [placehoderL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(8);
@@ -104,7 +116,7 @@ static NSString *footID = @"foot_id";
     [completeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(footView);
         make.top.equalTo(textview.mas_bottom).offset(20);
-        make.size.mas_equalTo(CGSizeMake(self.view.bounds.size.width, 50));
+        make.size.mas_equalTo(CGSizeMake(300, 44));
     }];
 }
 

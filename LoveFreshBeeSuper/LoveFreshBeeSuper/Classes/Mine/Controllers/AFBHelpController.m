@@ -59,6 +59,36 @@
     [qustionsBtn addTarget:self action:@selector(getQuestions:) forControlEvents:UIControlEventTouchUpInside];
     [helpView addSubview:qustionsBtn];
     
+    
+    
+    // 创建一个label
+    UILabel *line2Lab = [[UILabel alloc] init];
+    line2Lab.backgroundColor = [UIColor colorWithRed:228/255.0 green:226/255.0 blue:228/255.0 alpha:0.6];
+    [helpView addSubview:line2Lab];
+    
+    // 创建第三个button
+    UIButton *sugestionBtn = [[UIButton alloc] init];
+    sugestionBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    sugestionBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+    [sugestionBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [sugestionBtn setTitle:@"意见反馈" forState:UIControlStateNormal];
+    [sugestionBtn addTarget:self action:@selector(getIdear:) forControlEvents:UIControlEventTouchUpInside];
+    [helpView addSubview:sugestionBtn];
+    
+
+    
+    // 创建一个label
+    UILabel *twoLine = [[UILabel alloc] init];
+    twoLine.backgroundColor = [UIColor colorWithRed:228/255.0 green:226/255.0 blue:228/255.0 alpha:0.6];
+    [helpView addSubview:twoLine];
+    
+
+    
+    
+    
+    
+    
+    
     // 创建指示箭头1
     UIImageView *lastIndiaterView = [[UIImageView alloc] init];
     lastIndiaterView.image = [UIImage imageNamed:@"baidu_wallet_arrow_right"];
@@ -68,21 +98,28 @@
     UIImageView *nextIndiaterView = [[UIImageView alloc] init];
     nextIndiaterView.image = [UIImage imageNamed:@"baidu_wallet_arrow_right"];
     [helpView addSubview:nextIndiaterView];
+    
+    // 创建指示箭头3
+    UIImageView *threeIndiaterView = [[UIImageView alloc] init];
+    threeIndiaterView.image = [UIImage imageNamed:@"baidu_wallet_arrow_right"];
+    [helpView addSubview:threeIndiaterView];
+    
+    
+    
     //约束
     [helpView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.top.equalTo(self.view).offset(65);
-        make.height.mas_equalTo(80);
+        make.top.equalTo(self.view).offset(0);
+        make.height.mas_equalTo(120);
     }];
     
     [tellPhonebtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(helpView).offset(-35);
-        make.top.equalTo(helpView).offset(10);
+        make.top.equalTo(helpView).offset(8);
         make.size.mas_equalTo(CGSizeMake(280, 25));
         
         [lineLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(helpView);
-            make.left.right.equalTo(helpView);
+            make.top.equalTo(tellPhonebtn.mas_bottom).offset(5);          make.left.right.equalTo(helpView);
             make.height.mas_equalTo(1);
         }];
         
@@ -103,6 +140,28 @@
             make.top.equalTo(lineLab.mas_bottom).offset(15);
             make.right.equalTo(helpView).offset(-15);
         }];
+        
+    
+        [twoLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(qustionsBtn.mas_bottom).offset(5);          make.left.right.equalTo(helpView);
+            make.height.mas_equalTo(1);
+        }];
+        
+        
+        [sugestionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(tellPhonebtn).offset(-60);
+            make.top.equalTo(twoLine.mas_bottom).offset(5);
+            make.size.mas_equalTo(CGSizeMake(280, 25));
+        }];
+
+        [threeIndiaterView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(7, 9));
+            make.right.equalTo(helpView).offset(-15);
+            make.top.equalTo(twoLine.mas_bottom).offset(15);
+        }];
+        
+        
+        
     }];
     
 }
@@ -154,6 +213,12 @@
     AFBWebViewController *vc = [[AFBWebViewController alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)getIdear:(UIButton *)btn
+{
+
+    NSLog(@"我要push意见控制器了");
 }
 @end
 
