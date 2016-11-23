@@ -81,7 +81,7 @@ static NSString *systemCellID = @"oneCell";
 #pragma mark - 创建占位图片
 
 - (void)setupAFBHolderView {
-    _holderView = [AFBHolderView creatHolderView];
+    _holderView = [AFBHolderView creatHolderViewWithImageName:@"没有消息呦" lbName:@"pushlistview_up"];
     [self.tableView addSubview:_holderView];
     
 }

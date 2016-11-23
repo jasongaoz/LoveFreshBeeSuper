@@ -10,6 +10,6 @@
 
 @interface AFBHolderView : UIView
 
-+ (instancetype)creatHolderView;
++ (instancetype)creatHolderViewWithImageName:(NSString *)imgName lbName:(NSString *)lbName;
 
 @end

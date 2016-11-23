@@ -39,7 +39,7 @@
         
         _moreButton = [[UIButton alloc] init];
         [_moreButton setTitle:@"显示更多" forState:UIControlStateNormal];
-        [_moreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_moreButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         _moreButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
         [_moreButton addTarget:self action:@selector(moreContent:) forControlEvents:UIControlEventTouchUpInside];
         [backView addSubview:_moreButton];
@@ -71,7 +71,7 @@
         [_line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(backView);
             make.left.equalTo(backView);
-            make.size.mas_equalTo(CGSizeMake(kScreenWidth, 1));
+            make.size.mas_equalTo(CGSizeMake(kScreenWidth, 0.5));
         }];
         
         [_moreButton mas_makeConstraints:^(MASConstraintMaker *make) {
