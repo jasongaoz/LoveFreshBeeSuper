@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="IR1-gc-4aM">
+        <view contentMode="scaleToFill" id="IR1-gc-4aM" customClass="AFBOrderIncreaseAndReduceView">
             <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -28,6 +28,9 @@
                     </constraints>
                     <state key="normal" title="Button" image="v2_reduce"/>
                     <state key="highlighted" image="v2_reduced"/>
+                    <connections>
+                        <action selector="clickSubBtn:" destination="IR1-gc-4aM" eventType="touchUpInside" id="gEm-Z0-8Ts"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIg-8X-WUX">
                     <rect key="frame" x="50" y="0.0" width="30" height="30"/>
@@ -36,6 +39,9 @@
                     </constraints>
                     <state key="normal" title="Button" image="v2_increase"/>
                     <state key="highlighted" image="v2_increased"/>
+                    <connections>
+                        <action selector="clickPlusBtn:" destination="IR1-gc-4aM" eventType="touchUpInside" id="nnL-qM-JU9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,6 +59,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="countLabel" destination="9ev-Zn-FSu" id="b4w-3W-bUc"/>
+            </connections>
             <point key="canvasLocation" x="-62" y="-268"/>
         </view>
     </objects>

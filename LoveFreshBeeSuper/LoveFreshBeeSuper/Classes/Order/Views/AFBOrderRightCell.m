@@ -11,12 +11,16 @@
 #import <UIImageView+WebCache.h>
 #import "AFBCommonGoodsModel.h"
 
+
+
 @interface AFBOrderRightCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specificsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *partnerPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *marketPriceLabel;
+
+
 
 @end
 
