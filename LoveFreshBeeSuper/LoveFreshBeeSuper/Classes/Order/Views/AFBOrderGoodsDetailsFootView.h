@@ -17,5 +17,4 @@
 
 @property(nonatomic, assign) NSInteger goodsCount;//商品个数
 
-
 @end
