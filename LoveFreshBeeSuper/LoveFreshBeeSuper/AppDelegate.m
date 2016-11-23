@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFBTabBarController.h"
+#import "WZXLaunchViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,12 +19,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    AFBTabBarController *tabBarVc = [[AFBTabBarController alloc] init];
-    _window.rootViewController = tabBarVc;
+    [self launchView];
     [_window makeKeyAndVisible];
     return YES;
 }
-
+#pragma mark - 加载广告
+- (void)launchView{
+    ///设置启动页
+    [WZXLaunchViewController showWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height) ImageURL:@"http://img01.bqstatic.com/upload/activity/2016011111271981.jpg" advertisingURL:@"http://www.jianshu.com/p/7205047eadf7" timeSecond:5 hideSkip:YES imageLoadGood:^(UIImage *image, NSString *imageURL) {
+        //点击广告
+    } clickImage:^(UIViewController *WZXlaunchVC){
+        NSLog(@"点击了广告");
+        //广告结束
+    } theAdEnds:^{
+        //广告展示完成回调,设置window根控制器
+        AFBTabBarController *tabBarVc = [[AFBTabBarController alloc] init];
+        _window.rootViewController = tabBarVc;
+        
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

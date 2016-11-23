@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="AFBPriceArrangeControlText">
+            <rect key="frame" x="0.0" y="0.0" width="49" height="13"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-24-eEd">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="control-up" translatesAutoresizingMaskIntoConstraints="NO" id="RWN-mc-Zp2">
+                    <rect key="frame" x="42" y="1" width="7" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="FQv-aZ-PU7"/>
+                        <constraint firstAttribute="width" constant="7" id="V11-bW-egR"/>
+                    </constraints>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="control-down" translatesAutoresizingMaskIntoConstraints="NO" id="Ezh-mw-5Eb">
+                    <rect key="frame" x="42" y="8" width="7" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="Wzd-PD-2N7"/>
+                        <constraint firstAttribute="width" constant="7" id="usV-30-bBB"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="RWN-mc-Zp2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Jkw-P1-rbJ"/>
+                <constraint firstAttribute="bottom" secondItem="Ezh-mw-5Eb" secondAttribute="bottom" constant="1" id="KQu-jM-Y4y"/>
+                <constraint firstItem="gPg-24-eEd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NVy-Lj-RjA"/>
+                <constraint firstItem="gPg-24-eEd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QNL-bi-RDg"/>
+                <constraint firstAttribute="trailing" secondItem="RWN-mc-Zp2" secondAttribute="trailing" id="iTl-HN-lLw"/>
+                <constraint firstAttribute="trailing" secondItem="Ezh-mw-5Eb" secondAttribute="trailing" id="nTP-L6-rbA"/>
+                <constraint firstAttribute="bottom" secondItem="gPg-24-eEd" secondAttribute="bottom" id="ndF-Yj-drc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomImageView" destination="Ezh-mw-5Eb" id="bfb-GY-JfI"/>
+                <outlet property="title" destination="gPg-24-eEd" id="CfM-Q4-4xa"/>
+                <outlet property="topImangeView" destination="RWN-mc-Zp2" id="2kU-Yj-PLt"/>
+            </connections>
+            <point key="canvasLocation" x="-99.5" y="-181.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="control-down" width="7" height="4"/>
+        <image name="control-up" width="7" height="4"/>
+    </resources>
+</document>

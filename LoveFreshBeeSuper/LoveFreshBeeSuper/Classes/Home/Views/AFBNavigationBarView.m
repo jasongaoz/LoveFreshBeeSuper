@@ -7,9 +7,11 @@
 //
 
 #import "AFBNavigationBarView.h"
+#import <Masonry.h>
+
 @interface AFBNavigationBarView()
 @property(nonatomic,weak)UIView *leftView;
-@property(nonatomic,weak)UIView *rightView;
+
 @property(nonatomic,weak)UIView *centerView;
 @property(nonatomic,weak)UIButton *leftButton;
 @property(nonatomic,weak)UIButton *rightButton;
@@ -51,6 +53,7 @@ typedef enum : NSUInteger {
     centerView.layer.cornerRadius = 15;
     [self addSubview:centerView];
     self.centerView = centerView;
+    
     //button
     UIButton *buttonLeft = [[UIButton alloc]init];
     [buttonLeft setImage:[UIImage imageNamed:@"icon_black_scancode"] forState:UIControlStateHighlighted];
@@ -70,8 +73,8 @@ typedef enum : NSUInteger {
     
     UIButton *buttonCenter = [[UIButton alloc]init];
     [buttonCenter setTitle:@"配送到：西三旗众腾建华大厦，建材西路23" forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [buttonCenter setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonCenter setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     buttonCenter.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:buttonCenter];
     self.centerButton = buttonCenter;
@@ -88,7 +91,8 @@ typedef enum : NSUInteger {
     }];
     
     [centerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self).offset(10);
+        make.centerY.equalTo(self).offset(10);
+        make.centerX.mas_equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];
     //约束
@@ -105,7 +109,8 @@ typedef enum : NSUInteger {
     }];
     
     [buttonCenter mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self).offset(10);
+        make.centerY.equalTo(self).offset(10);
+        make.centerX.mas_equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];
     
@@ -123,21 +128,14 @@ typedef enum : NSUInteger {
     if (alpth>=0.5) {
         [self.leftButton setHighlighted:YES];
         [self.centerButton setHighlighted:YES];
+        [self.rightButton setHighlighted:YES];
     }else{
         [self.leftButton setHighlighted:NO];
         [self.centerButton setHighlighted:NO];
+        [self.rightButton setHighlighted:NO];
     }
-//    if (alpth<0) {
-//        self.leftButton.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//        self.leftView.alpha = 1+alpth;
-//        self.rightButton.alpha = 1+alpth;
-//        self.centerButton.alpha = 1+alpth;
-//    }
 
 }
-
 
 #pragma mark - 实现案件点击事件
 - (void)clickBtn:(UIButton *)sender{
@@ -155,6 +153,7 @@ typedef enum : NSUInteger {
         }
     }
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

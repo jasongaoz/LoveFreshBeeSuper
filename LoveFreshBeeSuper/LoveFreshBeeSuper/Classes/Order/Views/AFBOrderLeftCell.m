@@ -30,7 +30,7 @@
     
     self.contentView.backgroundColor = [UIColor ay_colorWithR:239 G:239 B:239 alpha:1.0];
     
-    self.textLabel.font = [UIFont systemFontOfSize:11];
+    self.textLabel.font = [UIFont systemFontOfSize:12];
     self.textLabel.textColor = [UIColor colorWithWhite:0.3 alpha:1.0];
     
     self.textLabel.textAlignment = NSTextAlignmentCenter;

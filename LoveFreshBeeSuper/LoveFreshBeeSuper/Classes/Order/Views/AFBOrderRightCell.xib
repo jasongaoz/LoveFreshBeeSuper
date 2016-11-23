@@ -24,15 +24,8 @@
                             <constraint firstAttribute="width" constant="70" id="Fh7-w7-fY5"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invitebackhot" translatesAutoresizingMaskIntoConstraints="NO" id="fAG-LE-bDb">
-                        <rect key="frame" x="86" y="10" width="20" height="8"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="J3Y-pa-GAD"/>
-                            <constraint firstAttribute="height" constant="8" id="P2X-XL-N9X"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="苏打水" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGy-YG-i8u">
-                        <rect key="frame" x="114" y="5" width="252" height="17"/>
+                        <rect key="frame" x="116" y="5" width="254" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -55,26 +48,36 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="精选" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7t-9j-ShK">
+                        <rect key="frame" x="86" y="7.5" width="27" height="13.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="27" id="gLt-A0-8lm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="hGy-YG-i8u" firstAttribute="leading" secondItem="fAG-LE-bDb" secondAttribute="trailing" constant="8" id="03x-V9-893"/>
                     <constraint firstAttribute="bottom" secondItem="uWC-4W-ywv" secondAttribute="bottom" constant="5" id="124-P4-ofJ"/>
                     <constraint firstItem="a3l-Dn-0dd" firstAttribute="leading" secondItem="NNP-Jx-uMD" secondAttribute="leading" id="5FJ-qY-g4b"/>
+                    <constraint firstItem="l7t-9j-ShK" firstAttribute="centerY" secondItem="hGy-YG-i8u" secondAttribute="centerY" id="E4l-m2-hi0"/>
+                    <constraint firstAttribute="trailing" secondItem="hGy-YG-i8u" secondAttribute="trailing" constant="16" id="Jf6-5P-UpR"/>
                     <constraint firstItem="NNP-Jx-uMD" firstAttribute="bottom" secondItem="uWC-4W-ywv" secondAttribute="bottom" id="LDG-d8-1jr"/>
-                    <constraint firstItem="fAG-LE-bDb" firstAttribute="centerY" secondItem="hGy-YG-i8u" secondAttribute="centerY" id="LJu-Tm-RLB"/>
-                    <constraint firstItem="fAG-LE-bDb" firstAttribute="leading" secondItem="a3l-Dn-0dd" secondAttribute="leading" id="MrT-tt-qPk"/>
                     <constraint firstItem="NNP-Jx-uMD" firstAttribute="top" secondItem="a3l-Dn-0dd" secondAttribute="bottom" constant="5" id="Ryn-0o-bjA"/>
+                    <constraint firstItem="l7t-9j-ShK" firstAttribute="leading" secondItem="NNP-Jx-uMD" secondAttribute="leading" id="Tb7-PL-RYI"/>
+                    <constraint firstItem="hGy-YG-i8u" firstAttribute="top" secondItem="uWC-4W-ywv" secondAttribute="top" id="Xf1-Db-CVC"/>
                     <constraint firstItem="NNP-Jx-uMD" firstAttribute="leading" secondItem="uWC-4W-ywv" secondAttribute="trailing" constant="8" id="Yqv-vG-JCQ"/>
                     <constraint firstItem="uWC-4W-ywv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Yzu-Oz-dkS"/>
                     <constraint firstItem="7J7-Sa-Dom" firstAttribute="bottom" secondItem="NNP-Jx-uMD" secondAttribute="bottom" id="dAx-sb-mih"/>
                     <constraint firstItem="7J7-Sa-Dom" firstAttribute="leading" secondItem="NNP-Jx-uMD" secondAttribute="trailing" constant="3" id="heh-i0-CTo"/>
-                    <constraint firstAttribute="trailing" secondItem="hGy-YG-i8u" secondAttribute="trailing" constant="20" id="k6p-L6-C61"/>
-                    <constraint firstItem="hGy-YG-i8u" firstAttribute="top" secondItem="uWC-4W-ywv" secondAttribute="top" id="pP9-kt-bKo"/>
                     <constraint firstItem="uWC-4W-ywv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sPN-L8-DuO"/>
+                    <constraint firstItem="hGy-YG-i8u" firstAttribute="leading" secondItem="l7t-9j-ShK" secondAttribute="trailing" constant="3" id="tpx-AH-mvL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="hotLabel" destination="l7t-9j-ShK" id="5rN-4t-pXR"/>
                 <outlet property="iconView" destination="uWC-4W-ywv" id="Apg-Lp-JMH"/>
                 <outlet property="marketPriceLabel" destination="7J7-Sa-Dom" id="BAb-37-WPY"/>
                 <outlet property="nameLabel" destination="hGy-YG-i8u" id="0Si-le-zYz"/>
@@ -86,6 +89,5 @@
     </objects>
     <resources>
         <image name="icon" width="60" height="60"/>
-        <image name="invitebackhot" width="20" height="8"/>
     </resources>
 </document>

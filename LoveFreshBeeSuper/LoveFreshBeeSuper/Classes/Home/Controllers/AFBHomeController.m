@@ -19,10 +19,12 @@
 #import "AFBBeeViewController.h"
 #import "AFBNavigationBarView.h"
 
+#import "AFBOrderSearchController.h"
+
 #import <PYSearch.h>
+#import <SVProgressHUD.h>
 
-
-@interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate>
+@interface AFBHomeController () <AFBHomeCollectionControllerDelegate,AFBNavigationBarViewDelegate,UIGestureRecognizerDelegate>
 @property(nonatomic,weak)AFBNavigationBarView *naviView;
 @end
 
@@ -32,12 +34,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self loadData];
     // Do any additional setup after loading the view.
 }
+
 #pragma mark - 自定义navigationbar
 - (void)viewWillAppear:(BOOL)animated{
-    
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     AFBNavigationBarView *view = [[AFBNavigationBarView alloc]init];
@@ -51,14 +54,18 @@
         make.height.mas_equalTo(64);
     }];
 }
+- (void)viewDidDisappear:(BOOL)animated{
+    [self.naviView removeFromSuperview];
+}
+
 - (void)getAlpha:(CGFloat)alpha{
     self.naviView.alpth = alpha;
 }
 
 #pragma mark - 搭建界面
 - (void)setupUI{
-    self.navigationItem.title = @"首页";
     
+    self.navigationItem.title = @"首页";
     //MARK:创建主页的collectionView
     AFBHomeCollectionController *collVc = [[AFBHomeCollectionController alloc]init];
     collVc.delegate = self;
@@ -72,26 +79,21 @@
     //MARK:添加NavigationItem
 //    [self addNavigationItem];
     
-    
     [[AFBDownLoadManager shareManager] getHomeDataWithParameters:@1 CompleteBlock:^(NSDictionary *arrayH) {
 //        NSLog(@"%@",arrayH);
     }];
 }
 
-//#pragma mark - 添加 设置NavigationItem
-//- (void)addNavigationItem{
-//    //左侧
-//    //不让系统渲染图片
-//    UIImage *leftImage = [[UIImage imageNamed:@"icon_black_scancode"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:leftImage style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftItem)];
-//    self.navigationItem.leftBarButtonItem = leftItem;
-//    
-//    //右侧
-//    //不让系统渲染图片
-//    UIImage *rightImage = [[UIImage imageNamed:@"icon_search"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(clickRightItem)];
-//    self.navigationItem.rightBarButtonItem = rightItem;
-//}
+#pragma mark - 拖拽手势的实现
+- (void)panGR:(UIPanGestureRecognizer *)sender{
+    CGPoint offset = [sender translationInView:sender.view];
+    NSLog(@"%f",offset.y);
+    [UIView animateWithDuration:0.5 animations:^{
+        if (offset.y > 0) {
+            _naviView.alpha = 0;
+        }
+    }];
+}
 
 #pragma mark - AFBNavigationBarViewDelegate代理方法
 - (void)clickLeftButton{
@@ -106,7 +108,7 @@
     PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入商品关键字" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
         // 开始(点击)搜索时执行以下代码
         // 如：跳转到指定控制器
-        [searchViewController.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+        [searchViewController.navigationController pushViewController:[[AFBOrderSearchController alloc] init] animated:YES];
     }];
     // 3. 跳转到搜索控制器
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
@@ -143,11 +145,23 @@
     [self.navigationController pushViewController:[[AFBBeeViewController alloc] init] animated:YES];
 }
 
+- (void)refreshStart{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.naviView.alpha = 0;
+    }];
+}
+
+- (void)refreshEnd{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.naviView.alpha = 1;
+    }];
+}
+
 #pragma mark - 加载数据
 - (void)loadData{
     AFBDownLoadManager * manager = [AFBDownLoadManager shareManager];
     [manager getSearchKeyWordParameters:@(6) CompleteBlock:^(NSDictionary *dicH) {
-        NSLog(@"====%@",dicH[@"hotquery"]);
+//        NSLog(@"====%@",dicH[@"hotquery"]);
         _searchKeyWords = dicH[@"hotquery"];
     }];
 }
