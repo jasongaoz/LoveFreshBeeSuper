@@ -9,7 +9,7 @@
 #import "AFBNavigationBarView.h"
 @interface AFBNavigationBarView()
 @property(nonatomic,weak)UIView *leftView;
-@property(nonatomic,weak)UIView *rightView;
+
 @property(nonatomic,weak)UIView *centerView;
 @property(nonatomic,weak)UIButton *leftButton;
 @property(nonatomic,weak)UIButton *rightButton;
@@ -131,7 +131,6 @@ typedef enum : NSUInteger {
     }
 
 }
-
 
 #pragma mark - 实现案件点击事件
 - (void)clickBtn:(UIButton *)sender{

@@ -22,15 +22,8 @@
 #import <SVProgressHUD.h>
 #import <MJRefresh.h>
 
-
-typedef enum : NSUInteger {
-    kRefreshStatePulling = 1,
-    kRefreshStateRefreshing = 2
-} kRefreshState;
-
-
 @interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
-@property(nonatomic,assign)kRefreshState refreshState;
+@property (nonatomic,strong) MJRefreshGifHeader * header;
 @end
 
 static NSString *cellFrist = @"cellFrist";
@@ -74,16 +67,16 @@ static NSString *cellFour = @"cellFour";
     [_imageArray addObject:[UIImage imageNamed:@"v2_pullRefresh2"]];
 
     MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    _header = header;
 
     [header setImages:_imageArray forState:MJRefreshStatePulling];
     [header setImages:_imageArray forState:MJRefreshStateRefreshing];
     [header setImages:_imageArray forState:MJRefreshStateIdle];
     self.collectionView.mj_header = header;
 
-    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"已刷新" forState:MJRefreshStateIdle];
     [header setTitle:@"松开立刻刷新" forState:MJRefreshStatePulling];
     [header setTitle:@"正在刷新" forState:MJRefreshStateRefreshing];
-    [header setTitle:@"正在刷新" forState:MJRefreshStateIdle];
     
     header.lastUpdatedTimeLabel.hidden = YES;
     
@@ -336,6 +329,19 @@ static NSString *cellFour = @"cellFour";
     CGFloat alpth =(topH-64+20)*scal-1;
     if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
         [self.delegate getAlpha:alpth];
+    }
+    NSLog(@"%.f",offset.y);
+    
+    if (offset.y < -20) {
+        if ([_delegate respondsToSelector:@selector(refreshStart)]) {
+            [_delegate refreshStart];
+        }
+    }
+    
+    if (offset.y == -20) {
+        if ([_delegate respondsToSelector:@selector(refreshEnd)]) {
+            [_delegate refreshEnd];
+        }
     }
 }
 
