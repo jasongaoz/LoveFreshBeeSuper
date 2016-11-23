@@ -22,9 +22,17 @@
 #import <SVProgressHUD.h>
 #import <MJRefresh.h>
 
-@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
 
+typedef enum : NSUInteger {
+    kRefreshStatePulling = 1,
+    kRefreshStateRefreshing = 2
+} kRefreshState;
+
+
+@interface AFBHomeCollectionController ()<UICollectionViewDelegateFlowLayout,AFBHomeFirstCellDelegate,AFBHomeThreeCellDelegate,CAAnimationDelegate>
+@property(nonatomic,assign)kRefreshState refreshState;
 @end
+
 static NSString *cellFrist = @"cellFrist";
 static NSString *cellSecond = @"cellSecond";
 static NSString *cellThree = @"cellThree";

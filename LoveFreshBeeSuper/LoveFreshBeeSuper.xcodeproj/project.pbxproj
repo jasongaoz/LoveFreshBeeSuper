@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A21B6B51DE45B6A0032FB62 /* UITabBar+AFBBage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A21B6B41DE45B6A0032FB62 /* UITabBar+AFBBage.m */; };
+		0A673CC61DE5377F007E050A /* WZXLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A673CC31DE5377F007E050A /* WZXLaunchAd.m */; };
+		0A673CC71DE5377F007E050A /* WZXLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A673CC51DE5377F007E050A /* WZXLaunchViewController.m */; };
 		0A6C38041DE1BA6800DEAFDB /* AFBHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */; };
 		0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C38071DE1BBB000DEAFDB /* AFBHomeFlowLayout.m */; };
 		0A6C380C1DE1BD8200DEAFDB /* AFBHomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C380B1DE1BD8200DEAFDB /* AFBHomeSecondCell.m */; };
@@ -92,6 +94,7 @@
 		2AC3FD8A1DE3F7C5006D7CAB /* SystemMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */; };
 		2AC3FD8B1DE3F7C5006D7CAB /* UserMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */; };
 
+
 		32C646F21DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */; };
 
 		32DDBBDE1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DDBBDD1DE3DD7300C0DD02 /* AFBOrderGoodsArrangeView.m */; };
@@ -113,6 +116,10 @@
 /* Begin PBXFileReference section */
 		0A21B6B31DE45B6A0032FB62 /* UITabBar+AFBBage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+AFBBage.h"; sourceTree = "<group>"; };
 		0A21B6B41DE45B6A0032FB62 /* UITabBar+AFBBage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+AFBBage.m"; sourceTree = "<group>"; };
+		0A673CC21DE5377F007E050A /* WZXLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZXLaunchAd.h; sourceTree = "<group>"; };
+		0A673CC31DE5377F007E050A /* WZXLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZXLaunchAd.m; sourceTree = "<group>"; };
+		0A673CC41DE5377F007E050A /* WZXLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZXLaunchViewController.h; sourceTree = "<group>"; };
+		0A673CC51DE5377F007E050A /* WZXLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZXLaunchViewController.m; sourceTree = "<group>"; };
 		0A6C38021DE1BA6800DEAFDB /* AFBHomeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeCollectionController.h; sourceTree = "<group>"; };
 		0A6C38031DE1BA6800DEAFDB /* AFBHomeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBHomeCollectionController.m; sourceTree = "<group>"; };
 		0A6C38061DE1BBB000DEAFDB /* AFBHomeFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBHomeFlowLayout.h; sourceTree = "<group>"; };
@@ -271,6 +278,7 @@
 		2AC3FD861DE3F7C5006D7CAB /* SystemMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMessageController.m; sourceTree = "<group>"; };
 		2AC3FD871DE3F7C5006D7CAB /* UserMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageController.h; sourceTree = "<group>"; };
 		2AC3FD881DE3F7C5006D7CAB /* UserMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageController.m; sourceTree = "<group>"; };
+
 
 		32C646F01DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBOrderGoodsDetailsFootView.h; sourceTree = "<group>"; };
 		32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBOrderGoodsDetailsFootView.m; sourceTree = "<group>"; };
@@ -574,7 +582,6 @@
 				23FE51481DE42D6400C59B12 /* right */,
 				23FE51471DE42D3E00C59B12 /* left */,
 				23FE514A1DE42DB500C59B12 /* Other */,
-
 				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
 				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
 				2131406A1DE19958002F7787 /* AFBOrderIncreaseAndReduceView.xib */,
@@ -594,8 +601,10 @@
 				32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */,
 				32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */,
 				32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */,
+
 				32C646F01DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.h */,
 				32C646F11DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m */,
+
 
 			);
 			path = Views;
@@ -626,6 +635,10 @@
 		2131407A1DE19958002F7787 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0A673CC21DE5377F007E050A /* WZXLaunchAd.h */,
+				0A673CC31DE5377F007E050A /* WZXLaunchAd.m */,
+				0A673CC41DE5377F007E050A /* WZXLaunchViewController.h */,
+				0A673CC51DE5377F007E050A /* WZXLaunchViewController.m */,
 				213140B81DE19BC1002F7787 /* AFBDownLoadManager.h */,
 				213140B91DE19BC1002F7787 /* AFBDownLoadManager.m */,
 				2131407B1DE19958002F7787 /* AY_Addition */,
@@ -717,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 
+
 				213140721DE19958002F7787 /* AFBOrderRightTableView.h */,
 				213140731DE19958002F7787 /* AFBOrderRightTableView.m */,
 				213140741DE19958002F7787 /* AFBOrderRightTableViewFootView.h */,
@@ -742,9 +756,11 @@
 			isa = PBXGroup;
 			children = (
 
+
 				32DDBBDF1DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.h */,
 				32DDBBE01DE3DE3600C0DD02 /* AFBOrderGoodsDetailsHeadView.m */,
 				32DDBBE21DE3DE4500C0DD02 /* AFBOrderGoodsDetailsHeadView.xib */,
+
 
 			);
 			name = common;
@@ -753,6 +769,8 @@
 		23FE514A1DE42DB500C59B12 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+
+
 
 				213140681DE19958002F7787 /* AFBOrderIncreaseAndReduceView.h */,
 				213140691DE19958002F7787 /* AFBOrderIncreaseAndReduceView.m */,
@@ -972,6 +990,7 @@
 				32E2AE9F1DE1A561003E34D3 /* AFBOrderSearchController.m in Sources */,
 				213140BA1DE19BC1002F7787 /* AFBDownLoadManager.m in Sources */,
 				213462441DE31685005E6F44 /* AFBCommentTopListCell.m in Sources */,
+				0A673CC71DE5377F007E050A /* WZXLaunchViewController.m in Sources */,
 				213140A91DE19958002F7787 /* AFBOrderRightTableViewFootView.m in Sources */,
 				0A6C38081DE1BBB000DEAFDB /* AFBHomeFlowLayout.m in Sources */,
 				32C646F21DE4674A009CE695 /* AFBOrderGoodsDetailsFootView.m in Sources */,
@@ -1016,6 +1035,7 @@
 				2A92B9541DE2D363000A1719 /* AFBHelpController.m in Sources */,
 				1B389C2B1DE321510042F99D /* AFBRedBagViewController.m in Sources */,
 				2AC3FD8B1DE3F7C5006D7CAB /* UserMessageController.m in Sources */,
+				0A673CC61DE5377F007E050A /* WZXLaunchAd.m in Sources */,
 				213140B01DE19958002F7787 /* UIButton+Addition.m in Sources */,
 				213140AF1DE19958002F7787 /* NSString+sandBox.m in Sources */,
 				46EDF9021DE2FDE100C98ECB /* AFBEditAddressController.m in Sources */,
