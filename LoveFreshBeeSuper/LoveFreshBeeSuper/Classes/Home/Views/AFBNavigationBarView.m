@@ -7,6 +7,8 @@
 //
 
 #import "AFBNavigationBarView.h"
+#import <Masonry.h>
+
 @interface AFBNavigationBarView()
 @property(nonatomic,weak)UIView *leftView;
 
@@ -51,6 +53,7 @@ typedef enum : NSUInteger {
     centerView.layer.cornerRadius = 15;
     [self addSubview:centerView];
     self.centerView = centerView;
+    
     //button
     UIButton *buttonLeft = [[UIButton alloc]init];
     [buttonLeft setImage:[UIImage imageNamed:@"icon_black_scancode"] forState:UIControlStateHighlighted];
@@ -88,7 +91,8 @@ typedef enum : NSUInteger {
     }];
     
     [centerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self).offset(10);
+        make.centerY.equalTo(self).offset(10);
+        make.centerX.mas_equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];
     //约束
@@ -105,7 +109,8 @@ typedef enum : NSUInteger {
     }];
     
     [buttonCenter mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self).offset(10);
+        make.centerY.equalTo(self).offset(10);
+        make.centerX.mas_equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];
     

@@ -330,7 +330,7 @@ static NSString *cellFour = @"cellFour";
     if ([self.delegate respondsToSelector:@selector(getAlpha:)]) {
         [self.delegate getAlpha:alpth];
     }
-    NSLog(@"%.f",offset.y);
+//    NSLog(@"%.f",offset.y);
     
     if (offset.y < -20) {
         if ([_delegate respondsToSelector:@selector(refreshStart)]) {
