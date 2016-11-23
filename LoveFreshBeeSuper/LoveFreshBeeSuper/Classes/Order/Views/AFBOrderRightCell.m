@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *specificsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *partnerPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *marketPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotLabel;
 
 
 
@@ -33,12 +34,16 @@
     self.partnerPriceLabel.text = [NSString stringWithFormat:@"¥%@",dataModel.partner_price];
 //    self.marketPriceLabel.text = dataModel.market_price;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:dataModel.img]];
-    //中划线
+    //原价按钮中划线
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
     
     NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"¥%@",dataModel.market_price] attributes:attribtDic];
     
     self.marketPriceLabel.attributedText = attribtStr;
+    [self.hotLabel.layer setBorderWidth:0.8];
+    self.hotLabel.layer.borderColor = [UIColor redColor].CGColor;
+    self.hotLabel.textColor = [UIColor redColor];
+    self.hotLabel.layer.cornerRadius = 5;
 }
 
 - (void)awakeFromNib {
